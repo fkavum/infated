@@ -62,7 +62,7 @@ namespace Infated.CoreEngine
 			//_characterGravity = GetComponent<CharacterGravity> ();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			//_health = GetComponent<Health> ();
-			//_animator = _character._animator;
+			_animator = _character._animator;
 			//_sceneCamera = _character.SceneCamera;
 			_inputManager = _character.LinkedInputManager;
 			_state = _character.CharacterState;
@@ -92,9 +92,6 @@ namespace Infated.CoreEngine
 
 			_verticalInput = _inputManager.PrimaryMovement.y;
             _horizontalInput = _inputManager.PrimaryMovement.x;
-
-            Debug.Log(_horizontalInput);
-
 
 			HandleInput();
 		}
@@ -225,7 +222,7 @@ namespace Infated.CoreEngine
 			}
 			if (_animator.HasParameterOfType(parameterName, parameterType))
 			{
-				//_character._animatorParameters.Add(parameterName);
+				_character._animatorParameters.Add(parameterName);
 			}
 		}
 

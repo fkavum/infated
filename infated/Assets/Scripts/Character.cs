@@ -31,6 +31,13 @@ public class Character : MonoBehaviour {
 
     /// if this is true, the character is currently facing right
     public bool IsFacingRight { get; set; }
+
+    [Header("Animator")]
+    /// the character animator
+    public Animator CharacterAnimator;
+    /// Set this to false if you want to implement your own animation system
+    public bool UseDefaultMecanim = true;
+
     public CharacterStates.CharacterTypes CharacterType = CharacterStates.CharacterTypes.AI;
     // Only used if the character is player-controlled. The PlayerID must match an input manager's PlayerID. It's also used to match Unity's input settings. So you'll be safe if you keep to Player1, Player2, Player3 or Player4
     public string PlayerID = "";
@@ -40,6 +47,7 @@ public class Character : MonoBehaviour {
     [Header("Direction")]
     /// true if the player is facing right
     public CharacterStates.FacingDirections InitialFacingDirection = CharacterStates.FacingDirections.Right;
+    public CharacterStates.SpawnFacingDirections DirectionOnSpawn = CharacterStates.SpawnFacingDirections.Default;
 
 
     [Header("Events")]
@@ -88,23 +96,23 @@ public class Character : MonoBehaviour {
         //_health = GetComponent<Health>();
         //_damageOnTouch = GetComponent<DamageOnTouch>();
 
-        //if (CharacterAnimator != null)
-        //{
-        //    _animator = CharacterAnimator;
-        //}
-        //else
-        //{
-        //    _animator = GetComponent<Animator>();
-        //}
+        if (CharacterAnimator != null)
+        {
+            _animator = CharacterAnimator;
+        }
+        else
+        {
+            _animator = GetComponent<Animator>();
+        }
 
-        //if (_animator != null)
-        //{
-        //    InitializeAnimatorParameters();
-        //}
+        if (_animator != null)
+        {
+            InitializeAnimatorParameters();
+        }
 
         //_originalGravity = _controller.Parameters.Gravity;
 
-        //ForceSpawnDirection();
+        ForceSpawnDirection();
 
     }
 
@@ -164,10 +172,58 @@ public class Character : MonoBehaviour {
         LateProcessAbilities();
 
         // we send our various states to the animator.		 
-        //UpdateAnimators();
+        UpdateAnimators();
 
     }
+    /// <summary>
+    /// Initializes the animator parameters.
+    /// </summary>
+    protected virtual void InitializeAnimatorParameters()
+    {
+        if (_animator == null) { return; }
 
+        _animatorParameters = new List<string>();
+
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "Grounded", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "xSpeed", AnimatorControllerParameterType.Float, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "ySpeed", AnimatorControllerParameterType.Float, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingLeft", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingRight", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingBelow", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingAbove", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "Idle", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "Alive", AnimatorControllerParameterType.Bool, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "FacingRight", AnimatorControllerParameterType.Bool, _animatorParameters);
+    }
+
+    /// <summary>
+    /// This is called at Update() and sets each of the animators parameters to their corresponding State values
+    /// </summary>
+    protected virtual void UpdateAnimators()
+    {
+        if ((UseDefaultMecanim) && (_animator != null))
+        {
+            Debug.Log(_animatorParameters.Count);
+            InfAnimator.UpdateAnimatorBool(_animator, "Grounded", _controller.State.IsGrounded, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "Alive", (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead), _animatorParameters);
+            InfAnimator.UpdateAnimatorFloat(_animator, "xSpeed", _controller.Speed.x, _animatorParameters);
+            InfAnimator.UpdateAnimatorFloat(_animator, "ySpeed", _controller.Speed.y, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "CollidingLeft", _controller.State.IsCollidingLeft, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "CollidingRight", _controller.State.IsCollidingRight, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "CollidingBelow", _controller.State.IsCollidingBelow, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "CollidingAbove", _controller.State.IsCollidingAbove, _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "Idle", (MovementState.CurrentState == CharacterStates.MovementStates.Idle), _animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "FacingRight", IsFacingRight, _animatorParameters);
+
+            foreach (CharacterAbility ability in _characterAbilities)
+            {
+                if (ability.enabled && ability.AbilityInitialized)
+                {
+                    ability.UpdateAnimator();
+                }
+            }
+        }
+    }
     /// <summary>
     /// Calls all registered abilities' Early Process methods
     /// </summary>
@@ -266,4 +322,49 @@ public class Character : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Forces the character to face left or right on spawn (and respawn)
+    /// </summary>
+    protected virtual void ForceSpawnDirection()
+    {
+        if ((DirectionOnSpawn == CharacterStates.SpawnFacingDirections.Default) || _spawnDirectionForced)
+        {
+            return;
+        }
+        else
+        {
+            _spawnDirectionForced = true;
+            if (DirectionOnSpawn == CharacterStates.SpawnFacingDirections.Left)
+            {
+                Face(CharacterStates.FacingDirections.Left);
+            }
+            if (DirectionOnSpawn == CharacterStates.SpawnFacingDirections.Right)
+            {
+                Face(CharacterStates.FacingDirections.Right);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Forces the character to face right or left
+    /// </summary>
+    /// <param name="facingDirection">Facing direction.</param>
+    public virtual void Face(CharacterStates.FacingDirections facingDirection)
+    {
+        // Flips the character horizontally
+        if (facingDirection == CharacterStates.FacingDirections.Right)
+        {
+            if (!IsFacingRight)
+            {
+                Flip(true);
+            }
+        }
+        else
+        {
+            if (IsFacingRight)
+            {
+                Flip(true);
+            }
+        }
+    }
 }

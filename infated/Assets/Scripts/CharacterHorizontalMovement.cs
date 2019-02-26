@@ -239,6 +239,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected override void InitializeAnimatorParameters()
 		{
+            Debug.Log("Walking registered");
 			RegisterAnimatorParameter ("Speed", AnimatorControllerParameterType.Float);
 			RegisterAnimatorParameter ("Walking", AnimatorControllerParameterType.Bool);
 		}
@@ -248,8 +249,8 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			//MMAnimator.UpdateAnimatorFloat(_animator,"Speed",Mathf.Abs(_normalizedHorizontalSpeed),_character._animatorParameters);
-			//MMAnimator.UpdateAnimatorBool(_animator,"Walking",(_movement.CurrentState == CharacterStates.MovementStates.Walking),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorFloat(_animator,"Speed",Mathf.Abs(_normalizedHorizontalSpeed),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"Walking",(_movement.CurrentState == CharacterStates.MovementStates.Walking),_character._animatorParameters);
 		}
 
 
