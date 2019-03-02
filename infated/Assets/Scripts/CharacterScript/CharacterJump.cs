@@ -442,9 +442,9 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			//MMAnimator.UpdateAnimatorBool(_animator,"Jumping",(_movement.CurrentState == CharacterStates.MovementStates.Jumping),_character._animatorParameters);
-			//MMAnimator.UpdateAnimatorBool(_animator,"DoubleJumping",_doubleJumping,_character._animatorParameters);
-			//MMAnimator.UpdateAnimatorBool (_animator, "HitTheGround", _controller.State.JustGotGrounded, _character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"Jumping",(_movement.CurrentState == CharacterStates.MovementStates.Jumping),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"DoubleJumping",_doubleJumping,_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool (_animator, "HitTheGround", _controller.State.JustGotGrounded, _character._animatorParameters);
 		}
 
 		/// <summary>
