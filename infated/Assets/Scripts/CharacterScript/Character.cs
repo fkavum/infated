@@ -156,8 +156,8 @@ public class Character : MonoBehaviour {
     protected virtual void Update()
     {
         EveryFrame();
-        Debug.Log(MovementState.CurrentState);
-        Debug.Log(ConditionState.CurrentState);
+        //Debug.Log(MovementState.CurrentState);
+        //Debug.Log(ConditionState.CurrentState);
         
 
     }

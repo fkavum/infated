@@ -239,7 +239,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected override void InitializeAnimatorParameters()
 		{
-            Debug.Log("Walking registered");
+            //Debug.Log("Walking registered");
 			RegisterAnimatorParameter ("Speed", AnimatorControllerParameterType.Float);
 			RegisterAnimatorParameter ("Walking", AnimatorControllerParameterType.Bool);
 		}

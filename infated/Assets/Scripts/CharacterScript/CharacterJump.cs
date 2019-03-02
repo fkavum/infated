@@ -432,7 +432,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected override void InitializeAnimatorParameters()
 		{
-            Debug.Log("Jump Registered");
+            //Debug.Log("Jump Registered");
 			RegisterAnimatorParameter ("Jumping", AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter ("DoubleJumping", AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter ("HitTheGround", AnimatorControllerParameterType.Bool);

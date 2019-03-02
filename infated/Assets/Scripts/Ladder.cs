@@ -46,7 +46,6 @@ namespace Infated.CoreEngine
 		{
 			if (LadderPlatform == null)
 			{
-                Debug.Log("Returned1");
 				return;
 			}
 
