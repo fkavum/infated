@@ -63,11 +63,12 @@ public class Character : MonoBehaviour {
     protected virtual void Awake()
     {
         Initialization();
+        
     }
 
     protected virtual void Initialization()
     {
-
+        
         MovementState = new InfStateMachine<CharacterStates.MovementStates>(gameObject,SendStateChangeEvents);
         // returns enum as "Walking", "Idle" etc.
         ConditionState = new InfStateMachine<CharacterStates.CharacterConditions>(gameObject, SendStateChangeEvents);
@@ -113,6 +114,7 @@ public class Character : MonoBehaviour {
         //_originalGravity = _controller.Parameters.Gravity;
 
         ForceSpawnDirection();
+        
 
     }
 
@@ -155,6 +157,7 @@ public class Character : MonoBehaviour {
     {
         EveryFrame();
         Debug.Log(MovementState.CurrentState);
+        Debug.Log(ConditionState.CurrentState);
         
 
     }

@@ -252,8 +252,9 @@ namespace Infated.CoreEngine
 
 		protected virtual void Initialization()
 		{
-			// we get the various components
-			_transform=transform;
+           
+            // we get the various components
+            _transform =transform;
 			_boxCollider = (BoxCollider2D)GetComponent<BoxCollider2D>();
 			_originalColliderSize = _boxCollider.size;
 			_originalColliderOffset = _boxCollider.offset;

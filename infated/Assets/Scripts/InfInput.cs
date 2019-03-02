@@ -67,6 +67,7 @@ namespace Infated.Tools
 
 			public IInfButton(string playerID, string buttonID, ButtonDownMethodDelegate btnDown, ButtonPressedMethodDelegate btnPressed, ButtonUpMethodDelegate btnUp)
 			{
+                
 				ButtonID = playerID + "_" + buttonID;
 				ButtonDownMethod = btnDown;
 				ButtonUpMethod = btnUp;

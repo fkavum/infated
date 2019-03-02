@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: d4babdf14034ba84d8c7384560a67965
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sancar_head
+    21300002: sancar_body
+    21300004: sancar_arm_r
+    21300006: sancar_arm_l
+    21300008: sancar_leg_r
+    21300010: sancar_leg_l
+    21300012: sancar_cape
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sancar_cape
+      rect:
+        serializedVersion: 2
+        x: 229.59125
+        y: 0
+        width: 365
+        height: 642
+      alignment: 9
+      pivot: {x: 0.5011199, y: 0.49844235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f899c9a15ad5841899a3c648e2ac59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_body
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 188
+        width: 233
+        height: 454
+      alignment: 9
+      pivot: {x: 0.4248927, y: 0.5055066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128ef96aa53c4aa4f9afe32d060b72be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_arm_l
+      rect:
+        serializedVersion: 2
+        x: 990.00006
+        y: 165.49998
+        width: 132.99994
+        height: 476.5
+      alignment: 9
+      pivot: {x: 0.49999976, y: 0.5057713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b222441afdd1ab4b997814d2ce8b433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_leg_r
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 19
+        width: 193
+        height: 623
+      alignment: 9
+      pivot: {x: 0.5, y: 0.505618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274e4c8dee069b04ca5d4249cf15e9d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_leg_l
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 20
+        width: 193
+        height: 622
+      alignment: 9
+      pivot: {x: 0.5, y: 0.505627}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76c6a9b5ee6ee44e9cc6b1adc626d70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_head
+      rect:
+        serializedVersion: 2
+        x: 10.500008
+        y: 0
+        width: 197
+        height: 291
+      alignment: 9
+      pivot: {x: 0.5177665, y: 0.48797253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2904da7cb96980043b6554a13eea9ecb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_arm_r
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 0
+        width: 486
+        height: 125
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.47200003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae905ae263d58748a4a1c347555d32e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1edc63708694b49468b01864bcb879ff
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636868852194620243
+  assetBundleName: 
+  assetBundleVariant: 
