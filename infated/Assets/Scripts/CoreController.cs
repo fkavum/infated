@@ -270,11 +270,13 @@ namespace Infated.CoreEngine
 			State = new CoreControllerState();
 
 			// we add the edge collider platform and moving platform masks to our initial platform mask so they can be walked on	
-			_platformMaskSave = PlatformMask;	
+			_platformMaskSave = PlatformMask;
 			PlatformMask |= OneWayPlatformMask;
 			PlatformMask |= MovingPlatformMask;
             PlatformMask |= MovingOneWayPlatformMask;
             PlatformMask |= MidHeightOneWayPlatformMask;
+
+
             
             _sideHitsStorage = new RaycastHit2D[NumberOfHorizontalRays];	
 			_belowHitsStorage = new RaycastHit2D[NumberOfVerticalRays];	
@@ -843,11 +845,13 @@ namespace Infated.CoreEngine
 
 				if ((_newPosition.y>0) && (!State.WasGroundedLastFrame))
 				{
-					_belowHitsStorage[i] = Physics2D.Raycast (rayOriginPoint,-transform.up,rayLength, _raysBelowLayerMaskPlatformsWithoutOneWay);	
-				}					
+					//_belowHitsStorage[i] = Physics2D.Raycast (rayOriginPoint,-transform.up,rayLength, _raysBelowLayerMaskPlatformsWithoutOneWay);
+                    _belowHitsStorage[i] = InfDebug.RayCast(rayOriginPoint, -transform.up, rayLength, _raysBelowLayerMaskPlatformsWithoutOneWay, Color.blue, Parameters.DrawRaycastsGizmos);
+                }					
 				else
 				{
-					_belowHitsStorage[i] = Physics2D.Raycast (rayOriginPoint,-transform.up,rayLength, _raysBelowLayerMaskPlatforms);					
+                    _belowHitsStorage[i] = InfDebug.RayCast(rayOriginPoint, -transform.up, rayLength, _raysBelowLayerMaskPlatforms, Color.blue, Parameters.DrawRaycastsGizmos);
+                    //_belowHitsStorage[i] = Physics2D.Raycast (rayOriginPoint,-transform.up,rayLength, _raysBelowLayerMaskPlatforms);					
 				}
 
                 float distance = MathUtils.DistanceBetweenPointAndLine(_belowHitsStorage[smallestDistanceIndex].point, _verticalRayCastFromLeft, _verticalRayCastToRight);
@@ -1059,7 +1063,7 @@ namespace Infated.CoreEngine
 
 			_stickRayCastOrigin.y = _boundsCenter.y + RayOffset;
 
-			//_stickRaycast = MMDebug.RayCast (_stickRayCastOrigin, -transform.up, rayLength, PlatformMask,Colors.LightBlue, Parameters.DrawRaycastsGizmos);	
+			_stickRaycast = InfDebug.RayCast (_stickRayCastOrigin, -transform.up, rayLength, PlatformMask,Colors.LightBlue, Parameters.DrawRaycastsGizmos);	
 
 			if (_stickRaycast)
 			{
