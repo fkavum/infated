@@ -41,7 +41,11 @@ GameObject:
   - component: {fileID: 7807224886638475577}
   - component: {fileID: 7807224886638475580}
   - component: {fileID: 7807224886638475582}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_arm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +82,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 606032231
   m_SortingOrder: 1
+=======
+  m_SortingLayerID: 1867084885
+  m_SortingOrder: 2
+>>>>>>> Stashed changes
   m_BoneTransforms:
   - {fileID: 7807224887801211756}
   - {fileID: 7807224886662172807}
@@ -117,9 +126,15 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 606032231
   m_SortingLayer: 7
   m_SortingOrder: 1
+=======
+  m_SortingLayerID: 1867084885
+  m_SortingLayer: 1
+  m_SortingOrder: 2
+>>>>>>> Stashed changes
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -144,7 +159,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886662172807}
   - component: {fileID: 7807224886662172804}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +210,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886858887566}
   - component: {fileID: 7807224886858887567}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Knee-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.2097797
+  m_Length: 3.209781
   m_ChildTransform: {fileID: 7807224888107984208}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224886921691197
@@ -239,7 +262,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886921691186}
   - component: {fileID: 7807224886921691187}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +313,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886981876968}
   - component: {fileID: 7807224886981876969}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224886981876971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37, y: -5.74, z: 0}
+  m_LocalPosition: {x: -2.29, y: -6.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7807224887160205831}
@@ -331,28 +362,28 @@ MonoBehaviour:
     m_RootBoneTransform: {fileID: 7807224888425843361}
     m_SolverPoses:
     - m_BoneTransform: {fileID: 7807224888425843361}
-      solverPosition: {x: -0.00000061899357, y: -0.00000013866288, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.22306278, w: 0.9748039}
-      defaultLocalRotation: {x: 0, y: 0, z: 0.123291455, w: 0.9923705}
+      solverPosition: {x: 0.0000005308399, y: -0.00000076590624, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.21341424, w: 0.9769618}
+      defaultLocalRotation: {x: 0, y: 0, z: 0.15952758, w: 0.98719347}
     - m_BoneTransform: {fileID: 7807224887337141217}
-      solverPosition: {x: 1.4456168, y: 0.29710495, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.11126038, w: 0.99379146}
-      defaultLocalRotation: {x: 0, y: 0, z: 0.007746989, w: 0.9999701}
+      solverPosition: {x: 1.4669584, y: 0.16159289, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.03623373, w: 0.9993434}
+      defaultLocalRotation: {x: 0, y: 0, z: -0.019196814, w: 0.99981576}
     - m_BoneTransform: {fileID: 7807224887522481016}
-      solverPosition: {x: 2.800488, y: 0.91141, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.08382327, w: 0.99648076}
-      defaultLocalRotation: {x: 0, y: 0, z: -0.025247728, w: 0.99968123}
+      solverPosition: {x: 2.9299686, y: 0.4311366, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.051502023, w: 0.9986729}
+      defaultLocalRotation: {x: 0, y: 0, z: 0.0041943365, w: 0.99999124}
     - m_BoneTransform: {fileID: 7807224887116262858}
-      solverPosition: {x: 4.185772, y: 1.8460221, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.0012605924, w: 0.9999991}
-      defaultLocalRotation: {x: 0, y: 0, z: -0.110063925, w: 0.9939245}
+      solverPosition: {x: 4.5335264, y: 0.9013657, z: 0}
+      solverRotation: {x: 0, y: 0, z: 0.029358601, w: 0.99956894}
+      defaultLocalRotation: {x: 0, y: 0, z: 0.0018618642, w: 0.9999983}
     - m_BoneTransform: {fileID: 7807224887340290281}
-      solverPosition: {x: 5.2615147, y: 2.57575, z: 0}
-      solverRotation: {x: 0, y: 0, z: 0.06993373, w: 0.9975516}
-      defaultLocalRotation: {x: 0, y: 0, z: 0.09324352, w: 0.9956433}
+      solverPosition: {x: 5.757278, y: 1.3397275, z: 0}
+      solverRotation: {x: 0, y: 0, z: -0.0014024496, w: 0.9999989}
+      defaultLocalRotation: {x: 0, y: 0, z: -0.0003107884, w: 1}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: -13.357251, y: -9.924186, z: 0.00027311593}
+    targetPosition: {x: -13.817251, y: -10.519186, z: 0.00027311593}
     iterations: 10
     damping: 0.8
 --- !u!1 &7807224886984707778
@@ -365,7 +396,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886984707779}
   - component: {fileID: 7807224886984707776}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK Arm-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +465,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887030265447}
   - component: {fileID: 7807224887030265444}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK Leg-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +535,11 @@ GameObject:
   - component: {fileID: 7807224887073478009}
   - component: {fileID: 7807224887073478012}
   - component: {fileID: 7807224887073478014}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,8 +576,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 606032231
   m_SortingOrder: 2
+=======
+  m_SortingLayerID: 1867084885
+  m_SortingOrder: 1
+>>>>>>> Stashed changes
   m_BoneTransforms:
   - {fileID: 7807224887879680888}
   - {fileID: 7807224888425843361}
@@ -576,9 +624,15 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+<<<<<<< Updated upstream
   m_SortingLayerID: 606032231
   m_SortingLayer: 7
   m_SortingOrder: 2
+=======
+  m_SortingLayerID: 1867084885
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+>>>>>>> Stashed changes
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -607,7 +661,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887116262858}
   - component: {fileID: 7807224887116262859}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,14 +679,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887116262837}
-  m_LocalRotation: {x: 0, y: 0, z: 0.0012605925, w: 0.9999992}
+  m_LocalRotation: {x: 0, y: 0, z: 0.029358601, w: 0.99956894}
   m_LocalPosition: {x: 1.6710807, y: -0.00000059441663, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7807224887340290281}
   m_Father: {fileID: 7807224887522481016}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360.144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1083.365}
 --- !u!114 &7807224887116262859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.299894
+  m_Length: 1.2998961
   m_ChildTransform: {fileID: 7807224887340290281}
   m_AttachedIK: {fileID: 7807224886981876969}
 --- !u!1 &7807224887119895121
@@ -656,7 +714,11 @@ GameObject:
   - component: {fileID: 7807224887119895126}
   - component: {fileID: 7807224887119895125}
   - component: {fileID: 7807224887119895127}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_leg_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +823,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887126706194}
   - component: {fileID: 7807224887126706195}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Arm-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.4885292
+  m_Length: 1.4885294
   m_ChildTransform: {fileID: 7807224887162048571}
   m_AttachedIK: {fileID: 7807224886984707776}
 --- !u!1 &7807224887160205830
@@ -808,7 +874,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807224887160205831}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +914,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887162048571}
   - component: {fileID: 7807224887162048568}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +965,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887258201438}
   - component: {fileID: 7807224887258201439}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Leg-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0649726
+  m_Length: 2.0649724
   m_ChildTransform: {fileID: 7807224886858887566}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224887337141216
@@ -939,7 +1017,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887337141217}
   - component: {fileID: 7807224887337141222}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,14 +1035,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887337141216}
-  m_LocalRotation: {x: 0, y: 0, z: 0.11126036, w: 0.99379134}
+  m_LocalRotation: {x: 0, y: 0, z: 0.03623373, w: 0.9993434}
   m_LocalPosition: {x: 1.4758313, y: 0.00000019092113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7807224887522481016}
   m_Father: {fileID: 7807224888425843361}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.776001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.1530004}
 --- !u!114 &7807224887337141222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,7 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.4876319
+  m_Length: 1.4876338
   m_ChildTransform: {fileID: 7807224887522481016}
   m_AttachedIK: {fileID: 7807224886981876969}
 --- !u!1 &7807224887340290280
@@ -987,7 +1069,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887340290281}
   - component: {fileID: 7807224887340290286}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,13 +1087,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887340290280}
-  m_LocalRotation: {x: 0, y: 0, z: 0.06993373, w: 0.9975516}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0014024497, w: 0.99999905}
   m_LocalPosition: {x: 1.2998929, y: 0.0000004656613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7807224887116262858}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.02}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2519.839}
 --- !u!114 &7807224887340290286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,7 +1120,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887414382151}
   - component: {fileID: 7807224887414382148}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Knee-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.0816176
+  m_Length: 3.0816169
   m_ChildTransform: {fileID: 7807224886921691186}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224887499959785
@@ -1083,7 +1173,11 @@ GameObject:
   - component: {fileID: 7807224887499959790}
   - component: {fileID: 7807224887499959789}
   - component: {fileID: 7807224887499959791}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_arm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1280,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887522481016}
   - component: {fileID: 7807224887522481017}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,14 +1298,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887522481019}
-  m_LocalRotation: {x: 0, y: 0, z: 0.08382326, w: 0.99648064}
+  m_LocalRotation: {x: 0, y: 0, z: 0.051502023, w: 0.9986729}
   m_LocalPosition: {x: 1.4876317, y: -0.00000032782555, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7807224887116262858}
   m_Father: {fileID: 7807224887337141217}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.617001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 365.904}
 --- !u!114 &7807224887522481017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,7 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.6710833
+  m_Length: 1.6710829
   m_ChildTransform: {fileID: 7807224887116262858}
   m_AttachedIK: {fileID: 7807224886981876969}
 --- !u!1 &7807224887593320699
@@ -1234,7 +1332,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887593320696}
   - component: {fileID: 7807224887593320697}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.35558128
+  m_Length: 0.35558122
   m_ChildTransform: {fileID: 7807224887885353000}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &7807224887681375257
@@ -1282,7 +1384,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807224887681375262}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: Limbs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1426,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887801211756}
   - component: {fileID: 7807224887801211757}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Arm-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1451,7 @@ Transform:
   - {fileID: 7807224886662172807}
   m_Father: {fileID: 7807224888516937532}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -544.68896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -904.68896}
 --- !u!114 &7807224887801211757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1478,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887879680888}
   - component: {fileID: 7807224887879680889}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1382,14 +1496,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887879680891}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9999342, w: 0.011473434}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9989726, w: -0.045319557}
   m_LocalPosition: {x: -0.0930432, y: 0.32000858, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7807224888425843361}
   m_Father: {fileID: 7807224887593320696}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 178.68501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 185.19499}
 --- !u!114 &7807224887879680889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.4470258
+  m_Length: 0.44702652
   m_ChildTransform: {fileID: 7807224888425843361}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &7807224887885353003
@@ -1416,7 +1530,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887885353000}
   - component: {fileID: 7807224887885353001}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,7 +1549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224887885353003}
   m_LocalRotation: {x: 0, y: 0, z: 0.04170207, w: 0.99913013}
-  m_LocalPosition: {x: 0.3555813, y: -0.000000009313226, z: 0}
+  m_LocalPosition: {x: 0.3555819, y: 0.00000032410026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7807224887593320696}
@@ -1463,7 +1581,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887992907799}
   - component: {fileID: 7807224887992907796}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Leg-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1498,7 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0187573
+  m_Length: 2.0187578
   m_ChildTransform: {fileID: 7807224887414382151}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224888107984211
@@ -1511,7 +1633,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888107984208}
   - component: {fileID: 7807224888107984209}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1684,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888130477773}
   - component: {fileID: 7807224888130477772}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1608,7 +1738,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888252354583}
   - component: {fileID: 7807224888252354580}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK Arm-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1623,7 +1757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224888252354582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62158424, y: 0.73207873, z: 0}
+  m_LocalPosition: {x: -0.62158424, y: 0.7320787, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7807224887160205831}
@@ -1791,9 +1925,9 @@ MonoBehaviour:
     FallMultiplier: 1
     AscentMultiplier: 1
     MaxVelocity: {x: 100, y: 100}
-    SpeedAccelerationOnGround: 20
+    SpeedAccelerationOnGround: 5
     SpeedAccelerationInAir: 5
-    SpeedFactor: 1
+    SpeedFactor: 1.25
     MaximumSlopeAngle: 30
     SlopeAngleSpeedFactor:
       serializedVersion: 2
@@ -1898,7 +2032,7 @@ MonoBehaviour:
   AbilityInProgressSfx: {fileID: 0}
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
-  WalkSpeed: 6
+  WalkSpeed: 12
   TouchTheGroundEffect: {fileID: 0}
   TouchTheGroundSfx: {fileID: 0}
 --- !u!114 &1113648694513236840
@@ -1992,7 +2126,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888425843361}
   - component: {fileID: 7807224888425843366}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2006,14 +2144,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807224888425843360}
-  m_LocalRotation: {x: 0, y: 0, z: 0.22306283, w: 0.9748041}
+  m_LocalRotation: {x: 0, y: 0, z: 0.21341424, w: 0.9769618}
   m_LocalPosition: {x: 0.44702637, y: 9.313226e-10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7807224887337141217}
   m_Father: {fileID: 7807224887879680888}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.778002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24.645}
 --- !u!114 &7807224888425843366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,7 +2165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.4758308
+  m_Length: 1.4758326
   m_ChildTransform: {fileID: 7807224887337141217}
   m_AttachedIK: {fileID: 7807224886981876969}
 --- !u!1 &7807224888466539202
@@ -2041,7 +2179,11 @@ GameObject:
   - component: {fileID: 7807224888466539203}
   - component: {fileID: 7807224888466539206}
   - component: {fileID: 7807224888466539200}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_leg_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2146,7 +2288,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888493186672}
   - component: {fileID: 7807224888493186675}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 12
+>>>>>>> Stashed changes
   m_Name: IK Leg-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2357,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888516937532}
   - component: {fileID: 7807224888516937533}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 11
+>>>>>>> Stashed changes
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2248,7 +2398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.6138378
+  m_Length: 1.6138384
   m_ChildTransform: {fileID: 7807224887593320696}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &7807224888690811931
@@ -2262,7 +2412,11 @@ GameObject:
   - component: {fileID: 7807224888690811928}
   - component: {fileID: 7807224888690811935}
   - component: {fileID: 7807224888690811929}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2520,11 @@ GameObject:
   - component: {fileID: 7807224888729223679}
   - component: {fileID: 7807224888729223666}
   - component: {fileID: 7807224888729223676}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: sancar_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

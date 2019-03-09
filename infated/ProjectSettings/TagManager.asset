@@ -20,6 +20,7 @@ TagManager:
   - Player
   - Volumes
   - OneWayPlatforms
+<<<<<<< Updated upstream
   - Projectiles
   - Enemies
   - LevelBounds
@@ -35,6 +36,25 @@ TagManager:
   - Invulnerable
   - PlatformsPlayerOnly
   - MidHeightOneWayPlatforms
+=======
+  - Limbs
+  - Bones
+  - IK
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 
@@ -67,4 +87,7 @@ TagManager:
     locked: 0
   - name: Sancar
     uniqueID: 606032231
+    locked: 0
+  - name: Level
+    uniqueID: 3117449869
     locked: 0
