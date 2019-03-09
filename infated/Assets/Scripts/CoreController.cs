@@ -286,15 +286,18 @@ namespace Infated.CoreEngine
 			State.Reset();
 			SetRaysParameters();
 
-			//if (AutomaticGravitySettings)
-			//{
-			//	CharacterGravity characterGravity = this.gameObject.GetComponentNoAlloc<CharacterGravity> ();
-			//	if (characterGravity == null)
-			//	{
-			//		this.transform.rotation = Quaternion.identity;
-			//	}
-			//}
-		}
+            if (AutomaticGravitySettings)
+                this.transform.rotation = Quaternion.identity; // remove this after comment out below
+
+            //if (AutomaticGravitySettings)
+            //{
+            //	CharacterGravity characterGravity = this.gameObject.GetComponentNoAlloc<CharacterGravity> ();
+            //	if (characterGravity == null)
+            //	{
+            //		this.transform.rotation = Quaternion.identity;
+            //	}
+            //}
+        }
 
 		/// <summary>
 		/// Use this to add force to the character
@@ -322,7 +325,8 @@ namespace Infated.CoreEngine
 		/// <param name="y">The y value of the velocity.</param>
 		public virtual void AddVerticalForce(float y)
 		{
-			_speed.y += y;
+            Debug.Log("Force Appplied");
+            _speed.y += y;
 			_externalForce.y += y;
 		}
 
@@ -450,17 +454,17 @@ namespace Infated.CoreEngine
             else if ((_speed.x > _movementDirectionThreshold) || (_externalForce.x > _movementDirectionThreshold))
             {
                 _movementDirection = 1;
-            }                
+            }
 
-            //TODO::
-            //if (_movingPlatform != null)
-            //{
-            //    if (Mathf.Abs(_movingPlatform.CurrentSpeed.x) > Mathf.Abs(_speed.x))
-            //    {
-            //       _movementDirection = Mathf.Sign(_movingPlatform.CurrentSpeed.x);
-            //    }
-            //}
-             _storedMovementDirection = _movementDirection;                        
+            /*
+            if (_movingPlatform != null)
+            {
+                if (Mathf.Abs(_movingPlatform.CurrentSpeed.x) > Mathf.Abs(_speed.x))
+                {
+                    _movementDirection = Mathf.Sign(_movingPlatform.CurrentSpeed.x);
+                }
+            }*/
+            _storedMovementDirection = _movementDirection;                        
         }
 
 		protected virtual void ApplyGravity()
@@ -554,8 +558,7 @@ namespace Infated.CoreEngine
 		/// <param name="storageArray">Storage array.</param>
 		public virtual bool CastRays(RaycastDirections direction, float rayLength, Color color, ref RaycastHit2D[] storageArray)
 		{
-            return false;
-            /*
+           
 			bool returnValue = false;
 			switch (direction)
 			{
@@ -568,7 +571,7 @@ namespace Infated.CoreEngine
 					for (int i = 0; i < NumberOfHorizontalRays; i++)
 					{	
 						Vector2 rayOriginPoint = Vector2.Lerp (_horizontalRayCastFromBottom, _horizontalRayCastToTop, (float)i / (float)(NumberOfHorizontalRays - 1));
-						storageArray [i] = MMDebug.RayCast (rayOriginPoint, -transform.right, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
+						storageArray [i] = InfDebug.RayCast (rayOriginPoint, -transform.right, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
 						if (storageArray [i])
 						{
 							returnValue = true;
@@ -585,7 +588,7 @@ namespace Infated.CoreEngine
 					for (int i = 0; i < NumberOfHorizontalRays; i++)
 					{	
 						Vector2 rayOriginPoint = Vector2.Lerp (_horizontalRayCastFromBottom, _horizontalRayCastToTop, (float)i / (float)(NumberOfHorizontalRays - 1));
-						storageArray[i] = MMDebug.RayCast (rayOriginPoint, transform.right, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
+						storageArray[i] = InfDebug.RayCast (rayOriginPoint, transform.right, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
 						if (storageArray [i])
 						{
 							returnValue = true;
@@ -607,7 +610,7 @@ namespace Infated.CoreEngine
 
 						if ((_newPosition.y > 0) && (!State.WasGroundedLastFrame))
 						{
-							storageArray [i] = MMDebug.RayCast (rayOriginPoint, -transform.up, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
+							storageArray [i] = InfDebug.RayCast (rayOriginPoint, -transform.up, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
 							if (storageArray [i])
 							{
 								returnValue = true;
@@ -630,7 +633,7 @@ namespace Infated.CoreEngine
 
 						if ((_newPosition.y > 0) && (!State.WasGroundedLastFrame))
 						{
-							storageArray [i] = MMDebug.RayCast (rayOriginPoint, transform.up, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
+							storageArray [i] = InfDebug.RayCast (rayOriginPoint, transform.up, rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, color, Parameters.DrawRaycastsGizmos);	
 							if (storageArray [i])
 							{
 								returnValue = true;
@@ -642,7 +645,7 @@ namespace Infated.CoreEngine
 				default:
 					return false;
 			}
-            */
+            
 		}
 
         protected virtual void CastRaysToTheLeft()
@@ -661,8 +664,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected virtual void CastRaysToTheSides(float raysDirection) 
 		{
-            return;
-            /*
+                      
 			// we determine the origin of our rays
 			_horizontalRayCastFromBottom = (_boundsBottomRightCorner + _boundsBottomLeftCorner) / 2;
 			_horizontalRayCastToTop = (_boundsTopLeftCorner + _boundsTopRightCorner) / 2;	
@@ -686,11 +688,11 @@ namespace Infated.CoreEngine
 				// if we were grounded last frame and if this is our first ray, we don't cast against one way platforms
 				if ( State.WasGroundedLastFrame && i == 0 )		
 				{
-					_sideHitsStorage[i] = MMDebug.RayCast (rayOriginPoint,raysDirection*(transform.right),horizontalRayLength,PlatformMask,Colors.Indigo,Parameters.DrawRaycastsGizmos);	
+					_sideHitsStorage[i] = InfDebug.RayCast (rayOriginPoint,raysDirection*(transform.right),horizontalRayLength,PlatformMask,Colors.Indigo,Parameters.DrawRaycastsGizmos);	
 				}						
 				else
 				{
-					_sideHitsStorage[i] = MMDebug.RayCast (rayOriginPoint,raysDirection*(transform.right),horizontalRayLength,PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask,Colors.Indigo,Parameters.DrawRaycastsGizmos);			
+					_sideHitsStorage[i] = InfDebug.RayCast (rayOriginPoint,raysDirection*(transform.right),horizontalRayLength,PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask,Colors.Indigo,Parameters.DrawRaycastsGizmos);			
 				}
 				// if we've hit something
 				if (_sideHitsStorage[i].distance >0)
@@ -729,7 +731,7 @@ namespace Infated.CoreEngine
                             CurrentWallCollider = _sideHitsStorage[i].collider.gameObject;
                             State.SlopeAngleOK = false;
 
-                            float distance = MMMaths.DistanceBetweenPointAndLine(_sideHitsStorage[i].point, _horizontalRayCastFromBottom, _horizontalRayCastToTop);
+                            float distance = InfMaths.DistanceBetweenPointAndLine(_sideHitsStorage[i].point, _horizontalRayCastFromBottom, _horizontalRayCastToTop);
                             if (raysDirection <= 0)
                             {
                                 _newPosition.x = -distance
@@ -757,7 +759,7 @@ namespace Infated.CoreEngine
 					}
 				}						
 			}
-            */
+            
 
 		}
 
@@ -971,7 +973,7 @@ namespace Infated.CoreEngine
         /// </summary>
         protected virtual void CastRaysAbove()
 		{			
-            /*
+            
 			if (_newPosition.y<0)
 				return;
 
@@ -996,7 +998,7 @@ namespace Infated.CoreEngine
 			for (int i=0; i<NumberOfVerticalRays;i++)
 			{							
 				Vector2 rayOriginPoint = Vector2.Lerp(_aboveRayCastStart,_aboveRayCastEnd,(float)i/(float)(NumberOfVerticalRays-1));
-				_aboveHitsStorage[i] = MMDebug.RayCast (rayOriginPoint,(transform.up), rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, Colors.Cyan, Parameters.DrawRaycastsGizmos);	
+				_aboveHitsStorage[i] = InfDebug.RayCast (rayOriginPoint,(transform.up), rayLength, PlatformMask & ~OneWayPlatformMask & ~MovingOneWayPlatformMask, Colors.Cyan, Parameters.DrawRaycastsGizmos);	
 
 				if (_aboveHitsStorage[i])
 				{
@@ -1028,7 +1030,7 @@ namespace Infated.CoreEngine
 					_speed = new Vector2(_speed.x, 0f);
 				}
 			}
-            */
+            
 		}
 
 		/// <summary>

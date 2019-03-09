@@ -118,7 +118,6 @@ public class Character : MonoBehaviour {
 
     }
 
-
     /// <summary>
     /// Gets (if it exists) the InputManager matching the Character's Player ID
     /// </summary>
@@ -167,7 +166,7 @@ public class Character : MonoBehaviour {
     /// </summary>
     protected virtual void EveryFrame()
     {
-        //Debug.Log(ConditionState.CurrentState);
+        Debug.Log(MovementState.CurrentState);
         HandleCharacterStatus();
 
         // we process our abilities
@@ -368,6 +367,30 @@ public class Character : MonoBehaviour {
             if (IsFacingRight)
             {
                 Flip(true);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Called when the Character dies. 
+    /// Calls every abilities' Reset() method, so you can restore settings to their original value if needed
+    /// </summary>
+    public virtual void Reset()
+    {
+        _spawnDirectionForced = false;
+        if (_characterAbilities == null)
+        {
+            return;
+        }
+        if (_characterAbilities.Length == 0)
+        {
+            return;
+        }
+        foreach (CharacterAbility ability in _characterAbilities)
+        {
+            if (ability.enabled)
+            {
+                ability.Reset();
             }
         }
     }

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField]
     private GameObject _GameObject;
     public Vector3 _position;
     // Start is called before the first frame update
 
     private void Awake()
     {
-        _GameObject = Resources.Load<GameObject>("Sancar/Prefab/Sancar");
+       _GameObject = Resources.Load<GameObject>("Sancar/Prefab/Sancar");
 
     }
 

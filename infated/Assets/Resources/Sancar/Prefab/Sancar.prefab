@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6892019984299926618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619339358701243092}
+  m_Layer: 0
+  m_Name: Weapon Attachment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619339358701243092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892019984299926618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42, y: -1.44, z: -0.06545373}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 7807224888320924606}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7807224886638475576
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +41,7 @@ GameObject:
   - component: {fileID: 7807224886638475577}
   - component: {fileID: 7807224886638475580}
   - component: {fileID: 7807224886638475582}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_arm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +78,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: 1
   m_BoneTransforms:
   - {fileID: 7807224887801211756}
@@ -87,8 +117,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: 1
   serializedVersion: 2
   m_Quality: 0
@@ -114,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886662172807}
   - component: {fileID: 7807224886662172804}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886858887566}
   - component: {fileID: 7807224886858887567}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Knee-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886921691186}
   - component: {fileID: 7807224886921691187}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886981876968}
   - component: {fileID: 7807224886981876969}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224886984707779}
   - component: {fileID: 7807224886984707776}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK Arm-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887030265447}
   - component: {fileID: 7807224887030265444}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK Leg-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +496,7 @@ GameObject:
   - component: {fileID: 7807224887073478009}
   - component: {fileID: 7807224887073478012}
   - component: {fileID: 7807224887073478014}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +533,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: 2
   m_BoneTransforms:
   - {fileID: 7807224887879680888}
@@ -546,8 +576,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: 2
   serializedVersion: 2
   m_Quality: 0
@@ -577,7 +607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887116262858}
   - component: {fileID: 7807224887116262859}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +656,7 @@ GameObject:
   - component: {fileID: 7807224887119895126}
   - component: {fileID: 7807224887119895125}
   - component: {fileID: 7807224887119895127}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_leg_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +693,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: -1
   m_BoneTransforms:
   - {fileID: 7807224887992907799}
@@ -703,8 +733,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: -1
   serializedVersion: 2
   m_Quality: 0
@@ -731,7 +761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887126706194}
   - component: {fileID: 7807224887126706195}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Arm-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807224887160205831}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887162048571}
   - component: {fileID: 7807224887162048568}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887258201438}
   - component: {fileID: 7807224887258201439}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Leg-L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887337141217}
   - component: {fileID: 7807224887337141222}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887340290281}
   - component: {fileID: 7807224887340290286}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887414382151}
   - component: {fileID: 7807224887414382148}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Knee-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1083,7 @@ GameObject:
   - component: {fileID: 7807224887499959790}
   - component: {fileID: 7807224887499959789}
   - component: {fileID: 7807224887499959791}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_arm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1120,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: -3
   m_BoneTransforms:
   - {fileID: 7807224887126706194}
@@ -1129,8 +1159,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: -3
   serializedVersion: 2
   m_Quality: 0
@@ -1156,7 +1186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887522481016}
   - component: {fileID: 7807224887522481017}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887593320696}
   - component: {fileID: 7807224887593320697}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807224887681375262}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Limbs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,7 +1320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887801211756}
   - component: {fileID: 7807224887801211757}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Arm-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887879680888}
   - component: {fileID: 7807224887879680889}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887885353000}
   - component: {fileID: 7807224887885353001}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224887992907799}
   - component: {fileID: 7807224887992907796}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Leg-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1481,7 +1511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888107984208}
   - component: {fileID: 7807224888107984209}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888130477773}
   - component: {fileID: 7807224888130477772}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,7 +1608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888252354583}
   - component: {fileID: 7807224888252354580}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK Arm-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,6 +1680,8 @@ GameObject:
   - component: {fileID: 7807224888320924595}
   - component: {fileID: 1113648694513236840}
   - component: {fileID: 7807224888320924593}
+  - component: {fileID: 4173855932860609383}
+  - component: {fileID: 8991791754142360675}
   m_Layer: 0
   m_Name: Sancar
   m_TagString: Player
@@ -1671,6 +1703,7 @@ Transform:
   - {fileID: 7807224887681375262}
   - {fileID: 7807224888130477773}
   - {fileID: 7807224887160205831}
+  - {fileID: 1619339358701243092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1807,7 +1840,7 @@ MonoBehaviour:
     m_Bits: 0
   OneWayPlatformMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2048
   MovingOneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 0
@@ -1907,6 +1940,48 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4173855932860609383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf73f856e5973954dafa3ed23887bf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
+  WallClingingSlowFactor: 0.6
+  WallClingingTolerance: 0.3
+--- !u!114 &8991791754142360675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37457b244e9dbb429b7945c76531cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
+  InitialWeapon: {fileID: 1807081326533691245, guid: 584239b168aa3634da0afc6e3427cf87,
+    type: 3}
+  WeaponAttachment: {fileID: 1619339358701243092}
+  CanPickupWeapons: 0
+  CurrentWeapon: {fileID: 0}
+  ContinuousPress: 0
+  AutomaticallyBindAnimator: 1
+  GettingHitInterruptsAttack: 0
 --- !u!1 &7807224888425843360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,7 +1992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888425843361}
   - component: {fileID: 7807224888425843366}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: New bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1966,7 +2041,7 @@ GameObject:
   - component: {fileID: 7807224888466539203}
   - component: {fileID: 7807224888466539206}
   - component: {fileID: 7807224888466539200}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_leg_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2003,7 +2078,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: -2
   m_BoneTransforms:
   - {fileID: 7807224887258201438}
@@ -2043,8 +2118,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: -2
   serializedVersion: 2
   m_Quality: 0
@@ -2071,7 +2146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888493186672}
   - component: {fileID: 7807224888493186675}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: IK Leg-R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2136,7 +2211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7807224888516937532}
   - component: {fileID: 7807224888516937533}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2187,7 +2262,7 @@ GameObject:
   - component: {fileID: 7807224888690811928}
   - component: {fileID: 7807224888690811935}
   - component: {fileID: 7807224888690811929}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2299,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: -2
   m_BoneTransforms:
   - {fileID: 7807224887593320696}
@@ -2263,8 +2338,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: -2
   serializedVersion: 2
   m_Quality: 0
@@ -2291,7 +2366,7 @@ GameObject:
   - component: {fileID: 7807224888729223679}
   - component: {fileID: 7807224888729223666}
   - component: {fileID: 7807224888729223676}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: sancar_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2328,7 +2403,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SortingLayerID: 1867084885
+  m_SortingLayerID: 606032231
   m_SortingOrder: 0
   m_BoneTransforms:
   - {fileID: 7807224888516937532}
@@ -2367,8 +2442,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1867084885
-  m_SortingLayer: 1
+  m_SortingLayerID: 606032231
+  m_SortingLayer: 7
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0

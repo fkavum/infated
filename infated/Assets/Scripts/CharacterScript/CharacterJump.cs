@@ -61,7 +61,7 @@ namespace Infated.CoreEngine
 	    //protected CharacterWalljump _characterWallJump = null;
 		//protected CharacterCrouch _characterCrouch = null;
 		//protected CharacterButtonActivation _characterButtonActivation = null;
-        //protected CharacterLadder _characterLadder = null;
+        protected CharacterLadder _characterLadder = null;
 
 		protected float _lastTimeGrounded = 0f;
 
@@ -130,7 +130,7 @@ namespace Infated.CoreEngine
 			//_characterCrouch = GetComponent<CharacterCrouch>();
 			//_characterButtonActivation = GetComponent<CharacterButtonActivation>();
 			_characterHorizontalMovement = GetComponent<CharacterHorizontalMovement> ();
-            //_characterLadder = GetComponent<CharacterLadder>();
+            _characterLadder = GetComponent<CharacterLadder>();
 		}	
         
 		/// <summary>
@@ -230,7 +230,7 @@ namespace Infated.CoreEngine
 					&& (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement))
 				|| (_movement.CurrentState == CharacterStates.MovementStates.Jetpacking) // or if we're jetpacking
 				|| (_movement.CurrentState == CharacterStates.MovementStates.Dashing) // or if we're dashing
-				//|| ((_movement.CurrentState == CharacterStates.MovementStates.WallClinging) && (_characterWallJump != null)) // or if we're wallclinging and can walljump
+				|| (_movement.CurrentState == CharacterStates.MovementStates.WallClinging)// && (_characterWallJump != null)) // or if we're wallclinging and can walljump
 				|| _controller.State.IsCollidingAbove) // or if we're colliding with the ceiling
 			{
 				return false;
@@ -307,11 +307,11 @@ namespace Infated.CoreEngine
 			{
 				_characterHorizontalMovement.ResetHorizontalSpeed();
 			}	
-            /*
+            
             if (_movement.CurrentState == CharacterStates.MovementStates.LadderClimbing)
             {
                 _characterLadder.GetOffTheLadder();
-            }*/
+            }
 
 			_controller.ResetColliderSize();
 
