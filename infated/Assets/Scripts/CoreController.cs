@@ -325,7 +325,6 @@ namespace Infated.CoreEngine
 		/// <param name="y">The y value of the velocity.</param>
 		public virtual void AddVerticalForce(float y)
 		{
-            Debug.Log("Force Appplied");
             _speed.y += y;
 			_externalForce.y += y;
 		}

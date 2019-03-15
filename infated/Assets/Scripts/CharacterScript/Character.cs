@@ -155,9 +155,6 @@ public class Character : MonoBehaviour {
     protected virtual void Update()
     {
         EveryFrame();
-        //Debug.Log(MovementState.CurrentState);
-        //Debug.Log(ConditionState.CurrentState);
-        
 
     }
 
@@ -166,7 +163,6 @@ public class Character : MonoBehaviour {
     /// </summary>
     protected virtual void EveryFrame()
     {
-        Debug.Log(MovementState.CurrentState);
         HandleCharacterStatus();
 
         // we process our abilities
@@ -189,6 +185,7 @@ public class Character : MonoBehaviour {
 
         InfAnimator.AddAnimatorParamaterIfExists(_animator, "Grounded", AnimatorControllerParameterType.Bool, _animatorParameters);
         InfAnimator.AddAnimatorParamaterIfExists(_animator, "xSpeed", AnimatorControllerParameterType.Float, _animatorParameters);
+        InfAnimator.AddAnimatorParamaterIfExists(_animator, "xAbsSpeed", AnimatorControllerParameterType.Float, _animatorParameters);
         InfAnimator.AddAnimatorParamaterIfExists(_animator, "ySpeed", AnimatorControllerParameterType.Float, _animatorParameters);
         InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingLeft", AnimatorControllerParameterType.Bool, _animatorParameters);
         InfAnimator.AddAnimatorParamaterIfExists(_animator, "CollidingRight", AnimatorControllerParameterType.Bool, _animatorParameters);
@@ -210,6 +207,7 @@ public class Character : MonoBehaviour {
             InfAnimator.UpdateAnimatorBool(_animator, "Grounded", _controller.State.IsGrounded, _animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator, "Alive", (ConditionState.CurrentState != CharacterStates.CharacterConditions.Dead), _animatorParameters);
             InfAnimator.UpdateAnimatorFloat(_animator, "xSpeed", _controller.Speed.x, _animatorParameters);
+            InfAnimator.UpdateAnimatorFloat(_animator, "xAbsSpeed", Mathf.Abs(_controller.Speed.x), _animatorParameters);
             InfAnimator.UpdateAnimatorFloat(_animator, "ySpeed", _controller.Speed.y, _animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator, "CollidingLeft", _controller.State.IsCollidingLeft, _animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator, "CollidingRight", _controller.State.IsCollidingRight, _animatorParameters);

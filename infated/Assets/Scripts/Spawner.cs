@@ -12,19 +12,13 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-<<<<<<< Updated upstream
        _GameObject = Resources.Load<GameObject>("Sancar/Prefab/Sancar");
-
-=======
-        _camera.GetComponent<CameraFollow>();
-        _GameObject = Resources.Load<GameObject>("Sancar/Prefab/Sancar");
-       
->>>>>>> Stashed changes
     }
 
     void Start()
     {
-        Instantiate(_GameObject, _position, Quaternion.identity);
+        GameObject instance = Instantiate(_GameObject, _position, Quaternion.identity);
+        _camera.GetComponent<CameraFollow>().SetTarget(instance.transform);
     }
 
     // Update is called once per frame
