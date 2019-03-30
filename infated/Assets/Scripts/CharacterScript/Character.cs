@@ -6,7 +6,7 @@ using Infated.CoreEngine;
 
 
 public class Character : MonoBehaviour {
-   
+
     // State Machines
     public InfStateMachine<CharacterStates.MovementStates> MovementState;
     public InfStateMachine<CharacterStates.CharacterConditions> ConditionState;
@@ -18,6 +18,9 @@ public class Character : MonoBehaviour {
     public Animator _animator { get; protected set; }
     public List<string> _animatorParameters { get; set; }
 
+    /// the various states of the character
+    public CharacterStates CharacterState { get; protected set; }
+
     protected CoreController _controller;
     protected SpriteRenderer _spriteRenderer;
     protected Color _initialColor;
@@ -28,21 +31,20 @@ public class Character : MonoBehaviour {
     //protected AIBrain _aiBrain;
     //protected DamageOnTouch _damageOnTouch;
 
-
     /// if this is true, the character is currently facing right
     public bool IsFacingRight { get; set; }
+
+    // Character Type
+    public CharacterStates.CharacterTypes CharacterType = CharacterStates.CharacterTypes.AI;
+
+    // Only used if the character is player-controlled. The PlayerID must match an input manager's PlayerID. It's also used to match Unity's input settings. So you'll be safe if you keep to Player1, Player2, Player3 or Player4
+    public string PlayerID = "";
 
     [Header("Animator")]
     /// the character animator
     public Animator CharacterAnimator;
     /// Set this to false if you want to implement your own animation system
     public bool UseDefaultMecanim = true;
-
-    public CharacterStates.CharacterTypes CharacterType = CharacterStates.CharacterTypes.AI;
-    // Only used if the character is player-controlled. The PlayerID must match an input manager's PlayerID. It's also used to match Unity's input settings. So you'll be safe if you keep to Player1, Player2, Player3 or Player4
-    public string PlayerID = "";
-    /// the various states of the character
-    public CharacterStates CharacterState { get; protected set; }
 
     [Header("Direction")]
     /// true if the player is facing right

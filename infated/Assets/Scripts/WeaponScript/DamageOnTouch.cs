@@ -62,8 +62,8 @@ namespace Infated.CoreEngine
         protected Vector2 _lastPosition, _velocity, _knockbackForce;
 		protected float _startTime = 0f;
 		protected Health _colliderHealth;
-		protected CoreController _corgiController;
-		protected CoreController _colliderCorgiController;
+		protected CoreController _coreController;
+		protected CoreController _colliderCoreController;
 		protected Health _health;
 		protected List<GameObject> _ignoredGameObjects;
         protected Color _gizmosColor;
@@ -79,7 +79,7 @@ namespace Infated.CoreEngine
 		{
 			_ignoredGameObjects = new List<GameObject>();
 			_health = GetComponent<Health>();
-			_corgiController = GetComponent<CoreController> ();
+			_coreController = GetComponent<CoreController> ();
             _boxCollider2D = GetComponent<BoxCollider2D>();
             _circleCollider2D = GetComponent<CircleCollider2D>();
             _gizmosColor = Color.red;
@@ -205,20 +205,20 @@ namespace Infated.CoreEngine
 	    protected virtual void OnCollideWithDamageable(Health health)
 	    {
 			// if what we're colliding with is a CorgiController, we apply a knockback force
-			_colliderCorgiController = health.gameObject.GetComponentNoAlloc<CoreController>();
+			_colliderCoreController = health.gameObject.GetComponentNoAlloc<CoreController>();
 
-			if ((_colliderCorgiController != null) && (DamageCausedKnockbackForce != Vector2.zero) && (!_colliderHealth.Invulnerable) && (!_colliderHealth.ImmuneToKnockback))
+			if ((_colliderCoreController != null) && (DamageCausedKnockbackForce != Vector2.zero) && (!_colliderHealth.Invulnerable) && (!_colliderHealth.ImmuneToKnockback))
 			{
                 _knockbackForce.x = DamageCausedKnockbackForce.x;
                 if (DamageCausedKnockbackDirection == KnockbackDirections.BasedOnSpeed)
                 {
-                    Vector2 totalVelocity = _colliderCorgiController.Speed + _velocity;
+                    Vector2 totalVelocity = _colliderCoreController.Speed + _velocity;
                     _knockbackForce.x *= -1 * Mathf.Sign(totalVelocity.x);
                 }
                 if (DamagedTakenKnockbackDirection == KnockbackDirections.BasedOnOwnerPosition)
                 {
                     if (Owner == null) { Owner = this.gameObject; }
-                    Vector2 relativePosition = _colliderCorgiController.transform.position - Owner.transform.position;
+                    Vector2 relativePosition = _colliderCoreController.transform.position - Owner.transform.position;
                     _knockbackForce.x *= Mathf.Sign(relativePosition.x);
                 }
 				
@@ -226,11 +226,11 @@ namespace Infated.CoreEngine
 
 				if (DamageCausedKnockbackType == KnockbackStyles.SetForce)
 				{
-					_colliderCorgiController.SetForce(_knockbackForce);	
+					_colliderCoreController.SetForce(_knockbackForce);	
 				}
 				if (DamageCausedKnockbackType == KnockbackStyles.AddForce)
 				{
-					_colliderCorgiController.AddForce(_knockbackForce);	
+					_colliderCoreController.AddForce(_knockbackForce);	
 				}
 			}
 
@@ -264,20 +264,20 @@ namespace Infated.CoreEngine
 	    	}	
 
 			// we apply knockback to ourself
-			if (_corgiController != null)
+			if (_coreController != null)
 			{
-				Vector2 totalVelocity=_colliderCorgiController.Speed + _velocity;
+				Vector2 totalVelocity=_colliderCoreController.Speed + _velocity;
 				Vector2 knockbackForce = new Vector2(
 					-1 * Mathf.Sign(totalVelocity.x) * DamageTakenKnockbackForce.x,
 					-1 * Mathf.Sign(totalVelocity.y) * DamageTakenKnockbackForce.y	);	
 
 				if (DamageTakenKnockbackType == KnockbackStyles.SetForce)
 				{
-					_corgiController.SetForce(knockbackForce);	
+					_coreController.SetForce(knockbackForce);	
 				}
 				if (DamageTakenKnockbackType == KnockbackStyles.AddForce)
 				{
-					_corgiController.AddForce(knockbackForce);	
+					_coreController.AddForce(knockbackForce);	
 				}
 			}
 	    }
