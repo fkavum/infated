@@ -266,6 +266,8 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         protected virtual void Update()
         {
+            CustomPosition = transform.position;
+            Debug.Log(CustomPosition);
             // Exit if disabled or paused:
             if (!enabled || (Time.timeScale <= 0)) return;
 
@@ -328,11 +330,12 @@ namespace PixelCrushers.DialogueSystem
 
         protected virtual void Run2DRaycast()
         {
-#if USE_PHYSICS2D || !UNITY_2018_1_OR_NEWER
+#if USE_PHYSICS2D || UNITY_2018_1_OR_NEWER
 
             if (raycastAll)
             {
 
+                RaycastHit2D[] lastHits2D = new RaycastHit2D[MaxHits]; //newly added.
                 // Run Physics2D.RaycastAll:
                 if (lastHits2D == null) lastHits2D = new RaycastHit2D[MaxHits];
                 int numHits = Physics2D.RaycastNonAlloc(UnityEngine.Camera.main.ScreenToWorldPoint(GetSelectionPoint()), Vector2.zero, lastHits2D, maxSelectionDistance, layerMask);
@@ -372,7 +375,9 @@ namespace PixelCrushers.DialogueSystem
 
                 // Cast a ray and see what we hit:
                 RaycastHit2D hit;
-                hit = Physics2D.Raycast(UnityEngine.Camera.main.ScreenToWorldPoint(GetSelectionPoint()), Vector2.zero, maxSelectionDistance, layerMask);
+                //hit = Physics2D.Raycast(UnityEngine.Camera.main.ScreenToWorldPoint(GetSelectionPoint()), Vector2.zero, maxSelectionDistance, layerMask);
+                hit = Physics2D.Raycast(GetSelectionPoint(), transform.right, maxSelectionDistance, layerMask); //newly added.ç
+                Debug.DrawRay(GetSelectionPoint(), transform.right, Color.yellow);
                 if (hit.collider != null)
                 {
                     distance = (distanceFrom == DistanceFrom.Camera) ? 0 : Vector3.Distance(gameObject.transform.position, hit.collider.transform.position);
