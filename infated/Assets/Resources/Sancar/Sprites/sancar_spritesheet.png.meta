@@ -9,6 +9,7 @@ TextureImporter:
     21300008: sancar_leg_r
     21300010: sancar_leg_l
     21300012: sancar_cape
+    21300014: sancar_sword_regular
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -230,6 +231,26 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sancar_sword_regular
+      rect:
+        serializedVersion: 2
+        x: 1640.2533
+        y: 0
+        width: 248
+        height: 642
+      alignment: 9
+      pivot: {x: 0.6935425, y: 0.8205273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4213a5dfbb68d7d43aa55f255bff76f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -241,6 +262,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636868852194620243
+  userData: 636889466922258339
   assetBundleName: 
   assetBundleVariant: 
