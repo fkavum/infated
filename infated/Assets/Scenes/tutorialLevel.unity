@@ -182,7 +182,7 @@ Camera:
   far clip plane: 25
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -423,12 +423,12 @@ PrefabInstance:
     - target: {fileID: 5545988152143078068, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.9699693
+      value: 42.4
       objectReference: {fileID: 0}
     - target: {fileID: 5545988152143078068, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5656723
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5545988152143078068, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
         type: 3}
@@ -474,6 +474,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545988152143078068, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208595368554263355, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9435
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208595368554263355, guid: 6bda590d25b9d0f4fbebd64d71a5b040,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.569
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bda590d25b9d0f4fbebd64d71a5b040, type: 3}
