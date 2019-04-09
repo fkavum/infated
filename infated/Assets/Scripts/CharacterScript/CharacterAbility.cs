@@ -168,7 +168,7 @@ namespace Infated.CoreEngine
 		{
 			if (AbilityStartSfx!=null) 
 			{	
-				//SoundManager.Instance.PlaySound(AbilityStartSfx,transform.position);	
+				SoundManager.Instance.PlaySound(AbilityStartSfx,transform.position);	
 			}
 		}	
 
@@ -181,7 +181,7 @@ namespace Infated.CoreEngine
 			{	
 				if (_abilityInProgressSfx == null)
 				{
-					//_abilityInProgressSfx = SoundManager.Instance.PlaySound(AbilityInProgressSfx, transform.position, true);	
+					_abilityInProgressSfx = SoundManager.Instance.PlaySound(AbilityInProgressSfx, transform.position, true);	
 				}
 			}
 		}	
@@ -193,7 +193,7 @@ namespace Infated.CoreEngine
 		{
 			if (AbilityInProgressSfx!=null) 
 			{	
-				//SoundManager.Instance.StopLoopingSound(_abilityInProgressSfx);	
+				SoundManager.Instance.StopLoopingSound(_abilityInProgressSfx);	
 				_abilityInProgressSfx = null;
 			}
 		}	
@@ -205,7 +205,7 @@ namespace Infated.CoreEngine
 		{
 			if (AbilityStopSfx!=null) 
 			{	
-				//SoundManager.Instance.PlaySound(AbilityStopSfx,transform.position);	
+				SoundManager.Instance.PlaySound(AbilityStopSfx,transform.position);	
 			}
 		}
 
@@ -279,5 +279,25 @@ namespace Infated.CoreEngine
    //             _health.OnHit -= OnHit;
    //         }			
 		}
-	}
+
+        protected virtual void PlaySound(AudioClip sfx)
+        {
+            // we create a temporary game object to host our audio source
+            GameObject temporaryAudioHost = new GameObject("TempAudio");
+            // we set the temp audio's position
+
+            // we add an audio source to that host
+            AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+            // we set that audio source clip to the one in paramaters
+            audioSource.clip = sfx;
+            // we set the audio source volume to the one in parameters
+            audioSource.volume = 100;
+            // we start playing the sound
+            audioSource.Play();
+
+            Destroy(temporaryAudioHost, sfx.length);
+        }
+    }
+
+
 }

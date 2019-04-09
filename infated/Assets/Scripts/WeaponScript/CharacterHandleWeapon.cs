@@ -317,30 +317,28 @@ namespace Infated.CoreEngine
 		{
 			if (CurrentWeapon == null)
 			{	return; }
-            /*
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.IdleAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.StartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponStart),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.DelayBeforeUseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse),_character._animatorParameters);
-
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.UseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse || CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse || CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses ),_character._animatorParameters);
-
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.SingleUseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.DelayBetweenUsesAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.StopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponStop),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload),_character._animatorParameters);
-			MMAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
+            
+			InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.IdleAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.StartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponStart),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.DelayBeforeUseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.UseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse || CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse || CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses ),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.SingleUseAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.DelayBetweenUsesAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.StopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponStop),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload),_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
 
 			if (_aimableWeapon != null)
 			{
-				MMAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleAnimationParameter, _aimableWeapon.CurrentAngle,_character._animatorParameters);
-				MMAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleRelativeAnimationParameter, _aimableWeapon.CurrentAngleRelative,_character._animatorParameters);
+                InfAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleAnimationParameter, _aimableWeapon.CurrentAngle,_character._animatorParameters);
+                InfAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleRelativeAnimationParameter, _aimableWeapon.CurrentAngleRelative,_character._animatorParameters);
 			}
 			else
 			{
-				MMAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleAnimationParameter, 0f,_character._animatorParameters);
-				MMAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleRelativeAnimationParameter, 0f,_character._animatorParameters);
-			}*/
+                InfAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleAnimationParameter, 0f,_character._animatorParameters);
+                InfAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleRelativeAnimationParameter, 0f,_character._animatorParameters);
+			}
 		}
 
         protected override void OnHit()

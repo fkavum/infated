@@ -222,7 +222,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected virtual void PlayTouchTheGroundSfx()
 		{
-			//if (TouchTheGroundSfx!=null) {	SoundManager.Instance.PlaySound(TouchTheGroundSfx,transform.position); }
+			if (TouchTheGroundSfx!=null) {	SoundManager.Instance.PlaySound(TouchTheGroundSfx,transform.position); }
 		}	
 
 

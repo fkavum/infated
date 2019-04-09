@@ -26,6 +26,10 @@ public class SeamlessBG : MonoBehaviour
         objectBGs[1].transform.parent = this.transform;
         objectBGs[2].transform.parent = this.transform;
 
+        objectBGs[0].GetComponent<SpriteRenderer>().sortingLayerName = "Background";
+        objectBGs[1].GetComponent<SpriteRenderer>().sortingLayerName = "Background";
+        objectBGs[2].GetComponent<SpriteRenderer>().sortingLayerName = "Background";
+
         trackBGs[0] = objectBGs[0].AddComponent<TrackBG>();
         trackBGs[1] = objectBGs[1].AddComponent<TrackBG>();
         trackBGs[2] = objectBGs[2].AddComponent<TrackBG>();
