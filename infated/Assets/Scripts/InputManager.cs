@@ -43,9 +43,18 @@ namespace Infated.CoreEngine
 		public bool SmoothMovement=true;
 		/// the minimum horizontal and vertical value you need to reach to trigger movement on an analog controller (joystick for example)
 		public Vector2 Threshold = new Vector2(0.1f, 0.4f);
-        
+
+        /// the action button (use doors, levers, interactions, cast magic)
+        public InfInput.IInfButton ActionButton { get; protected set; }
+        /// the ice magic
+        public InfInput.IInfButton IceMagicButton { get; protected set; }
+        /// the fire magic
+        public InfInput.IInfButton FireMagicButton { get; protected set; }
         /// the jump button, used for jumps
         public InfInput.IInfButton JumpButton { get; protected set; }
+        /// Attacks
+        public InfInput.IInfButton LightAttackButton { get; protected set; }
+        public InfInput.IInfButton HeavyAttackButton { get; protected set; }
         /// the swim button, used to swim
         public InfInput.IInfButton SwimButton { get; protected set; }
         /// the glide button, used to glide in the air
@@ -141,6 +150,11 @@ namespace Infated.CoreEngine
 		protected virtual void InitializeButtons()
 		{
 			ButtonList = new List<InfInput.IInfButton> ();
+            ButtonList.Add(LightAttackButton = new InfInput.IInfButton(PlayerID, "LightAttack", LightAttackButtonDown, LightAttackButtonPressed, LightAttackButtonUp));
+            ButtonList.Add(HeavyAttackButton = new InfInput.IInfButton(PlayerID, "HeavyAttack", HeavyAttackButtonDown, HeavyAttackButtonPressed, HeavyAttackButtonUp));
+            ButtonList.Add(ActionButton = new InfInput.IInfButton(PlayerID, "Action", ActionButtonDown, ActionButtonPressed, ActionButtonUp));
+            ButtonList.Add(IceMagicButton = new InfInput.IInfButton(PlayerID, "IceMagic", IceMagicButtonDown, IceMagicButtonPressed, IceMagicButtonUp));
+            ButtonList.Add(FireMagicButton = new InfInput.IInfButton(PlayerID, "FireMagic", FireMagicButtonDown, FireMagicButtonPressed, FireMagicButtonUp));
             ButtonList.Add(JumpButton = new InfInput.IInfButton(PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
             ButtonList.Add(SwimButton = new InfInput.IInfButton(PlayerID, "Swim", SwimButtonDown, SwimButtonPressed, SwimButtonUp));
             ButtonList.Add(GlideButton = new InfInput.IInfButton(PlayerID, "Glide", GlideButtonDown, GlideButtonPressed, GlideButtonUp));
@@ -357,9 +371,30 @@ namespace Infated.CoreEngine
 			}
         }
 
+
+        public virtual void IceMagicButtonDown() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void IceMagicButtonPressed() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void IceMagicButtonUp() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
+        public virtual void FireMagicButtonDown() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void FireMagicButtonPressed() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void FireMagicButtonUp() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
+        public virtual void HeavyAttackButtonDown() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void HeavyAttackButtonPressed() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void HeavyAttackButtonUp() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
+        public virtual void LightAttackButtonDown() { LightAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void LightAttackButtonPressed() { LightAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void LightAttackButtonUp() { LightAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
         public virtual void JumpButtonDown()        { JumpButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void JumpButtonPressed()     { JumpButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void JumpButtonUp()          { JumpButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
+        public virtual void ActionButtonDown() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void ActionButtonPressed() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void ActionButtonUp() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
         public virtual void SwimButtonDown()        { SwimButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void SwimButtonPressed()     { SwimButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
