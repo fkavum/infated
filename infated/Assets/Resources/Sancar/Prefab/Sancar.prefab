@@ -1,5 +1,84 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2280907897093205573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8771125880984367822}
+  - component: {fileID: 8122834360340816119}
+  m_Layer: 9
+  m_Name: Pardus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8771125880984367822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280907897093205573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14, y: -3.62, z: 0}
+  m_LocalScale: {x: -2.872, y: 2.872, z: 2.872}
+  m_Children: []
+  m_Father: {fileID: 7807224888320924606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8122834360340816119
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280907897093205573}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1077265521
+  m_SortingLayer: 6
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 9994119545783f740b72a5bed6206017, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.6, y: 1.9}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4666477721997112826
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +256,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 7807224888320924606}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7807224886638475576
 GameObject:
@@ -330,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.8842417
+  m_Length: 1.8842416
   m_ChildTransform: {fileID: 7328242986771735012}
   m_AttachedIK: {fileID: 1765805536854363461}
 --- !u!1 &7807224886858887561
@@ -378,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.2097802
+  m_Length: 3.2097812
   m_ChildTransform: {fileID: 7807224888107984208}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224886921691197
@@ -948,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.4885293
+  m_Length: 1.4885283
   m_ChildTransform: {fileID: 7807224887162048571}
   m_AttachedIK: {fileID: 7807224886984707776}
 --- !u!1 &7807224887160205830
@@ -984,7 +1063,7 @@ Transform:
   - {fileID: 7807224887030265447}
   - {fileID: 7807224886981876968}
   m_Father: {fileID: 7807224888320924606}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7807224887162048570
 GameObject:
@@ -1064,7 +1143,7 @@ Transform:
   - {fileID: 7807224886858887566}
   m_Father: {fileID: 7807224888130477773}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179.934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179.93501}
 --- !u!114 &7807224887258201439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0649722
+  m_Length: 2.0649726
   m_ChildTransform: {fileID: 7807224886858887566}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224887337141216
@@ -1221,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.0816188
+  m_Length: 3.0816205
   m_ChildTransform: {fileID: 7807224886921691186}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224887499959785
@@ -1461,7 +1540,7 @@ Transform:
   - {fileID: 7807224887073478009}
   - {fileID: 1348597729524345158}
   m_Father: {fileID: 7807224888320924606}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7807224887801211759
 GameObject:
@@ -1651,7 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0187573
+  m_Length: 2.0187595
   m_ChildTransform: {fileID: 7807224887414382151}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224888107984211
@@ -1733,7 +1812,7 @@ Transform:
   - {fileID: 7807224887258201438}
   - {fileID: 7807224887992907799}
   m_Father: {fileID: 7807224888320924606}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 100.387}
 --- !u!114 &7807224888130477772
 MonoBehaviour:
@@ -1838,6 +1917,7 @@ GameObject:
   - component: {fileID: 6662278907168254395}
   - component: {fileID: 4537343007927891469}
   - component: {fileID: 7636590071145102305}
+  - component: {fileID: 7387274391346018077}
   m_Layer: 9
   m_Name: Sancar
   m_TagString: Player
@@ -1856,6 +1936,7 @@ Transform:
   m_LocalPosition: {x: -12.7, y: -6.2, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
+  - {fileID: 8771125880984367822}
   - {fileID: 7807224887681375262}
   - {fileID: 7807224888130477773}
   - {fileID: 7807224887160205831}
@@ -2219,6 +2300,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegenCooldown: 4
   RegenAmount: 2.5
+--- !u!114 &7387274391346018077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24948f29c69d1f4092c46b3da4ce6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7807224888425843360
 GameObject:
   m_ObjectHideFlags: 0

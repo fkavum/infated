@@ -902,11 +902,11 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Player1_Button9
+    m_Name: Player1_Shapeshift
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -918,7 +918,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Player2_Button9
+    m_Name: Player2_Shapeshift
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -934,7 +934,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Player3_Button9
+    m_Name: Player3_Shapeshift
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -950,7 +950,7 @@ InputManager:
     axis: 0
     joyNum: 3
   - serializedVersion: 3
-    m_Name: Player4_Button9
+    m_Name: Player4_Shapeshift
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
