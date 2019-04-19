@@ -74,8 +74,9 @@ namespace Infated.CoreEngine
 
 				if (_verticalInput > _inputManager.Threshold.y// if the player is pressing up
 				&& (_movement.CurrentState != CharacterStates.MovementStates.LadderClimbing) // and we're not climbing a ladder already
-                && (_movement.CurrentState != CharacterStates.MovementStates.Gliding) // and we're not gliding
-                && (_movement.CurrentState != CharacterStates.MovementStates.Jetpacking)) // and we're not jetpacking
+                //&& (_movement.CurrentState != CharacterStates.MovementStates.Gliding) // and we're not gliding
+                //&& (_movement.CurrentState != CharacterStates.MovementStates.Jetpacking) // and we're not jetpacking
+				)
 				{			
 					// then the character starts climbing
 					StartClimbing();

@@ -95,7 +95,7 @@ namespace Infated.CoreEngine
             // if movement is prevented, or if the character is dead/frozen/can't move, we exit and do nothing
             if ( !AbilityPermitted
 				|| (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
-				|| (_movement.CurrentState == CharacterStates.MovementStates.Gripping) )
+				)
 			{
 				return;
             }
@@ -131,7 +131,7 @@ namespace Infated.CoreEngine
 			if ( (_controller.State.IsGrounded)
 				&& (_normalizedHorizontalSpeed != 0)
 				&& ( (_movement.CurrentState == CharacterStates.MovementStates.Idle)
-					|| (_movement.CurrentState == CharacterStates.MovementStates.Dangling) ))
+					))
 			{				
 				_movement.ChangeState(CharacterStates.MovementStates.Walking);	
 				PlayAbilityStartSfx();	
@@ -153,7 +153,7 @@ namespace Infated.CoreEngine
 					 || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
 					))
 			{
-				_movement.ChangeState(CharacterStates.MovementStates.Falling);
+				_movement.ChangeState(CharacterStates.MovementStates.Landing);
 			}
 
 			// we pass the horizontal force that needs to be applied to the controller.
@@ -179,7 +179,7 @@ namespace Infated.CoreEngine
 			{
                 if (_controller.State.ColliderResized)
                 {
-                    _movement.ChangeState(CharacterStates.MovementStates.Crouching);
+                    //_movement.ChangeState(CharacterStates.MovementStates.Crouching);
                 }
                 else
                 {

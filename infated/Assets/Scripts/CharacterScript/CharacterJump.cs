@@ -74,11 +74,12 @@ namespace Infated.CoreEngine
 				{
 					return true;
 				}
-
+				/*
                 if (_movement.CurrentState == CharacterStates.MovementStates.SwimmingIdle) 
                 {
                     return false;
                 }
+				*/
 
 				if ( (JumpRestrictions == JumpBehavior.CanJumpAnywhere) ||  (JumpRestrictions == JumpBehavior.CanJumpAnywhereAnyNumberOfTimes) )
 				{
@@ -177,7 +178,8 @@ namespace Infated.CoreEngine
 			    && (_controller.Speed.y > Mathf.Sqrt(Mathf.Abs(_controller.Parameters.Gravity))) 
 			    && (_jumpButtonReleased)
 				&& ( !_jumpButtonPressed
-					|| (_movement.CurrentState == CharacterStates.MovementStates.Jetpacking)))
+					//|| (_movement.CurrentState == CharacterStates.MovementStates.Jetpacking)
+					))
 			{
 				_jumpButtonReleased=false;	
 				if (JumpIsProportionalToThePressTime)	
@@ -203,7 +205,8 @@ namespace Infated.CoreEngine
 		{
 			if (_movement.CurrentState == CharacterStates.MovementStates.Jumping 
 				|| _movement.CurrentState == CharacterStates.MovementStates.DoubleJumping
-				|| _movement.CurrentState == CharacterStates.MovementStates.WallJumping)
+				// || _movement.CurrentState == CharacterStates.MovementStates.WallJumping
+				)
 			{
 				return false;
 			}
@@ -228,9 +231,9 @@ namespace Infated.CoreEngine
 				|| !JumpAuthorized // if jumps are not authorized right now
 				|| ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in the normal stance
 					&& (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement))
-				|| (_movement.CurrentState == CharacterStates.MovementStates.Jetpacking) // or if we're jetpacking
-				|| (_movement.CurrentState == CharacterStates.MovementStates.Dashing) // or if we're dashing
-				|| (_movement.CurrentState == CharacterStates.MovementStates.WallClinging)// && (_characterWallJump != null)) // or if we're wallclinging and can walljump
+				//|| (_movement.CurrentState == CharacterStates.MovementStates.Jetpacking) // or if we're jetpacking
+				//|| (_movement.CurrentState == CharacterStates.MovementStates.Dashing) // or if we're dashing
+				//|| (_movement.CurrentState == CharacterStates.MovementStates.WallClinging)// && (_characterWallJump != null)) // or if we're wallclinging and can walljump
 				|| _controller.State.IsCollidingAbove) // or if we're colliding with the ceiling
 			{
 				return false;
@@ -301,9 +304,11 @@ namespace Infated.CoreEngine
 				return;
 			}
 			// we reset our walking speed
-			if ((_movement.CurrentState == CharacterStates.MovementStates.Crawling)
-                || (_movement.CurrentState == CharacterStates.MovementStates.Crouching)
-                || (_movement.CurrentState == CharacterStates.MovementStates.LadderClimbing))
+			if (
+				(_movement.CurrentState == CharacterStates.MovementStates.LadderClimbing)
+				//(_movement.CurrentState == CharacterStates.MovementStates.Crawling)
+                //|| (_movement.CurrentState == CharacterStates.MovementStates.Crouching)
+                )
 			{
 				_characterHorizontalMovement.ResetHorizontalSpeed();
 			}	

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.6, y: 1.9}
+  m_Size: {x: 2.6, y: 1.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.8842416
+  m_Length: 1.8842417
   m_ChildTransform: {fileID: 7328242986771735012}
   m_AttachedIK: {fileID: 1765805536854363461}
 --- !u!1 &7807224886858887561
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.2097812
+  m_Length: 3.2097802
   m_ChildTransform: {fileID: 7807224888107984208}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224886921691197
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.4885283
+  m_Length: 1.4885293
   m_ChildTransform: {fileID: 7807224887162048571}
   m_AttachedIK: {fileID: 7807224886984707776}
 --- !u!1 &7807224887160205830
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0649726
+  m_Length: 2.0649722
   m_ChildTransform: {fileID: 7807224886858887566}
   m_AttachedIK: {fileID: 7807224887030265444}
 --- !u!1 &7807224887337141216
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.0816205
+  m_Length: 3.0816188
   m_ChildTransform: {fileID: 7807224886921691186}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224887499959785
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0187595
+  m_Length: 2.0187573
   m_ChildTransform: {fileID: 7807224887414382151}
   m_AttachedIK: {fileID: 7807224888493186675}
 --- !u!1 &7807224888107984211
@@ -2028,7 +2028,7 @@ MonoBehaviour:
     FallMultiplier: 1
     AscentMultiplier: 1
     MaxVelocity: {x: 100, y: 100}
-    SpeedAccelerationOnGround: 1
+    SpeedAccelerationOnGround: 5
     SpeedAccelerationInAir: 0.5
     SpeedFactor: 0.5
     MaximumSlopeAngle: 30
@@ -2312,6 +2312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24948f29c69d1f4092c46b3da4ce6be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
 --- !u!1 &7807224888425843360
 GameObject:
   m_ObjectHideFlags: 0
