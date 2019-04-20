@@ -267,7 +267,7 @@ namespace PixelCrushers.DialogueSystem
         protected virtual void Update()
         {
             CustomPosition = transform.position;
-            Debug.Log(CustomPosition);
+            // Debug.Log(CustomPosition);
             // Exit if disabled or paused:
             if (!enabled || (Time.timeScale <= 0)) return;
 

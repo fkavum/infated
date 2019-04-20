@@ -30,7 +30,7 @@ public class Character : MonoBehaviour {
     protected bool _spawnDirectionForced = false;
     //protected AIBrain _aiBrain;
     //protected DamageOnTouch _damageOnTouch;
-
+    public GUI_Writer mGuiWriter;
     /// if this is true, the character is currently facing right
     public bool IsFacingRight { get; set; }
 
@@ -98,6 +98,7 @@ public class Character : MonoBehaviour {
         //_aiBrain = GetComponent<AIBrain>();
         //_health = GetComponent<Health>();
         //_damageOnTouch = GetComponent<DamageOnTouch>();
+        mGuiWriter = GetComponent<GUI_Writer>();
 
         if (CharacterAnimator != null)
         {

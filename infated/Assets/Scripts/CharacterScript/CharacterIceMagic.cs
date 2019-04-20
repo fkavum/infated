@@ -5,10 +5,10 @@ using Infated.Tools;
 namespace Infated.CoreEngine
 {
     /// <summary>
-    /// Add this class to a character and it'll be able to jump
-    /// Animator parameters : Jumping (bool), DoubleJumping (bool), HitTheGround (bool)
+    /// Add this class to a character and it will be able to use ice magic
+    /// Mana component is required
     /// </summary>
-    [AddComponentMenu("Corgi Engine/Character/Abilities/Character Jump")]
+    [AddComponentMenu("Core Engine/Character/Abilities/Character Ice Magic")]
     public class CharacterIceMagic : CharacterAbility
     {
         /// This method is only used to display a helpbox text at the beginning of the ability's inspector
@@ -17,9 +17,14 @@ namespace Infated.CoreEngine
         private CharacterMana Mana;
         //private ParticleSystem IceParticles;
         public float DeltaCharge = 2.5f;
+        public float MaxChargeAmount = 100.0f;
+        public GameObject IceBlock;
+        public int BlockOffset = 1;
+        public float MinimumCharge = 5.0f;
+        public float MinimumBlockHeight = 0.5f;
+        public float MaximumBlockHeight = 2.0f;
         private float ChargedAmount = 0.0f;
         private bool Charging = false;
-        public float MaxChargeAmount = 20.0f;
 
 
         /// <summary>
@@ -35,7 +40,7 @@ namespace Infated.CoreEngine
         /// At the beginning of each cycle we check if we've just pressed or released the jump button
         /// </summary>
         protected override void HandleInput()
-        {
+        {   
             if (_inputManager.IceMagicButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
             {
                 StartMagicCharge();
@@ -44,6 +49,10 @@ namespace Infated.CoreEngine
             {
                 EndMagicCharge();
             }
+            if(Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
+                if(ChargedAmount > MinimumCharge)
+                    CreateIceBlock();
+            }
         }
 
         /// <summary>
@@ -51,20 +60,22 @@ namespace Infated.CoreEngine
         /// </summary>
         public override void ProcessAbility()
         {
-            if (!AbilityPermitted) { return; }
+            if (!AbilityPermitted || !Charging) { return; }
             
             base.ProcessAbility();
 
-            if (Mana.spendMana(DeltaCharge))
+            if (ChargedAmount < MaxChargeAmount)
             {
-                ChargedAmount += DeltaCharge;
+                if(Mana.spendMana(DeltaCharge))
+                    Charge();
             }
-            
             //Spawn particles at each loop, scaled with the ChargedAmount
 
         }
 
-
+        void Update(){
+             UpdateGuiValues();
+        }
 
         /// <summary>
         /// Causes the character to start jumping.
@@ -77,8 +88,9 @@ namespace Infated.CoreEngine
             }
             ChargedAmount += DeltaCharge;
             Charging = true;
+            Mana.setCharging(true);
             //IceParticles.emit()
-
+            UpdateGuiValues();
             // we start our sounds
             PlayAbilityStartSfx();
 
@@ -92,8 +104,21 @@ namespace Infated.CoreEngine
             //IceParticles.stopEmit()
             ChargedAmount = 0.0f;
             Charging = false;
+            Mana.setCharging(false);
+            UpdateGuiValues();
         }
-
+        private void Charge(){
+            if(ChargedAmount == MaxChargeAmount) return;
+            
+            ChargedAmount += DeltaCharge;
+            if(ChargedAmount > MaxChargeAmount){
+                ChargedAmount = MaxChargeAmount;
+            }
+        }
+        private void UpdateGuiValues(){
+            _character.mGuiWriter.setChargeText(Mathf.Floor(ChargedAmount).ToString());
+            _character.mGuiWriter.setManaText(Mana.getManaGuiString());            
+        }
         protected override void InitializeAnimatorParameters()
         {
             //Debug.Log("Jump Registered");
@@ -115,6 +140,25 @@ namespace Infated.CoreEngine
         {
             base.Reset();
             ChargedAmount = 0.0f;
+        }
+
+        private void CreateIceBlock(){
+            Vector3 position = _character.transform.position;
+            if(_character.IsFacingRight){
+                position.x += BlockOffset;
+            }
+            else{
+                position.x -= BlockOffset;
+            }
+
+            RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down);
+            if(hit.collider != null){
+                GameObject iceBlockInstance = Instantiate(IceBlock, hit.point, Quaternion.identity);
+                float height = ((ChargedAmount - MinimumCharge) * (MaximumBlockHeight - MinimumBlockHeight) / (MaxChargeAmount - MinimumCharge)) + MinimumBlockHeight;
+                
+                iceBlockInstance.transform.localScale = new Vector3(1, height, 1);
+                ChargedAmount = 0;
+            }
         }
     }
 }
