@@ -44,6 +44,7 @@ namespace Infated.CoreEngine
 		/// the minimum horizontal and vertical value you need to reach to trigger movement on an analog controller (joystick for example)
 		public Vector2 Threshold = new Vector2(0.1f, 0.4f);
 
+		public InfInput.IInfButton MovementToggleButton { get; protected set; }
 		/// the Shapehsifting button (by the which if you do not understand that from the name)
 		public InfInput.IInfButton ShapeshiftButton { get; protected set; }
         /// the action button (use doors, levers, interactions, cast magic)
@@ -152,6 +153,8 @@ namespace Infated.CoreEngine
 		protected virtual void InitializeButtons()
 		{
 			ButtonList = new List<InfInput.IInfButton> ();
+	
+			ButtonList.Add(MovementToggleButton = new InfInput.IInfButton(PlayerID, "MovementToggle", MovementToggleButtonDown, MovementToggleButtonPressed, MovementToggleButtonUp));
 			ButtonList.Add(ShapeshiftButton = new InfInput.IInfButton(PlayerID, "Shapeshift", ShapeshiftButtonDown, ShapeshiftButtonPressed, ShapeshiftButtonUp));
             ButtonList.Add(LightAttackButton = new InfInput.IInfButton(PlayerID, "LightAttack", LightAttackButtonDown, LightAttackButtonPressed, LightAttackButtonUp));
             ButtonList.Add(HeavyAttackButton = new InfInput.IInfButton(PlayerID, "HeavyAttack", HeavyAttackButtonDown, HeavyAttackButtonPressed, HeavyAttackButtonUp));
@@ -374,6 +377,10 @@ namespace Infated.CoreEngine
 			}
         }
 
+
+        public virtual void MovementToggleButtonDown() { MovementToggleButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void MovementToggleButtonPressed() { MovementToggleButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void MovementToggleButtonUp() { MovementToggleButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
         public virtual void ShapeshiftButtonDown() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void ShapeshiftButtonPressed() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }

@@ -86,6 +86,8 @@ namespace Infated.CoreEngine
 		{
 			if (!Settings.SfxOn)
 				return null;
+			if(sfx == null)
+				return null;
 			// we create a temporary game object to host our audio source
 			GameObject temporaryAudioHost = new GameObject("TempAudio");
 			// we set the temp audio's position

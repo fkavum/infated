@@ -18,14 +18,15 @@ namespace Infated.CoreEngine
 		public float MovementSpeed { get; set; }
 		//[Header("Speed")]
 		/// the speed of the character when it's walking
-		public float WalkSpeed = 6f;
+		public float WalkSpeed = 2f;
+		public float RunSpeed = 6f;
 		/// the multiplier to apply to the horizontal movement
 		public float MovementSpeedMultiplier { get; set; }
         /// the current horizontal movement force
 		public float HorizontalMovementForce { get { return _horizontalMovementForce; }}
         /// if this is true, movement will be forbidden (as well as flip)
         public bool MovementForbidden { get; set; }
-
+		public bool isRunning = false;
 		//[Header("Effects")]
 		/// the effect that will be instantiated everytime the character touches the ground
 		public ParticleSystem TouchTheGroundEffect;
@@ -65,6 +66,19 @@ namespace Infated.CoreEngine
 	    protected override void HandleInput()
 	    {
 			_horizontalMovement = _horizontalInput;
+
+			if (_inputManager.MovementToggleButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
+            {
+				isRunning = !isRunning;
+				if(isRunning){
+					MovementSpeed = RunSpeed;
+					_movement.ChangeState(CharacterStates.MovementStates.Running);
+				}
+				else{
+					MovementSpeed = WalkSpeed;
+					_movement.ChangeState(CharacterStates.MovementStates.Walking);
+				}
+            }
 	    }
 
 		/// <summary>
@@ -133,13 +147,18 @@ namespace Infated.CoreEngine
 				&& ( (_movement.CurrentState == CharacterStates.MovementStates.Idle)
 					))
 			{				
-				_movement.ChangeState(CharacterStates.MovementStates.Walking);	
+				if(isRunning){
+					_movement.ChangeState(CharacterStates.MovementStates.Running);	
+				}
+				else{
+					_movement.ChangeState(CharacterStates.MovementStates.Walking);	
+				}
 				PlayAbilityStartSfx();	
 				PlayAbilityUsedSfx();		
 			}
 
 			// if we're walking and not moving anymore, we go back to the Idle state
-			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking) 
+			if ((_movement.CurrentState == CharacterStates.MovementStates.Walking || _movement.CurrentState == CharacterStates.MovementStates.Running) 
 				&& (_normalizedHorizontalSpeed == 0))
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Idle);
@@ -150,6 +169,7 @@ namespace Infated.CoreEngine
 			if (!_controller.State.IsGrounded
 				&& (
 					(_movement.CurrentState == CharacterStates.MovementStates.Walking)
+					 || (_movement.CurrentState == CharacterStates.MovementStates.Running)
 					 || (_movement.CurrentState == CharacterStates.MovementStates.Idle)
 					))
 			{
@@ -232,6 +252,7 @@ namespace Infated.CoreEngine
 		public virtual void ResetHorizontalSpeed()
 		{
 			MovementSpeed = WalkSpeed;
+			isRunning = false;
 		}
 
 		/// <summary>
@@ -242,6 +263,7 @@ namespace Infated.CoreEngine
             //Debug.Log("Walking registered");
 			RegisterAnimatorParameter ("Speed", AnimatorControllerParameterType.Float);
 			RegisterAnimatorParameter ("Walking", AnimatorControllerParameterType.Bool);
+			RegisterAnimatorParameter ("Running", AnimatorControllerParameterType.Bool);
 		}
 
 		/// <summary>
@@ -251,6 +273,7 @@ namespace Infated.CoreEngine
 		{
 			InfAnimator.UpdateAnimatorFloat(_animator,"Speed",Mathf.Abs(_normalizedHorizontalSpeed),_character._animatorParameters);
 			InfAnimator.UpdateAnimatorBool(_animator,"Walking",(_movement.CurrentState == CharacterStates.MovementStates.Walking),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"Running",(_movement.CurrentState == CharacterStates.MovementStates.Running),_character._animatorParameters);
 		}
 
 

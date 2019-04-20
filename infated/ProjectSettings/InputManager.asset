@@ -966,11 +966,11 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Player1_Button10
+    m_Name: Player1_MovementToggle
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: caps lock
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -982,7 +982,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Player2_Button10
+    m_Name: Player2_MovementToggle
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -998,7 +998,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Player3_Button10
+    m_Name: Player3_MovementToggle
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -1014,7 +1014,7 @@ InputManager:
     axis: 0
     joyNum: 3
   - serializedVersion: 3
-    m_Name: Player4_Button10
+    m_Name: Player4_MovementToggle
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

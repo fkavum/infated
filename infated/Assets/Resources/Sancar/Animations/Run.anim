@@ -6219,16 +6219,14 @@ AnimationClip:
   - time: 0.5
     functionName: PlaySound
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: c00ff0acf512db749a28595eefc31005,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
     functionName: PlaySound
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: a30b245163cd5674ca876ade4395eeff,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

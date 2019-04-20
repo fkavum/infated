@@ -13,7 +13,13 @@ namespace Infated.CoreEngine
     {
         /// This method is only used to display a helpbox text at the beginning of the ability's inspector
         public override string HelpBoxText() { return "This component enables turning into a pardus."; }
+        public float _TransformingTime = 2.0f;
         private bool PardusMode = false;
+        private bool isTransformingNow = false;
+        private float timer = 0.0f;
+        
+        // Get the abilitiy references that you want to disable while shapeshifting transformation
+        private CharacterAbility[] abilitiesToDisable = new CharacterAbility[5];
 
         /// <summary>
         /// On Start() we reset our number of jumps
@@ -21,6 +27,7 @@ namespace Infated.CoreEngine
         protected override void Initialization()
         {
             base.Initialization();
+            CharacterHorizontalMovement a = GetComponent<CharacterHorizontalMovement>();
         }
 
         /// <summary>
@@ -28,9 +35,9 @@ namespace Infated.CoreEngine
         /// </summary>
         protected override void HandleInput()
         {
-            if (_inputManager.ShapeshiftButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
+            if (!isTransformingNow && _inputManager.ShapeshiftButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
             {
-                PardusMode = !PardusMode;
+                StartShapeshift();
             }
         }
 
@@ -44,12 +51,13 @@ namespace Infated.CoreEngine
             base.ProcessAbility();
         }
 
-
+        
 
         protected override void InitializeAnimatorParameters()
         {
             //Debug.Log("Jump Registered");
             RegisterAnimatorParameter("Shapeshift", AnimatorControllerParameterType.Bool);
+            RegisterAnimatorParameter("Transforming", AnimatorControllerParameterType.Bool);
         }
 
         /// <summary>
@@ -58,6 +66,7 @@ namespace Infated.CoreEngine
         public override void UpdateAnimator()
         {
             InfAnimator.UpdateAnimatorBool(_animator, "Shapeshift", this.PardusMode);
+            InfAnimator.UpdateAnimatorBool(_animator, "Transforming", this.isTransformingNow);
         }
 
         /// <summary>
@@ -67,6 +76,30 @@ namespace Infated.CoreEngine
         {
             base.Reset();
             PardusMode = false;
+            isTransformingNow = false;
+            timer = 0.0f;
+        }
+        private void StartShapeshift(){
+            isTransformingNow = true;
+        }
+        private void Shapeshift(){
+            PardusMode = !PardusMode;
+            isTransformingNow = false;
+            timer = 0.0f;
+        }
+
+        void Update(){
+            if(isTransformingNow == true){
+                if(timer < _TransformingTime){
+                    timer += Time.deltaTime;
+                }
+                else{
+                    Shapeshift();
+                }
+            }
+            else{
+                timer = 0.0f;
+            }
         }
     }
 }
