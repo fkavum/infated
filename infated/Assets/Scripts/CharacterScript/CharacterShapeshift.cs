@@ -17,9 +17,11 @@ namespace Infated.CoreEngine
         private bool PardusMode = false;
         private bool isTransformingNow = false;
         private float timer = 0.0f;
-        
+
+        private const int NUMBER_OF_ABILITIES_TO_DISABLE = 6;        
         // Get the abilitiy references that you want to disable while shapeshifting transformation
-        private CharacterAbility[] abilitiesToDisable = new CharacterAbility[5];
+        private CharacterAbility[] abilitiesToDisable = new CharacterAbility[NUMBER_OF_ABILITIES_TO_DISABLE];
+        private bool[] abilityPrevStates = new bool[NUMBER_OF_ABILITIES_TO_DISABLE];
 
         /// <summary>
         /// On Start() we reset our number of jumps
@@ -27,7 +29,11 @@ namespace Infated.CoreEngine
         protected override void Initialization()
         {
             base.Initialization();
-            CharacterHorizontalMovement a = GetComponent<CharacterHorizontalMovement>();
+            abilitiesToDisable[0] = GetComponent<CharacterHorizontalMovement>();
+            abilitiesToDisable[1] = GetComponent<CharacterIceMagic>();
+            abilitiesToDisable[2] = GetComponent<CharacterJump>();
+            //abilitiesToDisable[4] = GetComponent<CharacterWallClimb>();
+            //abilitiesToDisable[5] = GetComponent<CharacterFireMagic>();
         }
 
         /// <summary>
@@ -81,10 +87,23 @@ namespace Infated.CoreEngine
         }
         private void StartShapeshift(){
             isTransformingNow = true;
+            _movement.ChangeState(CharacterStates.MovementStates.Idle);
+            for(int i = 0; i < NUMBER_OF_ABILITIES_TO_DISABLE; i++){
+                if(abilitiesToDisable[i]  != null){
+                    abilityPrevStates[i] = abilitiesToDisable[i].AbilityPermitted;
+                    abilitiesToDisable[i].PermitAbility(false);
+                    abilitiesToDisable[i].Reset();
+                }
+            }
         }
         private void Shapeshift(){
             PardusMode = !PardusMode;
             isTransformingNow = false;
+            for(int i = 0; i < NUMBER_OF_ABILITIES_TO_DISABLE; i++){
+                if(abilitiesToDisable[i]  != null){
+                    abilitiesToDisable[i].PermitAbility(abilityPrevStates[i]);
+                }
+            }
             timer = 0.0f;
         }
 

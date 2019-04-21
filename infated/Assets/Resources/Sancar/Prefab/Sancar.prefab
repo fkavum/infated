@@ -2224,7 +2224,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
   JumpHeight: 2
-  NumberOfJumps: 1
+  NumberOfJumps: 2
   JumpRestrictions: 2
   JumpTimeWindow: 0
   JumpIsProportionalToThePressTime: 1

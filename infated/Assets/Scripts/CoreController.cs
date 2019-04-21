@@ -1450,5 +1450,8 @@ namespace Infated.CoreEngine
             return (lineStart + ((Vector3)(lhs * num2)));
         }
 
+		public void ForceStop(){
+			_speed = new Vector2(0, 0);
+		}
     }
 }

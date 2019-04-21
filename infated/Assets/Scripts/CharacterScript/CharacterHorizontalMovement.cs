@@ -65,7 +65,9 @@ namespace Infated.CoreEngine
 	    /// </summary>
 	    protected override void HandleInput()
 	    {
-			_horizontalMovement = _horizontalInput;
+			if(AbilityPermitted){
+				_horizontalMovement = _horizontalInput;
+			}
 
 			if (_inputManager.MovementToggleButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
             {
@@ -87,7 +89,9 @@ namespace Infated.CoreEngine
 		/// <param name="value">Horizontal move value, between -1 and 1 - positive : will move to the right, negative : will move left </param>
 		public virtual void SetHorizontalMove(float value)
 		{
-			_horizontalMovement=value;
+			if(AbilityPermitted){
+				_horizontalMovement=value;
+			}
 		}
 
 		/// <summary>
@@ -111,6 +115,7 @@ namespace Infated.CoreEngine
 				|| (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
 				)
 			{
+				_horizontalMovement = 0f;
 				return;
             }
 
@@ -255,6 +260,13 @@ namespace Infated.CoreEngine
 			isRunning = false;
 		}
 
+		public override void Reset(){
+			base.Reset();
+			_horizontalMovement = 0;
+			_horizontalMovementForce = 0;
+			_controller.ForceStop();
+		}
+
 		/// <summary>
 		/// Adds required animator parameters to the animator parameters list if they exist
 		/// </summary>
@@ -271,7 +283,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			InfAnimator.UpdateAnimatorFloat(_animator,"Speed",Mathf.Abs(_normalizedHorizontalSpeed),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorFloat(_animator,"Speed",_horizontalMovement,_character._animatorParameters);
 			InfAnimator.UpdateAnimatorBool(_animator,"Walking",(_movement.CurrentState == CharacterStates.MovementStates.Walking),_character._animatorParameters);
 			InfAnimator.UpdateAnimatorBool(_animator,"Running",(_movement.CurrentState == CharacterStates.MovementStates.Running),_character._animatorParameters);
 		}
