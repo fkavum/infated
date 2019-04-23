@@ -3,77 +3,96 @@ using System.Collections;
 using Infated.Tools;
 
 namespace Infated.CoreEngine
-{	
-	/// <summary>
-	/// A class meant to be overridden that handles a character's ability. 
-	/// </summary>
-	[RequireComponent(typeof(Character))]
-	public class CharacterAbility : MonoBehaviour 
-	{
-		/// the sound fx to play when the ability starts
-		public AudioClip AbilityStartSfx;
-		/// the sound fx to play while the ability is running
-		public AudioClip AbilityInProgressSfx;
-		/// the sound fx to play when the ability stops
-		public AudioClip AbilityStopSfx;
+{
+    /// <summary>
+    /// A class meant to be overridden that handles a character's ability. 
+    /// </summary>
+    [RequireComponent(typeof(Character))]
+    public class CharacterAbility : MonoBehaviour
+    {
 
-		/// if true, this ability can perform as usual, if not, it'll be ignored. You can use this to unlock abilities over time for example
-		public bool AbilityPermitted = true;
+        public userProfiler _userProfiler;
+        /// the sound fx to play when the ability starts
+        public AudioClip AbilityStartSfx;
+        /// the sound fx to play while the ability is running
+        public AudioClip AbilityInProgressSfx;
+        /// the sound fx to play when the ability stops
+        public AudioClip AbilityStopSfx;
 
-		public bool AbilityInitialized { get { return _abilityInitialized; } }
+        /// if true, this ability can perform as usual, if not, it'll be ignored. You can use this to unlock abilities over time for example
+        public bool AbilityPermitted = true;
 
-		protected Character _character;
-		//protected Health _health;
-		protected CharacterHorizontalMovement _characterBasicMovement;
-		protected CoreController _controller;
-		protected InputManager _inputManager;
-		//protected CameraController _sceneCamera;
-		protected Animator _animator;
-		protected CharacterStates _state;
-		protected SpriteRenderer _spriteRenderer;
-		protected InfStateMachine<CharacterStates.MovementStates> _movement;
-		protected InfStateMachine<CharacterStates.CharacterConditions> _condition;
-		protected AudioSource _abilityInProgressSfx;
-		protected bool _abilityInitialized = false;
+        public bool AbilityInitialized { get { return _abilityInitialized; } }
 
-		//protected CharacterGravity _characterGravity;
-		protected float _verticalInput;
-		protected float _horizontalInput;
+        protected Character _character;
+        //protected Health _health;
+        protected CharacterHorizontalMovement _characterBasicMovement;
+        protected CoreController _controller;
+        protected InputManager _inputManager;
+        //protected CameraController _sceneCamera;
+        protected Animator _animator;
+        protected CharacterStates _state;
+        protected SpriteRenderer _spriteRenderer;
+        protected InfStateMachine<CharacterStates.MovementStates> _movement;
+        protected InfStateMachine<CharacterStates.CharacterConditions> _condition;
+        protected AudioSource _abilityInProgressSfx;
+        protected bool _abilityInitialized = false;
 
-		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
-		public virtual string HelpBoxText() { return ""; }
+        //protected CharacterGravity _characterGravity;
+        protected float _verticalInput;
+        protected float _horizontalInput;
 
-		/// <summary>
-		/// On Start(), we call the ability's intialization
-		/// </summary>
-		protected virtual void Start () 
-		{
-			Initialization();
-		}
+        /// This method is only used to display a helpbox text at the beginning of the ability's inspector
+        public virtual string HelpBoxText() { return ""; }
 
-		/// <summary>
-		/// Gets and stores components for further use
-		/// </summary>
-		protected virtual void Initialization()
-		{
-			_character = GetComponent<Character>();
-			_controller = GetComponent<CoreController>();
-			_characterBasicMovement = GetComponent<CharacterHorizontalMovement>();
-			//_characterGravity = GetComponent<CharacterGravity> ();
-			_spriteRenderer = GetComponent<SpriteRenderer>();
-			//_health = GetComponent<Health> ();
-			_animator = _character._animator;
-			//_sceneCamera = _character.SceneCamera;
-			_inputManager = _character.LinkedInputManager;
-			_state = _character.CharacterState;
-			_movement = _character.MovementState;
-			_condition = _character.ConditionState;
-			_abilityInitialized = true;
-			if (_animator != null)
-			{
-				InitializeAnimatorParameters();
-			}
-		}
+        /// <summary>
+        /// On Start(), we call the ability's intialization
+        /// </summary>
+        protected virtual void Start()
+        {
+            Initialization();
+        }
+
+        /// <summary>
+        /// Gets and stores components for further use
+        /// </summary>
+        protected virtual void Initialization()
+        {
+            _character = GetComponent<Character>();
+            _controller = GetComponent<CoreController>();
+            _characterBasicMovement = GetComponent<CharacterHorizontalMovement>();
+            //_characterGravity = GetComponent<CharacterGravity> ();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            //_health = GetComponent<Health> ();
+            _animator = _character._animator;
+            //_sceneCamera = _character.SceneCamera;
+            _inputManager = _character.LinkedInputManager;
+            _state = _character.CharacterState;
+            _movement = _character.MovementState;
+            _condition = _character.ConditionState;
+            _abilityInitialized = true;
+            if (_animator != null)
+            {
+                InitializeAnimatorParameters();
+            }
+            getProfiler();
+        }
+
+        public virtual void getProfiler(){
+
+            if (_userProfiler == null)
+            {
+                GameObject profiler = GameObject.Find("GameManager");
+                if (profiler != null)
+                {
+                    _userProfiler = profiler.GetComponent<userProfiler>();
+                }
+                else
+                {
+                    Debug.Log("WARNING: User Profiler Not Found");
+                }
+            }
+        }
 
 		/// <summary>
 		/// Adds required animator parameters to the animator parameters list if they exist
@@ -117,7 +136,7 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public virtual void ProcessAbility()
 		{
-			
+            
 		}
 
 		/// <summary>

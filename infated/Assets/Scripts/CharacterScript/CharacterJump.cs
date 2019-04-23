@@ -133,12 +133,14 @@ namespace Infated.CoreEngine
 			_characterHorizontalMovement = GetComponent<CharacterHorizontalMovement> ();
             _characterLadder = GetComponent<CharacterLadder>();
 		}	
+
         
 		/// <summary>
 		/// At the beginning of each cycle we check if we've just pressed or released the jump button
 		/// </summary>
 		protected override void HandleInput()
 		{
+
 			if (_inputManager.JumpButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
 			{
 				JumpStart();
@@ -303,6 +305,7 @@ namespace Infated.CoreEngine
 			{
 				return;
 			}
+
 			// we reset our walking speed
 			if (
 				(_movement.CurrentState == CharacterStates.MovementStates.LadderClimbing)
@@ -337,7 +340,7 @@ namespace Infated.CoreEngine
 
 			// we decrease the number of jumps left
 			NumberOfJumpsLeft=NumberOfJumpsLeft-1;
-
+            _userProfiler.profileJump(NumberOfJumps - NumberOfJumpsLeft);
 			// we reset our current condition and gravity
 			_condition.ChangeState(CharacterStates.CharacterConditions.Normal);
 			_controller.GravityActive(true);

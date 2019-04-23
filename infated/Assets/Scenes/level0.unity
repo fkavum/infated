@@ -328,7 +328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -228.20004, y: 171.73}
+  m_AnchoredPosition: {x: -228.20007, y: 171.73}
   m_SizeDelta: {x: -456.4, y: -343.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697375397
@@ -467,7 +467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &926293359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +706,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904b12265ffd8e845b4a3b8758aa8b4d, type: 3}
+--- !u!1 &1504513221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6512784538957182036, guid: 59f35acfd7c8ee54e80e85a8c72e25c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 667074720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504513228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504513221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac8303d695ecd8409730a8fde76e1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleJumpCount: 0
+  oneJumpCount: 0
+  tripleJumpCount: 0
+  iceChargeAmount: 0
+  iceMagicUsed: 0
+  shapeShiftCount: 0
 --- !u!20 &1716350618 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5844090061522250187, guid: 904b12265ffd8e845b4a3b8758aa8b4d,

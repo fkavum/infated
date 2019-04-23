@@ -52,6 +52,7 @@ namespace Infated.CoreEngine
             if(Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
                 if(ChargedAmount > MinimumCharge)
                     CreateIceBlock();
+                _userProfiler.profileIceMagic(ChargedAmount);
             }
         }
 
