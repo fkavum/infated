@@ -1,37 +1,14 @@
 fileFormatVersion: 2
-guid: c24fa2577863cac4fbbd31493c3e77f0
+guid: 5674f022b6a83c845abef2afe46cdf8a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: BaseDirt
-    100002: CaveCover
-    100004: CaveForeground
-    100006: CaveIn
-    100008: //RootNode
-    100010: Road
-    400000: BaseDirt
-    400002: CaveCover
-    400004: CaveForeground
-    400006: CaveIn
-    400008: //RootNode
-    400010: Road
-    2100000: No Name
-    2100002: 'Material #31'
-    2300000: BaseDirt
-    2300002: CaveCover
-    2300004: CaveForeground
-    2300006: CaveIn
-    2300008: Road
-    3300000: BaseDirt
-    3300002: CaveCover
-    3300004: CaveForeground
-    3300006: CaveIn
-    3300008: Road
-    4300000: Road
-    4300002: CaveIn
-    4300004: BaseDirt
-    4300006: CaveCover
-    4300008: CaveForeground
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #31'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane002
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -63,14 +40,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
-    importLights: 0
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
