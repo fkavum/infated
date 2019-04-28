@@ -8,6 +8,7 @@ public class SelfDestroyer : MonoBehaviour
     public float _timer = 2.0f;
     public bool _haveAnimation = false;
     public Animator animator;
+    public string animationName;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class SelfDestroyer : MonoBehaviour
             if(!_haveAnimation || animator == null)
                 destroySelf();
             else
-                animator.Play("Destruction");
+                animator.Play(animationName);
 
         }
         _timer -= Time.deltaTime;

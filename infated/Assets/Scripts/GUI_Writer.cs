@@ -5,7 +5,7 @@ using UnityEngine;
 public class GUI_Writer : MonoBehaviour
 {
     public GameObject mGui;
-    public UnityEngine.UI.Text mMana, mCharge;
+    public UnityEngine.UI.Text mMana, mCharge, mChargeType;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,10 @@ public class GUI_Writer : MonoBehaviour
                             mCharge = magicChild.GetComponent<UnityEngine.UI.Text>();
                             mCharge.text = "999";
                             break;
+                        case "Type":
+                            mChargeType = magicChild.GetComponent<UnityEngine.UI.Text>();
+                            mChargeType.text = "lol";
+                            break;
                         default:
                             break;
                     }
@@ -62,5 +66,8 @@ public class GUI_Writer : MonoBehaviour
     }
     public void setManaText(string amount){
         mMana.text = amount;
+    }
+    public void setChargeTypeText(string type){
+        mChargeType.text = type;
     }
 }

@@ -25588,7 +25588,11 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: 0.3439214, w: 0.93899846}
     m_Weight: 1
     m_RestoreDefaultPose: 1
+<<<<<<< Updated upstream
     targetPosition: {x: -12.350901, y: -6.599674, z: 0}
+=======
+    targetPosition: {x: -12.730901, y: -7.073674, z: 0}
+>>>>>>> Stashed changes
     flip: 0
 --- !u!1 &7807224888320924601
 GameObject:
@@ -25609,11 +25613,12 @@ GameObject:
   - component: {fileID: 7807224888320924593}
   - component: {fileID: 8991791754142360675}
   - component: {fileID: 6662278907168254395}
-  - component: {fileID: 4116688987517817779}
+  - component: {fileID: 6460282362840382723}
   - component: {fileID: 1709757516680739672}
   - component: {fileID: 3137519418177971456}
-  - component: {fileID: 6460282362840382723}
+  - component: {fileID: 4116688987517817779}
   - component: {fileID: 3989846083653809059}
+  - component: {fileID: 1975651132561687507}
   m_Layer: 9
   m_Name: Sancar
   m_TagString: Player
@@ -25961,6 +25966,56 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   debug: 1
+--- !u!114 &6460282362840382723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35a78b055f4c88458dc0bb1ababe27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mGui: {fileID: 0}
+  mMana: {fileID: 0}
+  mCharge: {fileID: 0}
+  mChargeType: {fileID: 0}
+--- !u!114 &1709757516680739672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24e875b3ea9b5648bec8a087270205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegenCooldown: 4
+  RegenAmount: 0.05
+  Charging: 0
+  CurrentChargeType: 0
+--- !u!114 &3137519418177971456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502c8320c0115f44c89ca71e814f71f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userProfiler: {fileID: 0}
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
+  _TransformingTime: 2
 --- !u!114 &4116688987517817779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25980,59 +26035,12 @@ MonoBehaviour:
   AbilityPermitted: 1
   DeltaCharge: 0.2
   MaxChargeAmount: 20
+  MinimumCharge: 5
   IceBlock: {fileID: 7703296408480403947, guid: 02e34eb79c786fd4598934ec3fa33edc,
     type: 3}
   BlockOffset: 4
-  MinimumCharge: 5
   MinimumBlockHeight: 0.1
   MaximumBlockHeight: 1
---- !u!114 &1709757516680739672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e875b3ea9b5648bec8a087270205c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RegenCooldown: 4
-  RegenAmount: 0.05
---- !u!114 &3137519418177971456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502c8320c0115f44c89ca71e814f71f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  _TransformingTime: 2
---- !u!114 &6460282362840382723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a35a78b055f4c88458dc0bb1ababe27d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mGui: {fileID: 0}
-  mMana: {fileID: 0}
-  mCharge: {fileID: 0}
 --- !u!212 &3989846083653809059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26081,6 +26089,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1975651132561687507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dff185171249304390cb2cabd871d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userProfiler: {fileID: 0}
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
+  DeltaCharge: 0.2
+  MaxChargeAmount: 25
+  MinimumCharge: 5
+  FireObject: {fileID: 5975552266938463561, guid: 7fb53d9487e4e9848a2d74490a32885b,
+    type: 3}
+  FireOffset: 2
 --- !u!1 &7807224888425843360
 GameObject:
   m_ObjectHideFlags: 0
