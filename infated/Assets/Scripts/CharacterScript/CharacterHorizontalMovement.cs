@@ -56,7 +56,10 @@ namespace Infated.CoreEngine
 	    {
 			base.ProcessAbility();
 
-			HandleHorizontalMovement();
+            if(gameObject.name == "NPC_Melee") { 
+                Debug.Log(gameObject.name+": "+_movement.CurrentState);
+            }
+            HandleHorizontalMovement();
 	    }
 
 	    /// <summary>

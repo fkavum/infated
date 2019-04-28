@@ -1,0 +1,846 @@
+fileFormatVersion: 2
+guid: 960bd7158c186dd4bad70bfd23ec8d25
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spritesheet_npc_melee_2_0
+    21300002: spritesheet_npc_melee_2_1
+    21300004: spritesheet_npc_melee_2_2
+    21300006: spritesheet_npc_melee_2_3
+    21300008: spritesheet_npc_melee_2_4
+    21300010: spritesheet_npc_melee_2_5
+    21300012: spritesheet_npc_melee_2_6
+    21300014: spritesheet_npc_melee_2_7
+    21300016: spritesheet_npc_melee_2_8
+    21300018: spritesheet_npc_melee_2_9
+    21300020: spritesheet_npc_melee_2_10
+    21300022: spritesheet_npc_melee_2_11
+    21300024: spritesheet_npc_melee_2_12
+    21300026: spritesheet_npc_melee_2_13
+    21300028: spritesheet_npc_melee_2_14
+    21300030: spritesheet_npc_melee_2_15
+    21300032: spritesheet_npc_melee_2_16
+    21300034: spritesheet_npc_melee_2_17
+    21300036: spritesheet_npc_melee_2_18
+    21300038: spritesheet_npc_melee_2_19
+    21300040: spritesheet_npc_melee_2_20
+    21300042: spritesheet_npc_melee_2_21
+    21300044: spritesheet_npc_melee_2_22
+    21300046: spritesheet_npc_melee_2_23
+    21300048: spritesheet_npc_melee_2_24
+    21300050: spritesheet_npc_melee_2_25
+    21300052: spritesheet_npc_melee_2_26
+    21300054: spritesheet_npc_melee_2_27
+    21300056: spritesheet_npc_melee_2_28
+    21300058: spritesheet_npc_melee_2_29
+    21300060: spritesheet_npc_melee_2_30
+    21300062: spritesheet_npc_melee_2_31
+    21300064: spritesheet_npc_melee_2_32
+    21300066: spritesheet_npc_melee_2_33
+    21300068: spritesheet_npc_melee_2_34
+    21300070: spritesheet_npc_melee_2_35
+    21300072: spritesheet_npc_melee_2_36
+    21300074: spritesheet_npc_melee_2_37
+    21300076: spritesheet_npc_melee_2_38
+    21300078: spritesheet_npc_melee_2_39
+    21300080: spritesheet_npc_melee_2_40
+    21300082: spritesheet_npc_melee_2_41
+    21300084: spritesheet_npc_melee_2_42
+    21300086: spritesheet_npc_melee_2_43
+    21300088: spritesheet_npc_melee_2_44
+    21300090: spritesheet_npc_melee_2_45
+    21300092: spritesheet_npc_melee_2_46
+    21300094: spritesheet_npc_melee_2_47
+    21300096: spritesheet_npc_melee_2_48
+    21300098: spritesheet_npc_melee_2_49
+    21300100: spritesheet_npc_melee_2_50
+    21300102: spritesheet_npc_melee_2_51
+    21300104: spritesheet_npc_melee_2_52
+    21300106: spritesheet_npc_melee_2_53
+    21300108: spritesheet_npc_melee_2_54
+    21300110: spritesheet_npc_melee_2_55
+    21300112: spritesheet_npc_melee_2_56
+    21300114: spritesheet_npc_melee_2_57
+    21300116: spritesheet_npc_melee_2_58
+    21300118: spritesheet_npc_melee_2_59
+    21300120: spritesheet_npc_melee_2_60
+    21300122: spritesheet_npc_melee_2_61
+    21300124: spritesheet_npc_melee_2_62
+    21300126: spritesheet_npc_melee_2_63
+    21300128: spritesheet_npc_melee_2_64
+    21300130: spritesheet_npc_melee_2_65
+    21300132: spritesheet_npc_melee_2_66
+    21300134: spritesheet_npc_melee_2_67
+    21300136: spritesheet_npc_melee_2_68
+    21300138: spritesheet_npc_melee_2_69
+    21300140: spritesheet_npc_melee_2_70
+    21300142: spritesheet_npc_melee_2_71
+    21300144: spritesheet_npc_melee_2_72
+    21300146: spritesheet_npc_melee_2_73
+    21300148: spritesheet_npc_melee_2_74
+    21300150: spritesheet_npc_melee_2_75
+    21300152: spritesheet_npc_melee_2_76
+    21300154: spritesheet_npc_melee_2_77
+    21300156: spritesheet_npc_melee_2_78
+    21300158: spritesheet_npc_melee_2_79
+    21300160: spritesheet_npc_melee_2_80
+    21300162: spritesheet_npc_melee_2_81
+    21300164: spritesheet_npc_melee_2_82
+    21300166: spritesheet_npc_melee_2_83
+    21300168: spritesheet_npc_melee_2_84
+    21300170: spritesheet_npc_melee_2_85
+    21300172: spritesheet_npc_melee_2_86
+    21300174: spritesheet_npc_melee_2_87
+    21300176: spritesheet_npc_melee_2_88
+    21300178: spritesheet_npc_melee_2_89
+    21300180: spritesheet_npc_melee_2_90
+    21300182: spritesheet_npc_melee_2_91
+    21300184: spritesheet_npc_melee_2_92
+    21300186: spritesheet_npc_melee_2_93
+    21300188: spritesheet_npc_melee_2_94
+    21300190: spritesheet_npc_melee_2_95
+    21300192: spritesheet_npc_melee_2_96
+    21300194: spritesheet_npc_melee_2_97
+    21300196: spritesheet_npc_melee_2_98
+    21300198: spritesheet_npc_melee_2_99
+    21300200: spritesheet_npc_melee_2_100
+    21300202: spritesheet_npc_melee_2_101
+    21300204: spritesheet_npc_melee_2_102
+    21300206: spritesheet_npc_melee_2_103
+    21300208: spritesheet_npc_melee_2_104
+    21300210: spritesheet_npc_melee_2_105
+    21300212: spritesheet_npc_melee_2_106
+    21300214: spritesheet_npc_melee_2_107
+    21300216: spritesheet_npc_melee_2_108
+    21300218: spritesheet_npc_melee_2_109
+    21300220: spritesheet_npc_melee_2_110
+    21300222: spritesheet_npc_melee_2_111
+    21300224: spritesheet_npc_melee_2_112
+    21300226: spritesheet_npc_melee_2_113
+    21300228: spritesheet_npc_melee_2_114
+    21300230: spritesheet_npc_melee_2_115
+    21300232: spritesheet_npc_melee_2_116
+    21300234: spritesheet_npc_melee_2_117
+    21300236: spritesheet_npc_melee_2_118
+    21300238: spritesheet_npc_melee_2_119
+    21300240: spritesheet_npc_melee_2_120
+    21300242: spritesheet_npc_melee_2_121
+    21300244: spritesheet_npc_melee_2_122
+    21300246: spritesheet_npc_melee_2_123
+    21300248: spritesheet_npc_melee_2_124
+    21300250: spritesheet_npc_melee_2_125
+    21300252: spritesheet_npc_melee_2_126
+    21300254: spritesheet_npc_melee_2_127
+    21300256: spritesheet_npc_melee_2_128
+    21300258: spritesheet_npc_melee_2_129
+    21300260: spritesheet_npc_melee_2_130
+    21300262: spritesheet_npc_melee_2_131
+    21300264: spritesheet_npc_melee_2_132
+    21300266: spritesheet_npc_melee_2_133
+    21300268: spritesheet_npc_melee_2_134
+    21300270: spritesheet_npc_melee_2_135
+    21300272: spritesheet_npc_melee_2_136
+    21300274: spritesheet_npc_melee_2_137
+    21300276: spritesheet_npc_melee_2_138
+    21300278: spritesheet_npc_melee_2_139
+    21300280: spritesheet_npc_melee_2_140
+    21300282: spritesheet_npc_melee_2_141
+    21300284: spritesheet_npc_melee_2_142
+    21300286: spritesheet_npc_melee_2_143
+    21300288: spritesheet_npc_melee_2_144
+    21300290: spritesheet_npc_melee_2_145
+    21300292: spritesheet_npc_melee_2_146
+    21300294: spritesheet_npc_melee_2_147
+    21300296: spritesheet_npc_melee_2_148
+    21300298: spritesheet_npc_melee_2_149
+    21300300: spritesheet_npc_melee_2_150
+    21300302: spritesheet_npc_melee_2_151
+    21300304: spritesheet_npc_melee_2_152
+    21300306: spritesheet_npc_melee_2_153
+    21300308: spritesheet_npc_melee_2_154
+    21300310: spritesheet_npc_melee_2_155
+    21300312: spritesheet_npc_melee_2_156
+    21300314: spritesheet_npc_melee_2_157
+    21300316: spritesheet_npc_melee_2_158
+    21300318: spritesheet_npc_melee_2_159
+    21300320: spritesheet_npc_melee_2_160
+    21300322: spritesheet_npc_melee_2_161
+    21300324: spritesheet_npc_melee_2_162
+    21300326: spritesheet_npc_melee_2_163
+    21300328: spritesheet_npc_melee_2_164
+    21300330: spritesheet_npc_melee_2_165
+    21300332: spritesheet_npc_melee_2_166
+    21300334: spritesheet_npc_melee_2_167
+    21300336: spritesheet_npc_melee_2_168
+    21300338: spritesheet_npc_melee_2_169
+    21300340: spritesheet_npc_melee_2_170
+    21300342: spritesheet_npc_melee_2_171
+    21300344: spritesheet_npc_melee_2_172
+    21300346: spritesheet_npc_melee_2_173
+    21300348: spritesheet_npc_melee_2_174
+    21300350: spritesheet_npc_melee_2_175
+    21300352: spritesheet_npc_melee_2_176
+    21300354: spritesheet_npc_melee_2_177
+    21300356: spritesheet_npc_melee_2_178
+    21300358: spritesheet_npc_melee_2_179
+    21300360: spritesheet_npc_melee_2_180
+    21300362: spritesheet_npc_melee_2_181
+    21300364: spritesheet_npc_melee_2_182
+    21300366: spritesheet_npc_melee_2_183
+    21300368: spritesheet_npc_melee_2_184
+    21300370: spritesheet_npc_melee_2_185
+    21300372: spritesheet_npc_melee_2_186
+    21300374: spritesheet_npc_melee_2_187
+    21300376: spritesheet_npc_melee_2_188
+    21300378: spritesheet_npc_melee_2_189
+    21300380: spritesheet_npc_melee_2_190
+    21300382: spritesheet_npc_melee_2_191
+    21300384: spritesheet_npc_melee_2_192
+    21300386: spritesheet_npc_melee_2_193
+    21300388: spritesheet_npc_melee_2_194
+    21300390: spritesheet_npc_melee_2_195
+    21300392: spritesheet_npc_melee_2_196
+    21300394: spritesheet_npc_melee_2_197
+    21300396: spritesheet_npc_melee_2_198
+    21300398: spritesheet_npc_melee_2_199
+    21300400: spritesheet_npc_melee_2_200
+    21300402: spritesheet_npc_melee_2_201
+    21300404: spritesheet_npc_melee_2_202
+    21300406: spritesheet_npc_melee_2_203
+    21300408: spritesheet_npc_melee_2_204
+    21300410: spritesheet_npc_melee_2_205
+    21300412: spritesheet_npc_melee_2_206
+    21300414: spritesheet_npc_melee_2_207
+    21300416: spritesheet_npc_melee_2_208
+    21300418: spritesheet_npc_melee_2_209
+    21300420: spritesheet_npc_melee_2_210
+    21300422: spritesheet_npc_melee_2_211
+    21300424: spritesheet_npc_melee_2_212
+    21300426: spritesheet_npc_melee_2_213
+    21300428: spritesheet_npc_melee_2_214
+    21300430: spritesheet_npc_melee_2_215
+    21300432: spritesheet_npc_melee_2_216
+    21300434: spritesheet_npc_melee_2_217
+    21300436: spritesheet_npc_melee_2_218
+    21300438: spritesheet_npc_melee_2_219
+    21300440: spritesheet_npc_melee_2_220
+    21300442: spritesheet_npc_melee_2_221
+    21300444: spritesheet_npc_melee_2_222
+    21300446: spritesheet_npc_melee_2_223
+    21300448: spritesheet_npc_melee_2_224
+    21300450: spritesheet_npc_melee_2_225
+    21300452: spritesheet_npc_melee_2_226
+    21300454: spritesheet_npc_melee_2_227
+    21300456: spritesheet_npc_melee_2_228
+    21300458: spritesheet_npc_melee_2_229
+    21300460: spritesheet_npc_melee_2_230
+    21300462: spritesheet_npc_melee_2_231
+    21300464: spritesheet_npc_melee_2_232
+    21300466: spritesheet_npc_melee_2_233
+    21300468: spritesheet_npc_melee_2_234
+    21300470: spritesheet_npc_melee_2_235
+    21300472: spritesheet_npc_melee_2_236
+    21300474: spritesheet_npc_melee_2_237
+    21300476: spritesheet_npc_melee_2_238
+    21300478: spritesheet_npc_melee_2_239
+    21300480: spritesheet_npc_melee_2_240
+    21300482: spritesheet_npc_melee_2_241
+    21300484: spritesheet_npc_melee_2_242
+    21300486: spritesheet_npc_melee_2_243
+    21300488: spritesheet_npc_melee_2_244
+    21300490: spritesheet_npc_melee_2_245
+    21300492: spritesheet_npc_melee_2_246
+    21300494: spritesheet_npc_melee_2_247
+    21300496: spritesheet_npc_melee_2_248
+    21300498: spritesheet_npc_melee_2_249
+    21300500: spritesheet_npc_melee_2_250
+    21300502: spritesheet_npc_melee_2_251
+    21300504: spritesheet_npc_melee_2_252
+    21300506: spritesheet_npc_melee_2_253
+    21300508: spritesheet_npc_melee_2_254
+    21300510: spritesheet_npc_melee_2_255
+    21300512: spritesheet_npc_melee_2_256
+    21300514: spritesheet_npc_melee_2_257
+    21300516: spritesheet_npc_melee_2_258
+    21300518: spritesheet_npc_melee_2_259
+    21300520: spritesheet_npc_melee_2_260
+    21300522: spritesheet_npc_melee_2_261
+    21300524: spritesheet_npc_melee_2_262
+    21300526: spritesheet_npc_melee_2_263
+    21300528: spritesheet_npc_melee_2_264
+    21300530: spritesheet_npc_melee_2_265
+    21300532: spritesheet_npc_melee_2_266
+    21300534: spritesheet_npc_melee_2_267
+    21300536: spritesheet_npc_melee_2_268
+    21300538: spritesheet_npc_melee_2_269
+    21300540: spritesheet_npc_melee_2_270
+    21300542: spritesheet_npc_melee_2_271
+    21300544: spritesheet_npc_melee_2_272
+    21300546: spritesheet_npc_melee_2_273
+    21300548: spritesheet_npc_melee_2_274
+    21300550: spritesheet_npc_melee_2_275
+    21300552: spritesheet_npc_melee_2_276
+    21300554: spritesheet_npc_melee_2_277
+    21300556: spritesheet_npc_melee_2_278
+    21300558: spritesheet_npc_melee_2_279
+    21300560: spritesheet_npc_melee_2_280
+    21300562: spritesheet_npc_melee_2_281
+    21300564: spritesheet_npc_melee_2_282
+    21300566: spritesheet_npc_melee_2_283
+    21300568: spritesheet_npc_melee_2_284
+    21300570: spritesheet_npc_melee_2_285
+    21300572: spritesheet_npc_melee_2_286
+    21300574: spritesheet_npc_melee_2_287
+    21300576: spritesheet_npc_melee_2_288
+    21300578: spritesheet_npc_melee_2_289
+    21300580: spritesheet_npc_melee_2_290
+    21300582: spritesheet_npc_melee_2_291
+    21300584: spritesheet_npc_melee_2_292
+    21300586: spritesheet_npc_melee_2_293
+    21300588: spritesheet_npc_melee_2_294
+    21300590: spritesheet_npc_melee_2_295
+    21300592: spritesheet_npc_melee_2_296
+    21300594: spritesheet_npc_melee_2_297
+    21300596: spritesheet_npc_melee_2_298
+    21300598: spritesheet_npc_melee_2_299
+    21300600: spritesheet_npc_melee_2_300
+    21300602: spritesheet_npc_melee_2_301
+    21300604: spritesheet_npc_melee_2_302
+    21300606: spritesheet_npc_melee_2_303
+    21300608: spritesheet_npc_melee_2_304
+    21300610: spritesheet_npc_melee_2_305
+    21300612: spritesheet_npc_melee_2_306
+    21300614: spritesheet_npc_melee_2_307
+    21300616: spritesheet_npc_melee_2_308
+    21300618: spritesheet_npc_melee_2_309
+    21300620: spritesheet_npc_melee_2_310
+    21300622: spritesheet_npc_melee_2_311
+    21300624: spritesheet_npc_melee_2_312
+    21300626: spritesheet_npc_melee_2_313
+    21300628: spritesheet_npc_melee_2_314
+    21300630: spritesheet_npc_melee_2_315
+    21300632: spritesheet_npc_melee_2_316
+    21300634: spritesheet_npc_melee_2_317
+    21300636: spritesheet_npc_melee_2_318
+    21300638: spritesheet_npc_melee_2_319
+    21300640: spritesheet_npc_melee_2_320
+    21300642: spritesheet_npc_melee_2_321
+    21300644: spritesheet_npc_melee_2_322
+    21300646: spritesheet_npc_melee_2_323
+    21300648: spritesheet_npc_melee_2_324
+    21300650: spritesheet_npc_melee_2_325
+    21300652: spritesheet_npc_melee_2_326
+    21300654: spritesheet_npc_melee_2_327
+    21300656: spritesheet_npc_melee_2_328
+    21300658: spritesheet_npc_melee_2_329
+    21300660: spritesheet_npc_melee_2_330
+    21300662: spritesheet_npc_melee_2_331
+    21300664: spritesheet_npc_melee_2_332
+    21300666: spritesheet_npc_melee_2_333
+    21300668: spritesheet_npc_melee_2_334
+    21300670: spritesheet_npc_melee_2_335
+    21300672: spritesheet_npc_melee_2_336
+    21300674: spritesheet_npc_melee_2_337
+    21300676: spritesheet_npc_melee_2_338
+    21300678: spritesheet_npc_melee_2_339
+    21300680: spritesheet_npc_melee_2_340
+    21300682: spritesheet_npc_melee_2_341
+    21300684: spritesheet_npc_melee_2_342
+    21300686: spritesheet_npc_melee_2_343
+    21300688: spritesheet_npc_melee_2_344
+    21300690: spritesheet_npc_melee_2_345
+    21300692: spritesheet_npc_melee_2_346
+    21300694: spritesheet_npc_melee_2_347
+    21300696: spritesheet_npc_melee_2_348
+    21300698: spritesheet_npc_melee_2_349
+    21300700: spritesheet_npc_melee_2_350
+    21300702: spritesheet_npc_melee_2_351
+    21300704: spritesheet_npc_melee_2_352
+    21300706: spritesheet_npc_melee_2_353
+    21300708: spritesheet_npc_melee_2_354
+    21300710: spritesheet_npc_melee_2_355
+    21300712: spritesheet_npc_melee_2_356
+    21300714: spritesheet_npc_melee_2_357
+    21300716: spritesheet_npc_melee_2_358
+    21300718: spritesheet_npc_melee_2_359
+    21300720: spritesheet_npc_melee_2_360
+    21300722: spritesheet_npc_melee_2_361
+    21300724: spritesheet_npc_melee_2_362
+    21300726: spritesheet_npc_melee_2_363
+    21300728: spritesheet_npc_melee_2_364
+    21300730: spritesheet_npc_melee_2_365
+    21300732: spritesheet_npc_melee_2_366
+    21300734: spritesheet_npc_melee_2_367
+    21300736: spritesheet_npc_melee_2_368
+    21300738: spritesheet_npc_melee_2_369
+    21300740: spritesheet_npc_melee_2_370
+    21300742: spritesheet_npc_melee_2_371
+    21300744: spritesheet_npc_melee_2_372
+    21300746: spritesheet_npc_melee_2_373
+    21300748: spritesheet_npc_melee_2_374
+    21300750: spritesheet_npc_melee_2_375
+    21300752: spritesheet_npc_melee_2_376
+    21300754: spritesheet_npc_melee_2_377
+    21300756: spritesheet_npc_melee_2_378
+    21300758: spritesheet_npc_melee_2_379
+    21300760: spritesheet_npc_melee_2_380
+    21300762: spritesheet_npc_melee_2_381
+    21300764: spritesheet_npc_melee_2_382
+    21300766: spritesheet_npc_melee_2_383
+    21300768: spritesheet_npc_melee_2_384
+    21300770: spritesheet_npc_melee_2_385
+    21300772: spritesheet_npc_melee_2_386
+    21300774: spritesheet_npc_melee_2_387
+    21300776: spritesheet_npc_melee_2_388
+    21300778: spritesheet_npc_melee_2_389
+    21300780: spritesheet_npc_melee_2_390
+    21300782: spritesheet_npc_melee_2_391
+    21300784: spritesheet_npc_melee_2_392
+    21300786: spritesheet_npc_melee_2_393
+    21300788: spritesheet_npc_melee_2_394
+    21300790: spritesheet_npc_melee_2_395
+    21300792: spritesheet_npc_melee_2_396
+    21300794: spritesheet_npc_melee_2_397
+    21300796: spritesheet_npc_melee_2_398
+    21300798: spritesheet_npc_melee_2_399
+    21300800: spritesheet_npc_melee_2_400
+    21300802: spritesheet_npc_melee_2_401
+    21300804: spritesheet_npc_melee_2_402
+    21300806: spritesheet_npc_melee_2_403
+    21300808: spritesheet_npc_melee_2_404
+    21300810: spritesheet_npc_melee_2_405
+    21300812: spritesheet_npc_melee_2_406
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_0
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 752
+        width: 350
+        height: 355
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f813e6e354d91314395328bff67b3541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_1
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 755
+        width: 346
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9f32f776c05eb49ab76964bbb044fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_2
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 781
+        width: 327
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68568e1c1648acf4ba6aaf3800459363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_3
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 783
+        width: 293
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dafd3a7ffd7d1459ab99d5e0762bbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_4
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 768
+        width: 343
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3169cdde966d736419190bae09f2af9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_5
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 752
+        width: 337
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d5a190a2d815446b23c11da4acd922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_6
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 763
+        width: 364
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8248d96f910ea01498ca28d5307f4c62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 773
+        width: 275
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784006d148a256245b2918adb5c43cb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 396
+        width: 439
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e76365ee06873346847c23cfe33777e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_9
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 386
+        width: 493
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5dadafb5e0d414b9f4c71496fb4cb1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_10
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 368
+        width: 563
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a00d48ae30045f418445ef2e394729f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_11
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 381
+        width: 332
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5f64062c3fa514d90b6adc55c831ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_12
+      rect:
+        serializedVersion: 2
+        x: 2174
+        y: 389
+        width: 333
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a44d4ef7b8cbc489b610084b2f7618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_13
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 25
+        width: 402
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571e9709595107b48baadaf6adae2fe7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_14
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 33
+        width: 392
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316dc466be08f3e4faa8efbcd0537110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_15
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 33
+        width: 619
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550aa8b1285a53f4f9cb9cbb625f8b00
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_npc_melee_2_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 30
+        width: 486
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e694d3bbd442d4993a15c0691c64e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 56080d782f7f22445a427ee467a82124
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
