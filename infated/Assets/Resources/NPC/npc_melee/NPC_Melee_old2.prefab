@@ -26,11 +26,9 @@ GameObject:
   - component: {fileID: 937791480}
   - component: {fileID: 937791494}
   - component: {fileID: 937791493}
-  - component: {fileID: 937791497}
-  - component: {fileID: 937791496}
-  - component: {fileID: 937791498}
+  - component: {fileID: 1689568631363746142}
   m_Layer: 13
-  m_Name: NPC_Melee
+  m_Name: NPC_Melee_old2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +44,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 103.04, y: -4.3871703, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1640816097}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -317,17 +314,8 @@ MonoBehaviour:
       - {fileID: 937791478}
     Transitions:
       array:
-      - Decision: {fileID: 937791498}
-        TrueState: Delay
-        FalseState: 
-  - StateName: Delay
-    Actions:
-      array:
-      - {fileID: 937791486}
-    Transitions:
-      array:
-      - Decision: {fileID: 937791496}
-        TrueState: Idle
+      - Decision: {fileID: 937791495}
+        TrueState: Chase
         FalseState: 
   BrainActive: 1
   TimeInThisState: 0
@@ -490,7 +478,7 @@ MonoBehaviour:
   CharacterModel: {fileID: 0}
   FlipOnDirectionChange: 1
   FlipValue: {x: -1, y: 1, z: 1}
---- !u!114 &937791497
+--- !u!114 &1689568631363746142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,69 +495,10 @@ MonoBehaviour:
   AbilityInProgressSfx: {fileID: 0}
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
-  InitialWeapon: {fileID: 1807081326533691245, guid: 584239b168aa3634da0afc6e3427cf87,
-    type: 3}
-  WeaponAttachment: {fileID: 1640816097}
+  InitialWeapon: {fileID: 0}
+  WeaponAttachment: {fileID: 0}
   CanPickupWeapons: 1
   CurrentWeapon: {fileID: 0}
   ContinuousPress: 0
   AutomaticallyBindAnimator: 1
   GettingHitInterruptsAttack: 0
---- !u!114 &937791496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937791477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f74aeb92683149688f391b67ee16567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AfterTimeMin: 2
-  AfterTimeMax: 2
---- !u!114 &937791498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937791477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f74aeb92683149688f391b67ee16567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AfterTimeMin: 0.1
-  AfterTimeMax: 0.1
---- !u!1 &1640816096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1640816097}
-  m_Layer: 13
-  m_Name: weapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1640816097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640816096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 937791492}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
