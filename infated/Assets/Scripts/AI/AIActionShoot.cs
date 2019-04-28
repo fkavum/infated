@@ -23,6 +23,18 @@ namespace Infated.CoreEngine
         protected int _numberOfShoots = 0;
         protected bool _shooting = false;
 
+
+       public void animShootStart()
+        {
+            _characterHandleWeapon.ShootStop();
+            _shooting = false;
+        }
+        public void animShootEnd()
+        {
+            _shooting = true;
+            _numberOfShoots = 0;
+        }
+
         /// <summary>
         /// On init we grab our CharacterHandleWeapon ability
         /// </summary>
@@ -37,9 +49,13 @@ namespace Infated.CoreEngine
         /// </summary>
         public override void PerformAction()
         {
+
+            Debug.Log(_numberOfShoots);
             TestFaceTarget();
             //TestAimAtTarget();
-            //Shoot();
+            Shoot();
+            //_characterHandleWeapon.ShootStop();
+            //_numberOfShoots =0 ;
         }
 
         /// <summary>
@@ -47,27 +63,29 @@ namespace Infated.CoreEngine
         /// </summary>
         protected virtual void Update()
         {
-            //if (_characterHandleWeapon.CurrentWeapon != null)
-            //{
-            //    if (_weaponAim != null)
-            //    {
-            //        if (_shooting)
-            //        {
-            //            _weaponAim.SetCurrentAim(_weaponAimDirection);
-            //        }
-            //        else
-            //        {
-            //            if (_character.IsFacingRight)
-            //            {
-            //                _weaponAim.SetCurrentAim(Vector3.right);
-            //            }
-            //            else
-            //            {
-            //                _weaponAim.SetCurrentAim(Vector3.left);
-            //            }
-            //        }
-            //    }
-            //}
+
+
+            if (_characterHandleWeapon.CurrentWeapon != null)
+            {
+                if (_weaponAim != null)
+                {
+                    if (_shooting)
+                    {
+                        _weaponAim.SetCurrentAim(_weaponAimDirection);
+                    }
+                    else
+                    {
+                        if (_character.IsFacingRight)
+                        {
+                            _weaponAim.SetCurrentAim(Vector3.right);
+                        }
+                        else
+                        {
+                            _weaponAim.SetCurrentAim(Vector3.left);
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -127,6 +145,7 @@ namespace Infated.CoreEngine
         /// </summary>
         protected virtual void Shoot()
         {
+            
             if (_numberOfShoots < 1)
             {
                 _characterHandleWeapon.ShootStart();
@@ -134,14 +153,21 @@ namespace Infated.CoreEngine
             }
         }
 
-        /// <summary>
-        /// When entering the state we reset our shoot counter and grab our weapon
-        /// </summary>
-        public override void OnEnterState()
+
+      
+    
+
+
+
+    /// <summary>
+    /// When entering the state we reset our shoot counter and grab our weapon
+    /// </summary>
+    public override void OnEnterState()
         {
             base.OnEnterState();
-            //_numberOfShoots = 0;
-            //_shooting = true;
+            Debug.Log("I entered the State");
+           _numberOfShoots = 0;
+            _shooting = true;
             //_weaponAim = _characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
             //_projectileWeapon = _characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<ProjectileWeapon>();
         }
@@ -152,8 +178,9 @@ namespace Infated.CoreEngine
         public override void OnExitState()
         {
             base.OnExitState();
-            //_characterHandleWeapon.ShootStop();
-            //_shooting = false;
+            Debug.Log("I exited the State");
+            _characterHandleWeapon.ShootStop();
+            _shooting = false;
         }
     }
 }

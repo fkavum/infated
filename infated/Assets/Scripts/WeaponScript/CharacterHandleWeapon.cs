@@ -95,12 +95,12 @@ namespace Infated.CoreEngine
 
 			if ((_inputManager.ShootAxis == InfInput.ButtonStates.ButtonDown) || (ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && (_inputManager.ShootAxis == InfInput.ButtonStates.ButtonPressed)))
 			{
-				ShootStart();
+                ShootStart();
 			}
 
 			if (_inputManager.ReloadButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
 			{
-				Reload();
+                Reload();
             }
 
             if ((_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonUp) || (_inputManager.ShootAxis == InfInput.ButtonStates.ButtonUp))
