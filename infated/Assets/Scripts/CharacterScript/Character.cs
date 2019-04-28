@@ -7,7 +7,7 @@ using Infated.CoreEngine;
 
 
 public class Character : MonoBehaviour {
-
+    public userProfiler _userProfiler;
     // State Machines
     public InfStateMachine<CharacterStates.MovementStates> MovementState;
     public InfStateMachine<CharacterStates.CharacterConditions> ConditionState;
@@ -88,6 +88,7 @@ public class Character : MonoBehaviour {
 
         // we get the current input manager
         GetInputManager();
+        getProfiler();
         //// we get the main camera
         //if (Camera.main == null) { return; }
         //SceneCamera = Camera.main.GetComponent<CameraController>();
@@ -120,6 +121,30 @@ public class Character : MonoBehaviour {
         ForceSpawnDirection();
         
 
+    }
+
+
+    public virtual void getProfiler()
+    {
+
+        if(gameObject.name != "Sancar(Clone)")
+        {
+            _userProfiler = null;
+            return;
+        }
+        
+        if (_userProfiler == null)
+        {
+            GameObject profiler = GameObject.Find("GameManager");
+            if (profiler != null)
+            {
+                _userProfiler = profiler.GetComponent<userProfiler>();
+            }
+            else
+            {
+                Debug.Log("WARNING: User Profiler Not Found");
+            }
+        }
     }
 
     /// <summary>

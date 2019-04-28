@@ -340,9 +340,11 @@ namespace Infated.CoreEngine
 
 			// we decrease the number of jumps left
 			NumberOfJumpsLeft=NumberOfJumpsLeft-1;
+            if (_userProfiler != null) { 
             _userProfiler.profileJump(NumberOfJumps - NumberOfJumpsLeft);
-			// we reset our current condition and gravity
-			_condition.ChangeState(CharacterStates.CharacterConditions.Normal);
+            }
+            // we reset our current condition and gravity
+            _condition.ChangeState(CharacterStates.CharacterConditions.Normal);
 			_controller.GravityActive(true);
 			_controller.CollisionsOn ();
 

@@ -44,7 +44,9 @@ namespace Infated.CoreEngine
             if (!isTransformingNow && _inputManager.ShapeshiftButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
             {
                 StartShapeshift();
+                if (_userProfiler != null) { 
                 _userProfiler.shapeShiftCount++;
+                }
             }
         }
 

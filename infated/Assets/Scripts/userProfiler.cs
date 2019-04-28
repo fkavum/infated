@@ -8,12 +8,17 @@ public class userProfiler : MonoBehaviour
     public int doubleJumpCount = 0;
     public int oneJumpCount = 0;
     public int tripleJumpCount = 0;
-
     public float iceChargeAmount = 0;
     public int iceMagicUsed = 0;
-
     public int shapeShiftCount = 0;
 
+    private List<string> checkPoints = new List<string>();
+    public float totalCombatTime = 0f;
+
+
+    private void Start()
+    {
+    }
     // Update is called once per frame
     void Update()
     {
@@ -69,5 +74,11 @@ public class userProfiler : MonoBehaviour
         Debug.Log("Writed");
     }
 
+
+    public void checkPointReached(string checkPointName)
+    {
+        checkPoints.Add(checkPointName);
+
+    }
 
 }

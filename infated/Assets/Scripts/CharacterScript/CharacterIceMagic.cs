@@ -50,9 +50,13 @@ namespace Infated.CoreEngine
                 EndMagicCharge();
             }
             if(Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
-                if(ChargedAmount > MinimumCharge)
+                if(ChargedAmount > MinimumCharge) {
+                    if (_userProfiler != null) { 
+                    _userProfiler.profileIceMagic(ChargedAmount);
+                    }
                     CreateIceBlock();
-                _userProfiler.profileIceMagic(ChargedAmount);
+                    
+                }
             }
         }
 

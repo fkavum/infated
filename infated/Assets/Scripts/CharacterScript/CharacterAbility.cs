@@ -75,24 +75,15 @@ namespace Infated.CoreEngine
             {
                 InitializeAnimatorParameters();
             }
-            getProfiler();
-        }
 
-        public virtual void getProfiler(){
-
-            if (_userProfiler == null)
+            if (_character._userProfiler != null)
             {
-                GameObject profiler = GameObject.Find("GameManager");
-                if (profiler != null)
-                {
-                    _userProfiler = profiler.GetComponent<userProfiler>();
-                }
-                else
-                {
-                    Debug.Log("WARNING: User Profiler Not Found");
-                }
+                _userProfiler = _character._userProfiler;
             }
+
         }
+
+   
 
 		/// <summary>
 		/// Adds required animator parameters to the animator parameters list if they exist
