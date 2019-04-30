@@ -417,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 6512784538957182042, guid: 59f35acfd7c8ee54e80e85a8c72e25c9,
         type: 3}
       propertyPath: _Position.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f35acfd7c8ee54e80e85a8c72e25c9, type: 3}
@@ -458,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -228.20007, y: 171.73}
-  m_SizeDelta: {x: -456.4, y: -343.56}
+  m_AnchoredPosition: {x: -321.09998, y: 132.4}
+  m_SizeDelta: {x: -642.2, y: -265.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697375397
 MonoBehaviour:
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
