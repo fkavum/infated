@@ -21,6 +21,7 @@ namespace Infated.CoreEngine
         private const int NUMBER_OF_ABILITIES_TO_DISABLE = 6;        
         // Get the abilitiy references that you want to disable while shapeshifting transformation
         private CharacterAbility[] abilitiesToDisable = new CharacterAbility[NUMBER_OF_ABILITIES_TO_DISABLE];
+        private CharacterAbility wallClimb;
         private bool[] abilityPrevStates = new bool[NUMBER_OF_ABILITIES_TO_DISABLE];
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace Infated.CoreEngine
             abilitiesToDisable[2] = GetComponent<CharacterJump>();
             //abilitiesToDisable[4] = GetComponent<CharacterWallClimb>();
             //abilitiesToDisable[5] = GetComponent<CharacterFireMagic>();
+            wallClimb = wallClimb = GetComponent<CharacterWallClimb>();
         }
 
         /// <summary>
@@ -101,6 +103,7 @@ namespace Infated.CoreEngine
         }
         private void Shapeshift(){
             PardusMode = !PardusMode;
+            wallClimb.AbilityPermitted = !wallClimb.AbilityPermitted;
             isTransformingNow = false;
             for(int i = 0; i < NUMBER_OF_ABILITIES_TO_DISABLE; i++){
                 if(abilitiesToDisable[i]  != null){

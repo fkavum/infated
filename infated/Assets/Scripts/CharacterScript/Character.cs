@@ -421,4 +421,8 @@ public class Character : MonoBehaviour {
             }
         }
     }
+
+    public void SetPosition(Vector3 pos){
+        transform.SetPositionAndRotation(pos, transform.rotation);
+    }
 }
