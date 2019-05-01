@@ -44,6 +44,7 @@ namespace Infated.CoreEngine
 		/// the minimum horizontal and vertical value you need to reach to trigger movement on an analog controller (joystick for example)
 		public Vector2 Threshold = new Vector2(0.1f, 0.4f);
 
+		public InfInput.IInfButton WallClimbButton { get; protected set; }
 		public InfInput.IInfButton MovementToggleButton { get; protected set; }
 		/// the Shapehsifting button (by the which if you do not understand that from the name)
 		public InfInput.IInfButton ShapeshiftButton { get; protected set; }
@@ -154,6 +155,7 @@ namespace Infated.CoreEngine
 		{
 			ButtonList = new List<InfInput.IInfButton> ();
 	
+			ButtonList.Add(WallClimbButton = new InfInput.IInfButton(PlayerID, "WallClimb", WallClimbButtonDown, WallClimbButtonPressed, WallClimbButtonUp));
 			ButtonList.Add(MovementToggleButton = new InfInput.IInfButton(PlayerID, "MovementToggle", MovementToggleButtonDown, MovementToggleButtonPressed, MovementToggleButtonUp));
 			ButtonList.Add(ShapeshiftButton = new InfInput.IInfButton(PlayerID, "Shapeshift", ShapeshiftButtonDown, ShapeshiftButtonPressed, ShapeshiftButtonUp));
             ButtonList.Add(LightAttackButton = new InfInput.IInfButton(PlayerID, "LightAttack", LightAttackButtonDown, LightAttackButtonPressed, LightAttackButtonUp));
@@ -377,6 +379,10 @@ namespace Infated.CoreEngine
 			}
         }
 
+
+        public virtual void WallClimbButtonDown() { WallClimbButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void WallClimbButtonPressed() { WallClimbButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void WallClimbButtonUp() { WallClimbButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
         public virtual void MovementToggleButtonDown() { MovementToggleButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void MovementToggleButtonPressed() { MovementToggleButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
