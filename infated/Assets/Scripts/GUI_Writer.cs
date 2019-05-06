@@ -6,6 +6,7 @@ public class GUI_Writer : MonoBehaviour
 {
     public GameObject mGui;
     public UnityEngine.UI.Text mMana, mCharge, mChargeType;
+    public UnityEngine.UI.Image mManabar;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,10 @@ public class GUI_Writer : MonoBehaviour
                             mChargeType = magicChild.GetComponent<UnityEngine.UI.Text>();
                             mChargeType.text = "lol";
                             break;
+                        case "ManaBar":
+                            mManabar = magicChild.GetComponent<UnityEngine.UI.Image>();
+                            mManabar.fillAmount = 1;
+                            break;
                         default:
                             break;
                     }
@@ -64,8 +69,9 @@ public class GUI_Writer : MonoBehaviour
     public void setChargeText(string amount){
         mCharge.text = amount;
     }
-    public void setManaText(string amount){
+    public void setManaText(string amount, float percentage){
         mMana.text = amount;
+        mManabar.fillAmount = percentage;
     }
     public void setChargeTypeText(string type){
         mChargeType.text = type;

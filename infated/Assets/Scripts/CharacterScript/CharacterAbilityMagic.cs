@@ -89,7 +89,7 @@ namespace Infated.CoreEngine
         }
         protected virtual void UpdateGuiValues(){
             _character.mGuiWriter.setChargeText(Mathf.Floor(ChargedAmount).ToString());
-            _character.mGuiWriter.setManaText(Mana.getManaGuiString());            
+            _character.mGuiWriter.setManaText(Mana.getManaGuiString(), Mana.getManaPercentage()); 
         }
         public override void Reset()
         {

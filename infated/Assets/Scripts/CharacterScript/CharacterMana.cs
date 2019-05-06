@@ -61,6 +61,10 @@ namespace Infated.CoreEngine
             return Mathf.Floor(CurrentMana).ToString() + "/" + Mathf.Floor(MaxMana).ToString();
         }
 
+        public float getManaPercentage(){
+            return CurrentMana / MaxMana;
+        }
+
         public void setCharging(bool charging, ChargingMagicType type){
             Charging = charging;
             setChargingMagicType(type);
