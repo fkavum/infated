@@ -12,7 +12,7 @@ namespace Infated.CoreEngine
     public class CharacterInventoryWheel : CharacterAbility
     {
         /// This method is only used to display a helpbox text at the beginning of the ability's inspector
-        public override string HelpBoxText() { return "This component handles ice magic. Holding down the ice button charges ice magic power."; }
+        public override string HelpBoxText() { return "This component handles inventory wheel. When button hit, it opens a wheel. For gamepad only."; }
 
         /// <summary>
         /// On Start() we reset our number of jumps
@@ -46,14 +46,6 @@ namespace Infated.CoreEngine
              UpdateGuiValues();
         }
 
-        /// <summary>
-        /// Causes the character to start jumping.
-        /// </summary>
-      
-        /// <summary>
-        /// Causes the character to stop jumping.
-        /// </summary>
-        
         private void UpdateGuiValues(){
            // _character.mGuiWriter.setChargeText(Mathf.Floor(ChargedAmount).ToString());
             //_character.mGuiWriter.setManaText(Mana.getManaGuiString());            
