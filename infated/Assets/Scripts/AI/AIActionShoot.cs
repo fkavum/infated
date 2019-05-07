@@ -50,7 +50,7 @@ namespace Infated.CoreEngine
         public override void PerformAction()
         {
 
-            Debug.Log(_numberOfShoots);
+            //Debug.Log(_numberOfShoots);
             TestFaceTarget();
             //TestAimAtTarget();
             Shoot();
@@ -178,7 +178,7 @@ namespace Infated.CoreEngine
         public override void OnExitState()
         {
             base.OnExitState();
-            Debug.Log("I exited the State");
+            //Debug.Log("I exited the State");
             _characterHandleWeapon.ShootStop();
             _shooting = false;
         }

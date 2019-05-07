@@ -2414,7 +2414,9 @@ MonoBehaviour:
   mMana: {fileID: 0}
   mCharge: {fileID: 0}
   mChargeType: {fileID: 0}
+  mStamina: {fileID: 0}
   mManabar: {fileID: 0}
+  mStaminabar: {fileID: 0}
 --- !u!114 &4425453556564442702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2497,7 +2499,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 0
   WallClimbDistance: 0.1
-  StaminaCost: 2
+  StaminaCost: 1
 --- !u!114 &6001219151359360939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2510,8 +2512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85773e1fd3689cd419ce9fefb4dc6b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RegenCooldown: 2
-  RegenAmount: 1
+  RegenCooldown: 1.5
+  RegenAmount: 2.5
 --- !u!212 &7728536663713736493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3044,11 +3046,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1348597729524345158}
     m_Modifications:
-    - target: {fileID: 2466545633203942092, guid: a213d9788cc280a498660f05e0f0a2d3,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_parent
-      objectReference: {fileID: 0}
     - target: {fileID: 3745703260964940814, guid: a213d9788cc280a498660f05e0f0a2d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3103,6 +3100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466545633203942092, guid: a213d9788cc280a498660f05e0f0a2d3,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_parent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a213d9788cc280a498660f05e0f0a2d3, type: 3}

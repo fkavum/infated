@@ -5,8 +5,8 @@ using UnityEngine;
 public class GUI_Writer : MonoBehaviour
 {
     public GameObject mGui;
-    public UnityEngine.UI.Text mMana, mCharge, mChargeType;
-    public UnityEngine.UI.Image mManabar;
+    public UnityEngine.UI.Text mMana, mCharge, mChargeType, mStamina;
+    public UnityEngine.UI.Image mManabar, mStaminabar;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +27,12 @@ public class GUI_Writer : MonoBehaviour
 
     void assignElements(){
         GameObject[] guiChildren =  getAllChildren(mGui);
-        GameObject[] guiMagicPanel;
+        GameObject[] guiPanel;
 
         foreach(GameObject child in guiChildren){
             if(child.name == "MagicPanel"){
-                guiMagicPanel = getAllChildren(child);
-                foreach(GameObject magicChild in guiMagicPanel){
+                guiPanel = getAllChildren(child);
+                foreach(GameObject magicChild in guiPanel){
                     switch(magicChild.name){
                         case "Mana":
                             mMana = magicChild.GetComponent<UnityEngine.UI.Text>();
@@ -49,6 +49,23 @@ public class GUI_Writer : MonoBehaviour
                         case "ManaBar":
                             mManabar = magicChild.GetComponent<UnityEngine.UI.Image>();
                             mManabar.fillAmount = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            else if(child.name == "StaminaPanel"){
+                guiPanel = getAllChildren(child);
+                foreach(GameObject staminaChild in guiPanel){
+                    switch(staminaChild.name){
+                        case "Stamina":
+                            mStamina = staminaChild.GetComponent<UnityEngine.UI.Text>();
+                            mStamina.text = "10/100";
+                            break;
+                        case "StaminaBar":
+                            mStaminabar = staminaChild.GetComponent<UnityEngine.UI.Image>();
+                            mStaminabar.fillAmount = 1;
                             break;
                         default:
                             break;
@@ -75,5 +92,10 @@ public class GUI_Writer : MonoBehaviour
     }
     public void setChargeTypeText(string type){
         mChargeType.text = type;
+    }
+
+    public void setStaminaText(string amount, float percentage){
+        mStamina.text = amount;
+        mStaminabar.fillAmount = percentage;
     }
 }

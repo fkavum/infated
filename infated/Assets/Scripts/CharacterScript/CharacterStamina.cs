@@ -55,6 +55,9 @@ namespace Infated.CoreEngine
             return Mathf.Floor(CurrentStamina).ToString() + "/" + Mathf.Floor(MaxStamina).ToString();
         }
 
+        public float getStaminaPercentage(){
+            return CurrentStamina / MaxStamina;
+        }
 
     }
 }

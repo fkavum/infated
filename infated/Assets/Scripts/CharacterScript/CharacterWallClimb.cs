@@ -15,14 +15,16 @@ namespace Infated.CoreEngine
         public override string HelpBoxText() { return "This component is required for wall climbing."; }
 
         public float WallClimbDistance = 0.6f;
-        public float StaminaCost = 2.0f;
+        public float StaminaCost = 0.5f;
         private CharacterStamina _Stamina; 
+        private CharacterJump _Jump;
         private bool isClimbing = false;
         private bool isNearWall = false;
         protected override void Initialization()
         {
             base.Initialization();
             _Stamina = GetComponent<CharacterStamina>();
+            _Jump = GetComponent<CharacterJump>();
         }
 
         protected override void HandleInput()
@@ -39,7 +41,8 @@ namespace Infated.CoreEngine
                 //If we are still climbing i.e. not jumped off before releasing the button or finishing the climb
                 if(isClimbing){
                     StopWallClimb();
-                    _movement.ChangeState(CharacterStates.MovementStates.Landing);
+                    _movement.ChangeState(CharacterStates.MovementStates.Jumping);
+                    _Jump.JumpStart();
                 }
             }
 
@@ -51,6 +54,14 @@ namespace Infated.CoreEngine
 
                 if(isClimbing && isNearWall){
                     _controller.SetVerticalForce(10.0f);
+                    float val = _Stamina.spendStamina(StaminaCost);
+                    if(val == 0){
+                        StopWallClimb();
+                        _movement.ChangeState(CharacterStates.MovementStates.Jumping);
+                        _Jump.JumpStart();
+                    }
+                        
+
                 }
                 else if(isClimbing && !isNearWall){
                     StopWallClimb();
@@ -79,9 +90,13 @@ namespace Infated.CoreEngine
                 else
                     _controller.SetHorizontalForce(-2.0f);
             }
-            Debug.Log(_movement.CurrentState);
+            UpdateGuiValues();
+            //Debug.Log(_movement.CurrentState);
         }
 
+        protected virtual void UpdateGuiValues(){
+            _character.mGuiWriter.setStaminaText(_Stamina.getStaminaGuiString(), _Stamina.getStaminaPercentage()); 
+        }
         private void StartWallClimb(){
             isClimbing = true;
             _movement.ChangeState(CharacterStates.MovementStates.pWallClimbing);
