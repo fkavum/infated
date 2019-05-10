@@ -2149,22 +2149,13 @@ MonoBehaviour:
     SpeedAccelerationOnGround: 5
     SpeedAccelerationInAir: 0.5
     SpeedFactor: 0.5
-    MaximumSlopeAngle: 30
+    MaximumSlopeAngle: 60
     SlopeAngleSpeedFactor:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -90
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2172,10 +2163,10 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 90
+        time: 1
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 2
+        outSlope: 2
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -3046,6 +3037,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1348597729524345158}
     m_Modifications:
+    - target: {fileID: 2466545633203942092, guid: a213d9788cc280a498660f05e0f0a2d3,
+        type: 3}
+      propertyPath: m_Name
+      value: PS_parent
+      objectReference: {fileID: 0}
     - target: {fileID: 3745703260964940814, guid: a213d9788cc280a498660f05e0f0a2d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3100,11 +3096,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2466545633203942092, guid: a213d9788cc280a498660f05e0f0a2d3,
-        type: 3}
-      propertyPath: m_Name
-      value: PS_parent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a213d9788cc280a498660f05e0f0a2d3, type: 3}

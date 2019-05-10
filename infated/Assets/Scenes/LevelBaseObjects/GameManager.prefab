@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6512784538957182043}
   - component: {fileID: 6512784538957182042}
   - component: {fileID: 6512784538957182047}
+  - component: {fileID: 1504513222}
+  - component: {fileID: 1504513223}
+  - component: {fileID: 1504513228}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -102,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed21eb47ccab80f42acb5d035fe62b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _GameObject: {fileID: 0}
-  _position: {x: -9, y: 0, z: 0}
-  _camera: {fileID: 0}
+  _Character: {fileID: 7807224888320924601, guid: 2bd9a0cc91d5ea04b8c02af5c800d21d,
+    type: 3}
+  _Gui: {fileID: 0}
+  _Position: {x: 4.4, y: 74.4, z: 0}
+  _Camera: {fileID: 0}
 --- !u!114 &6512784538957182047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +131,60 @@ MonoBehaviour:
   MusicVolume: 0.3
   SfxVolume: 1
   MuteSfxOnPause: 1
+--- !u!61 &1504513222
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512784538957182036}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1152.6726, y: 195.59512}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2423.683, y: 392.1903}
+  m_EdgeRadius: 0
+--- !u!114 &1504513223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512784538957182036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba5994574753004f9ce2f724d043985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1504513228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512784538957182036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac8303d695ecd8409730a8fde76e1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleJumpCount: 0
+  oneJumpCount: 0
+  tripleJumpCount: 0
+  iceChargeAmount: 0
+  iceMagicUsed: 0
+  shapeShiftCount: 0
+  totalCombatTime: 0

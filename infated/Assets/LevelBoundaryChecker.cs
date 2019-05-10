@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LevelBoundaryChecker : MonoBehaviour
 {
+    public Spawner spawner;
     // Start is called before the first frame update
     void Start()
     {
+        spawner = GetComponent<Spawner>();
     }
 
     // Update is called once per frame
@@ -16,6 +18,6 @@ public class LevelBoundaryChecker : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other){
-       other.transform.position = new Vector3(0, 0, 0);
+       other.transform.position = spawner._Position;
     }
 }

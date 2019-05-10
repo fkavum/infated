@@ -30,9 +30,9 @@ public class LevelVisibilityToggler : MonoBehaviour
     }
 
     private void fadeIn(){
-        _Animator.Play("CaveCoverFadeIn");
+        _Animator.Play("FadeIn");
     }
     private void fadeOut(){
-        _Animator.Play("CaveCoverFadeOut");
+        _Animator.Play("FadeOut");
     }
 }
