@@ -15,7 +15,7 @@ namespace Infated.CoreEngine
         public override string HelpBoxText() { return "This component enables turning into a pardus."; }
         public float _TransformingTime = 2.0f;
         public float ManaCostPerSec = 0.1f;
-        private bool PardusMode = false;
+        public bool PardusMode = false;
         private bool isTransformingNow = false;
         private float timer = 0.0f;
         private CharacterMana _Mana;

@@ -53,7 +53,7 @@ namespace Infated.CoreEngine
         /// whether or not the jump happened this frame
         public bool JumpHappenedThisFrame { get; set;  }
 
-	    protected float _jumpButtonPressTime = 0;
+	    protected float _jumpButtonPressTime = 0.5f;
 	    protected bool _jumpButtonPressed = false;
 	    protected bool _jumpButtonReleased = false;
 	    protected bool _doubleJumping = false;
@@ -62,7 +62,7 @@ namespace Infated.CoreEngine
 		//protected CharacterCrouch _characterCrouch = null;
 		//protected CharacterButtonActivation _characterButtonActivation = null;
         protected CharacterLadder _characterLadder = null;
-
+		protected CharacterShapeshift _characterShapeshift = null;
 		protected float _lastTimeGrounded = 0f;
 
 		/// Evaluates the jump restrictions
@@ -132,6 +132,7 @@ namespace Infated.CoreEngine
 			//_characterButtonActivation = GetComponent<CharacterButtonActivation>();
 			_characterHorizontalMovement = GetComponent<CharacterHorizontalMovement> ();
             _characterLadder = GetComponent<CharacterLadder>();
+			_characterShapeshift = GetComponent<CharacterShapeshift>();
 		}	
 
         
@@ -143,8 +144,8 @@ namespace Infated.CoreEngine
 
 			if (_inputManager.JumpButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
 			{
-				if(!_jumpButtonPressed && 
-				(_movement.CurrentState == CharacterStates.MovementStates.Jumping || _movement.CurrentState == CharacterStates.MovementStates.Landing))
+				if(_characterShapeshift.PardusMode || (!_jumpButtonPressed && 
+				(_movement.CurrentState == CharacterStates.MovementStates.Jumping || _movement.CurrentState == CharacterStates.MovementStates.Landing)))
 					JumpStart();
 				else
 					JumpAnticipation();

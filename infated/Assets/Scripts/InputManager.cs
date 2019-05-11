@@ -54,7 +54,7 @@ namespace Infated.CoreEngine
         public InfInput.IInfButton JumpButton { get; protected set; }
         /// Attacks
         public InfInput.IInfButton LightAttackButton { get; protected set; }
-        public InfInput.IInfButton HeavyAttackButton { get; protected set; }
+        public InfInput.IInfButton BlockButton { get; protected set; }
         /// the swim button, used to swim
         /// the activate button, used for interactions with zones
         public InfInput.IInfButton InteractButton { get; protected set; }
@@ -149,7 +149,7 @@ namespace Infated.CoreEngine
 			ButtonList.Add(MovementToggleButton = new InfInput.IInfButton(PlayerID, "MovementToggle", MovementToggleButtonDown, MovementToggleButtonPressed, MovementToggleButtonUp));
 			ButtonList.Add(ShapeshiftButton = new InfInput.IInfButton(PlayerID, "Shapeshift", ShapeshiftButtonDown, ShapeshiftButtonPressed, ShapeshiftButtonUp));
             ButtonList.Add(LightAttackButton = new InfInput.IInfButton(PlayerID, "LightAttack", LightAttackButtonDown, LightAttackButtonPressed, LightAttackButtonUp));
-            ButtonList.Add(HeavyAttackButton = new InfInput.IInfButton(PlayerID, "HeavyAttack", HeavyAttackButtonDown, HeavyAttackButtonPressed, HeavyAttackButtonUp));
+            ButtonList.Add(BlockButton = new InfInput.IInfButton(PlayerID, "Block", BlockButtonDown, BlockButtonPressed, BlockButtonUp));
             ButtonList.Add(ActionButton = new InfInput.IInfButton(PlayerID, "Action", ActionButtonDown, ActionButtonPressed, ActionButtonUp));
             ButtonList.Add(JumpButton = new InfInput.IInfButton(PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
             ButtonList.Add(InteractButton = new InfInput.IInfButton (PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
@@ -380,9 +380,9 @@ namespace Infated.CoreEngine
         public virtual void ShapeshiftButtonPressed() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void ShapeshiftButtonUp() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
-        public virtual void HeavyAttackButtonDown() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void HeavyAttackButtonPressed() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void HeavyAttackButtonUp() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+        public virtual void BlockButtonDown() { BlockButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void BlockButtonPressed() { BlockButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void BlockButtonUp() { BlockButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
         public virtual void LightAttackButtonDown() { LightAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void LightAttackButtonPressed() { LightAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }

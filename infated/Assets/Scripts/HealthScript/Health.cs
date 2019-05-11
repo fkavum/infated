@@ -24,6 +24,7 @@ namespace Infated.CoreEngine
 	    /// the maximum amount of health of the object
 	    public int MaximumHealth = 10;
 
+		public bool isBlocking = false;
 
         [Header("Damage")]
 		//[Information("Here you can specify an effect and a sound FX to instantiate when the object gets damaged, and also how long the object should flicker when hit (only works for sprites).",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
@@ -86,6 +87,9 @@ namespace Infated.CoreEngine
 			InitializeSpriteColor ();
 	    }
 
+		public void SetBlocking(bool b){
+			isBlocking = b;
+		}
 	    /// <summary>
 	    /// Grabs useful components, enables damage and gets the inital color
 	    /// </summary>

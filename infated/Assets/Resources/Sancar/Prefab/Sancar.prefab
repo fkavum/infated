@@ -248,7 +248,8 @@ GameObject:
   - component: {fileID: 6001219151359360939}
   - component: {fileID: 5613238327129319290}
   - component: {fileID: 5088435595275183719}
-
+  - component: {fileID: 8585337575444469392}
+  - component: {fileID: 1534678467829206632}
   m_Layer: 9
   m_Name: Sancar
   m_TagString: Player
@@ -629,6 +630,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   _TransformingTime: 2
   ManaCostPerSec: 0.1
+  PardusMode: 0
 --- !u!114 &6460282362840382723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +849,7 @@ MonoBehaviour:
   Invulnerable: 0
   InitialHealth: 100
   MaximumHealth: 100
+  isBlocking: 0
   DamageEffect: {fileID: 0}
   DamageSfx: {fileID: 0}
   FlickerSpriteOnHit: 1
@@ -859,3 +862,22 @@ MonoBehaviour:
   PointsWhenDestroyed: 0
   VibrateOnDeath: 0
   RespawnAtInitialLocation: 0
+--- !u!114 &1534678467829206632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3e3e634d4304343a2f6480c9ab04f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userProfiler: {fileID: 0}
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityPermitted: 1
+  _stamina: {fileID: 0}
+  _hp: {fileID: 0}

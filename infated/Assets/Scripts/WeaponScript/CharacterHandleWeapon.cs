@@ -307,6 +307,8 @@ namespace Infated.CoreEngine
 			RegisterAnimatorParameter(CurrentWeapon.ReloadAnimationParameter, AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter(CurrentWeapon.SingleUseAnimationParameter, AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter(CurrentWeapon.UseAnimationParameter, AnimatorControllerParameterType.Bool);
+			RegisterAnimatorParameter ("Attack1", AnimatorControllerParameterType.Bool);
+			RegisterAnimatorParameter ("Attack2", AnimatorControllerParameterType.Bool);
 		}
 
 		/// <summary>
@@ -328,6 +330,8 @@ namespace Infated.CoreEngine
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart),_character._animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload),_character._animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"Attack1",(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator,"Attack2",(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
 
 			if (_aimableWeapon != null)
 			{
