@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1807081326533691234}
   - component: {fileID: 1807081326533691245}
   m_Layer: 0
-  m_Name: EthernalSword
+  m_Name: Sancar-EthernalSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,13 +90,13 @@ MonoBehaviour:
   Interruptable: 0
   DamageAreaShape: 0
   AreaSize: {x: 1, y: 1}
-  AreaOffset: {x: 1, y: 0}
+  AreaOffset: {x: 1.25, y: 1.25}
   InitialDelay: 0
   ActiveDuration: 1
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 512
-  DamageCaused: 5
+    m_Bits: 8192
+  DamageCaused: 10
   Knockback: 0
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5

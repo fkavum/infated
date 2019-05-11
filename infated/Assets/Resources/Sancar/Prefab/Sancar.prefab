@@ -548,7 +548,7 @@ MonoBehaviour:
   AbilityInProgressSfx: {fileID: 0}
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
-  InitialWeapon: {fileID: 1807081326533691245, guid: 584239b168aa3634da0afc6e3427cf87,
+  InitialWeapon: {fileID: 1807081326533691245, guid: 53201da137409433d88b5db69a67a012,
     type: 3}
   WeaponAttachment: {fileID: 1619339358701243092}
   CanPickupWeapons: 0
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth: 0
   CurrentHealthInPercentage: 0
-  Invulnerable: 0
+  Invulnerable: 1
   InitialHealth: 100
   MaximumHealth: 100
   isBlocking: 0

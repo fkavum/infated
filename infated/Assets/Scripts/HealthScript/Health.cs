@@ -13,8 +13,13 @@ namespace Infated.CoreEngine
 	{
 		/// the current health of the character
 		[ReadOnly]
+<<<<<<< Updated upstream
 		public int CurrentHealth ;
         public float CurrentHealthInPercentage;
+=======
+		public int CurrentHealth;
+        public float CurrentHealthInPercentage;
+>>>>>>> Stashed changes
         public bool Invulnerable = false;
 
 		[Header("Health")]
@@ -133,9 +138,7 @@ namespace Infated.CoreEngine
                 _animator.logWarnings = false;
             }
 
-            //_autoRespawn = GetComponent<AutoRespawn> ();
 			_controller = GetComponent<CoreController>();
-			//_healthBar = GetComponent<MMHealthBar>();
 			_collider2D = GetComponent<Collider2D>();
 
 			_initialPosition = transform.position;
@@ -242,13 +245,15 @@ namespace Infated.CoreEngine
 				// We make the character's sprite flicker
 				if (_renderer != null)
 				{
-                    Debug.Log("Olmasi gerek bir satir commentlenmiş");
 					//StartCoroutine(MMImage.Flicker(_renderer,_initialColor,_flickerColor,0.05f,flickerDuration));	
 				}	
 			}
 
-			// we update the health bar
-			UpdateHealthBar(true);
+            //CharacterStates.CharacterTypes.AI
+            if (_character.CharacterType == CharacterStates.CharacterTypes.Player)
+            {
+                UpdateHealthBar(true);
+            }
 
 			// if health has reached zero
 			if (CurrentHealth <= 0)
@@ -257,13 +262,13 @@ namespace Infated.CoreEngine
 				CurrentHealth = 0;
 				if (_character != null)
 				{
-                    Debug.Log("Olmasi gerek bir satir commentlenmiş");
-                    /*
-					if (_character.CharacterType == Character.CharacterTypes.Player)
-					{
-						LevelManager.Instance.KillPlayer(_character);
-						return;
-					}*/
+                    Debug.Log("Character's Health is " + CurrentHealth);
+
+					//if (_character.CharacterType == Character.CharacterTypes.Player)
+					//{
+					//	LevelManager.Instance.KillPlayer(_character);
+					//	return;
+					//}
                 }
 
 				Kill();
@@ -353,45 +358,6 @@ namespace Infated.CoreEngine
 			}
 		}
 
-		/// <summary>
-		/// Revive this object.
-		/// </summary>
-		public virtual void Revive()
-		{
-			if (!_initialized)
-			{
-				return;
-			}
-
-			if (_collider2D != null)
-			{
-				_collider2D.enabled = true;
-			}
-			if (_controller != null)
-			{
-				_controller.CollisionsOn();
-				_controller.SetForce(Vector2.zero);
-				_controller.ResetParameters();
-			}
-			if (_character != null)
-			{
-				_character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
-			}
-
-			if (RespawnAtInitialLocation)
-			{
-				transform.position = _initialPosition;
-			}
-
-			Initialization();
-			ResetSpriteColor ();
-			UpdateHealthBar(false);
-			if (OnRevive != null)
-			{
-				OnRevive ();
-			}
-		}
-
 	    /// <summary>
 	    /// Destroys the object, or tries to, depending on the character's settings
 	    /// </summary>
@@ -401,20 +367,7 @@ namespace Infated.CoreEngine
 			{
 				return;
 			}
-            // TODO :  Auto respawn geldikten sonra aşağıdaki satırı kaldırıp if koşullarını aktive et.
-            // object is turned inactive to be able to reinstate it at respawn
             gameObject.SetActive(false);
-            /*
-			if (_autoRespawn == null)
-			{
-				// object is turned inactive to be able to reinstate it at respawn
-				gameObject.SetActive(false);	
-			}
-			else
-			{
-				_autoRespawn.Kill ();
-			}*/
-
         }
 
 		/// <summary>
@@ -442,10 +395,19 @@ namespace Infated.CoreEngine
 	    /// </summary>
 		protected virtual void UpdateHealthBar(bool show)
         {
+<<<<<<< Updated upstream
             Debug.Log("Current Health " + CurrentHealth);
             CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
             _character.mGuiWriter.setHp(CurrentHealthInPercentage);
             Debug.Log("Current Health Percentage " + CurrentHealthInPercentage);
+=======
+            if(show)
+            {   
+                CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
+                _character.mGuiWriter.setHp(CurrentHealthInPercentage);
+                Debug.Log(CurrentHealth);
+            }
+>>>>>>> Stashed changes
 	    }
 
 	    /// <summary>

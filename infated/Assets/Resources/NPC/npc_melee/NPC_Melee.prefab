@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 937791497}
   - component: {fileID: 937791496}
   - component: {fileID: 937791498}
+  - component: {fileID: 1266947165320661005}
   m_Layer: 13
   m_Name: NPC_Melee
   m_TagString: Untagged
@@ -68,7 +69,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6f37c5a452e8cb84d96ec0c818bf0994, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -543,6 +544,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AfterTimeMin: 0.1
   AfterTimeMax: 0.1
+--- !u!114 &1266947165320661005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937791477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c004d72982fc64d9f98788cc57ac47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  CurrentHealthInPercentage: 0
+  Invulnerable: 0
+  InitialHealth: 30
+  MaximumHealth: 30
+  DamageEffect: {fileID: 0}
+  DamageSfx: {fileID: 0}
+  FlickerSpriteOnHit: 1
+  ImmuneToKnockback: 0
+  DeathEffect: {fileID: 0}
+  DestroyOnDeath: 1
+  DelayBeforeDestruction: 0
+  CollisionsOffOnDeath: 1
+  DeathForce: {x: 0, y: 10}
+  PointsWhenDestroyed: 0
+  VibrateOnDeath: 0
+  RespawnAtInitialLocation: 0
 --- !u!1 &1640816096
 GameObject:
   m_ObjectHideFlags: 0

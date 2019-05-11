@@ -153,12 +153,6 @@ namespace Infated.CoreEngine
             }
         }
 
-
-      
-    
-
-
-
     /// <summary>
     /// When entering the state we reset our shoot counter and grab our weapon
     /// </summary>
