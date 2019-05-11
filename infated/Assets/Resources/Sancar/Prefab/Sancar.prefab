@@ -246,6 +246,8 @@ GameObject:
   - component: {fileID: 3615015981981838614}
   - component: {fileID: 5988958342251902498}
   - component: {fileID: 6001219151359360939}
+  - component: {fileID: 5613238327129319290}
+  - component: {fileID: 5088435595275183719}
   m_Layer: 0
   m_Name: Sancar
   m_TagString: Player
@@ -742,3 +744,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegenCooldown: 1.5
   RegenAmount: 2.5
+--- !u!114 &5613238327129319290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: Sancar(Clone)
+  persistentDataName: 
+  portrait: {fileID: 2800000, guid: f047abc30adba984393b9440f38f91e0, type: 3}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    useMenuPanelFor: 0
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 0
+    applyColorToPrependedName: 0
+    prependActorNameSeparator: ': '
+    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5088435595275183719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624654ff0a68ee844994f728ddf3d991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectAt: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  distanceFrom: 1
+  maxSelectionDistance: 30
+  runRaycasts: 0
+  raycastAll: 0
+  useDefaultGUI: 1
+  guiSkin: {fileID: 11400000, guid: a335577d0e85761409aeef66f54670e1, type: 2}
+  guiStyleName: label
+  alignment: 1
+  textStyle: 1
+  textStyleColor: {r: 0, g: 0, b: 0, a: 1}
+  inRangeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  outOfRangeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  reticle:
+    inRange: {fileID: 0}
+    outOfRange: {fileID: 0}
+    width: 64
+    height: 64
+  useKey: 32
+  useButton: Fire2
+  defaultUseMessage: (spacebar to interact)
+  broadcastToChildren: 1
+  actorTransform: {fileID: 7807224888320924606}
+  tooFarMessage: 
+  onSelectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onDeselectedUsable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  tooFarEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  debug: 1
