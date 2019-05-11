@@ -38,11 +38,11 @@ namespace Infated.CoreEngine
         protected override void HandleInput()
         {   
 
-            if (_inputManager.FireMagicButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
+            if (_inputManager._magicCharge > 0 && !Mana.Charging) 
             {
                 StartMagicCharge();
             }
-            if (_inputManager.FireMagicButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
+            if (_inputManager._magicCharge == 0)
             {
                 EndMagicCharge();
             }

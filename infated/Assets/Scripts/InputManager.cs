@@ -50,27 +50,15 @@ namespace Infated.CoreEngine
 		public InfInput.IInfButton ShapeshiftButton { get; protected set; }
         /// the action button (use doors, levers, interactions, cast magic)
         public InfInput.IInfButton ActionButton { get; protected set; }
-        /// the ice magic
-        public InfInput.IInfButton IceMagicButton { get; protected set; }
-        /// the fire magic
-        public InfInput.IInfButton FireMagicButton { get; protected set; }
         /// the jump button, used for jumps
         public InfInput.IInfButton JumpButton { get; protected set; }
         /// Attacks
         public InfInput.IInfButton LightAttackButton { get; protected set; }
         public InfInput.IInfButton HeavyAttackButton { get; protected set; }
         /// the swim button, used to swim
-        public InfInput.IInfButton SwimButton { get; protected set; }
-        /// the glide button, used to glide in the air
-        public InfInput.IInfButton GlideButton { get; protected set; }
         /// the activate button, used for interactions with zones
         public InfInput.IInfButton InteractButton { get; protected set; }
         /// the jetpack button
-        public InfInput.IInfButton JetpackButton { get; protected set; }
-        /// the fly button
-        public InfInput.IInfButton FlyButton { get; protected set; }
-        /// the run button
-        public InfInput.IInfButton RunButton { get; protected set; }
 		/// the dash button
 		public InfInput.IInfButton DashButton { get; protected set; }
 		/// the shoot button
@@ -91,11 +79,13 @@ namespace Infated.CoreEngine
 		protected List<InfInput.IInfButton> ButtonList;
         protected Vector2 _primaryMovement = new Vector2(1f,1f); // Vector2.zero;
         protected Vector2 _secondaryMovement = new Vector2(1f,1f); //Vector2.zero;
+		public float _magicCharge;
 		protected string _axisHorizontal;
 		protected string _axisVertical;
 		protected string _axisSecondaryHorizontal;
 		protected string _axisSecondaryVertical;
 		protected string _axisShoot;
+		protected string _axisMagic;
 
 	    /// <summary>
 	    /// On Start we look for what mode to use, and initialize our axis and buttons
@@ -161,16 +151,9 @@ namespace Infated.CoreEngine
             ButtonList.Add(LightAttackButton = new InfInput.IInfButton(PlayerID, "LightAttack", LightAttackButtonDown, LightAttackButtonPressed, LightAttackButtonUp));
             ButtonList.Add(HeavyAttackButton = new InfInput.IInfButton(PlayerID, "HeavyAttack", HeavyAttackButtonDown, HeavyAttackButtonPressed, HeavyAttackButtonUp));
             ButtonList.Add(ActionButton = new InfInput.IInfButton(PlayerID, "Action", ActionButtonDown, ActionButtonPressed, ActionButtonUp));
-            ButtonList.Add(IceMagicButton = new InfInput.IInfButton(PlayerID, "IceMagic", IceMagicButtonDown, IceMagicButtonPressed, IceMagicButtonUp));
-            ButtonList.Add(FireMagicButton = new InfInput.IInfButton(PlayerID, "FireMagic", FireMagicButtonDown, FireMagicButtonPressed, FireMagicButtonUp));
             ButtonList.Add(JumpButton = new InfInput.IInfButton(PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
-            ButtonList.Add(SwimButton = new InfInput.IInfButton(PlayerID, "Swim", SwimButtonDown, SwimButtonPressed, SwimButtonUp));
-            ButtonList.Add(GlideButton = new InfInput.IInfButton(PlayerID, "Glide", GlideButtonDown, GlideButtonPressed, GlideButtonUp));
             ButtonList.Add(InteractButton = new InfInput.IInfButton (PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
-			ButtonList.Add(JetpackButton = new InfInput.IInfButton (PlayerID, "Jetpack", JetpackButtonDown, JetpackButtonPressed, JetpackButtonUp)); 
-			ButtonList.Add(RunButton  = new InfInput.IInfButton (PlayerID, "Run", RunButtonDown, RunButtonPressed, RunButtonUp));
-            ButtonList.Add(DashButton = new InfInput.IInfButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
-            ButtonList.Add(FlyButton = new InfInput.IInfButton(PlayerID, "Fly", FlyButtonDown, FlyButtonPressed, FlyButtonUp));
+			ButtonList.Add(DashButton = new InfInput.IInfButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
             ButtonList.Add(ShootButton = new InfInput.IInfButton (PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp)); 
 			ButtonList.Add(ReloadButton = new InfInput.IInfButton (PlayerID, "Reload", ReloadButtonDown, ReloadButtonPressed, ReloadButtonUp));
 			ButtonList.Add(SwitchWeaponButton = new InfInput.IInfButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
@@ -187,6 +170,7 @@ namespace Infated.CoreEngine
 			_axisSecondaryHorizontal = PlayerID+"_SecondaryHorizontal";
 			_axisSecondaryVertical = PlayerID+"_SecondaryVertical";
 			_axisShoot = PlayerID+"_ShootAxis";
+			_axisMagic = PlayerID+"_MagicCast";
 		}
 
 		/// <summary>
@@ -206,6 +190,7 @@ namespace Infated.CoreEngine
 			{	
 				SetMovement();	
 				SetSecondaryMovement ();
+				SetMagic();
 				SetShootAxis ();
 				GetInputButtons ();
 			}									
@@ -272,7 +257,10 @@ namespace Infated.CoreEngine
 				}
 			}
 		}
-
+		public virtual void SetMagic()
+		{
+			_magicCharge = Input.GetAxisRaw(_axisMagic);	
+		}
 		/// <summary>
 		/// Called every frame, if not on mobile, gets secondary movement values from input
 		/// </summary>
@@ -392,15 +380,6 @@ namespace Infated.CoreEngine
         public virtual void ShapeshiftButtonPressed() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void ShapeshiftButtonUp() { ShapeshiftButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
-
-        public virtual void IceMagicButtonDown() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void IceMagicButtonPressed() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void IceMagicButtonUp() { IceMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
-        public virtual void FireMagicButtonDown() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void FireMagicButtonPressed() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void FireMagicButtonUp() { FireMagicButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
         public virtual void HeavyAttackButtonDown() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void HeavyAttackButtonPressed() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void HeavyAttackButtonUp() { HeavyAttackButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
@@ -417,14 +396,6 @@ namespace Infated.CoreEngine
         public virtual void ActionButtonPressed() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void ActionButtonUp() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
-        public virtual void SwimButtonDown()        { SwimButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void SwimButtonPressed()     { SwimButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void SwimButtonUp()          { SwimButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
-        public virtual void GlideButtonDown()       { GlideButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void GlideButtonPressed()    { GlideButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void GlideButtonUp()         { GlideButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
         public virtual void InteractButtonDown()	{ InteractButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
 		public virtual void InteractButtonPressed()	{ InteractButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
 		public virtual void InteractButtonUp()		{ InteractButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
@@ -432,18 +403,6 @@ namespace Infated.CoreEngine
         public virtual void DashButtonDown()        { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void DashButtonPressed()     { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void DashButtonUp()          { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
-        public virtual void FlyButtonDown()         { FlyButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
-        public virtual void FlyButtonPressed()      { FlyButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
-        public virtual void FlyButtonUp()           { FlyButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
-        public virtual void RunButtonDown()			{ RunButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
-		public virtual void RunButtonPressed()		{ RunButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
-		public virtual void RunButtonUp()			{ RunButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
-
-		public virtual void JetpackButtonDown()		{ JetpackButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
-		public virtual void JetpackButtonPressed()	{ JetpackButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
-		public virtual void JetpackButtonUp()		{ JetpackButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
 
 		public virtual void ReloadButtonDown()		{ ReloadButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
 		public virtual void ReloadButtonPressed()	{ ReloadButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }

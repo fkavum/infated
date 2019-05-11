@@ -21,7 +21,6 @@ namespace Infated.CoreEngine
         public float MinimumCharge = 5.0f;
         protected float ChargedAmount = 0.0f;
 
-
         /// <summary>
         /// On Start() we reset our number of jumps
         /// </summary>

@@ -1,49 +1,29 @@
 fileFormatVersion: 2
-guid: 06b7292fc47a7904c8d4d343943d8630
+guid: 40aabd3bbe5fc294d837a032b791e683
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: BG
-    100002: ForegroundWalls
+    100000: Level2_BG
+    100002: Level2_FG
     100004: //RootNode
-    100006: Walls
-    100008: Level2_BG
-    100010: Level2_FG
-    100012: Level2_Walls
-    100014: Level2_Floor
-    400000: BG
-    400002: ForegroundWalls
+    100006: Level2_Walls
+    400000: Level2_BG
+    400002: Level2_FG
     400004: //RootNode
-    400006: Walls
-    400008: Level2_BG
-    400010: Level2_FG
-    400012: Level2_Walls
-    400014: Level2_Floor
+    400006: Level2_Walls
     2100000: No Name
-    2300000: BG
-    2300002: ForegroundWalls
-    2300004: Walls
-    2300006: Level2_BG
-    2300008: Level2_FG
-    2300010: Level2_Walls
-    2300012: Level2_Floor
-    3300000: BG
-    3300002: ForegroundWalls
-    3300004: Walls
-    3300006: Level2_BG
-    3300008: Level2_FG
-    3300010: Level2_Walls
-    3300012: Level2_Floor
-    4300000: Walls
-    4300002: BG
-    4300004: ForegroundWalls
-    4300006: Level2_Walls
-    4300008: Level2_BG
-    4300010: Level2_FG
-    4300012: Level2_Floor
+    2300000: Level2_BG
+    2300002: Level2_FG
+    2300004: Level2_Walls
+    3300000: Level2_BG
+    3300002: Level2_FG
+    3300004: Level2_Walls
+    4300000: Level2_Walls
+    4300002: Level2_BG
+    4300004: Level2_FG
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -72,7 +52,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
