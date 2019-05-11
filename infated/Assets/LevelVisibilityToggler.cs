@@ -11,7 +11,6 @@ public class LevelVisibilityToggler : MonoBehaviour
     void Start()
     {
         _Animator = _Object.GetComponent<Animator>();
-        _Object.GetComponent<MeshRenderer>().sortingOrder = 2;
     }
 
     // Update is called once per frame
@@ -22,11 +21,11 @@ public class LevelVisibilityToggler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        fadeIn();
+        if(other.tag == "Player") fadeIn();
     }
 
     private void OnTriggerExit2D(Collider2D other){
-       fadeOut();
+       if(other.tag == "Player") fadeOut();
     }
 
     private void fadeIn(){

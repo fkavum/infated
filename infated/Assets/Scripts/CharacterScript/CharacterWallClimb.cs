@@ -118,6 +118,7 @@ namespace Infated.CoreEngine
                 direction = Vector2.left;
                 position.x -= 1;
             }
+            position.y -= 0.5f;
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(position, direction, WallClimbDistance, LayerMask.NameToLayer("Platform"), Mathf.Infinity, Mathf.Infinity);
             

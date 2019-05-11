@@ -14,10 +14,11 @@ namespace Infated.CoreEngine
         /// This method is only used to display a helpbox text at the beginning of the ability's inspector
         public override string HelpBoxText() { return "This component enables turning into a pardus."; }
         public float _TransformingTime = 2.0f;
+        public float ManaCostPerSec = 0.1f;
         private bool PardusMode = false;
         private bool isTransformingNow = false;
         private float timer = 0.0f;
-
+        private CharacterMana _Mana;
         private const int NUMBER_OF_ABILITIES_TO_DISABLE = 6;        
         // Get the abilitiy references that you want to disable while shapeshifting transformation
         private CharacterAbility[] abilitiesToDisable = new CharacterAbility[NUMBER_OF_ABILITIES_TO_DISABLE];
@@ -30,6 +31,9 @@ namespace Infated.CoreEngine
         protected override void Initialization()
         {
             base.Initialization();
+
+            _Mana = GetComponent<CharacterMana>();
+            
             abilitiesToDisable[0] = GetComponent<CharacterHorizontalMovement>();
             abilitiesToDisable[1] = GetComponent<CharacterIceMagic>();
             abilitiesToDisable[2] = GetComponent<CharacterJump>();
@@ -47,7 +51,7 @@ namespace Infated.CoreEngine
             {
                 StartShapeshift();
                 if (_userProfiler != null) { 
-                _userProfiler.shapeShiftCount++;
+                    _userProfiler.shapeShiftCount++;
                 }
             }
         }
@@ -124,6 +128,13 @@ namespace Infated.CoreEngine
             }
             else{
                 timer = 0.0f;
+            }
+
+            if(PardusMode == true && isTransformingNow == false){
+                float amount = _Mana.spendMana(ManaCostPerSec);
+                if(amount == 0){
+                    StartShapeshift();
+                }
             }
         }
     }
