@@ -13,13 +13,9 @@ namespace Infated.CoreEngine
 	{
 		/// the current health of the character
 		[ReadOnly]
-<<<<<<< Updated upstream
-		public int CurrentHealth ;
-        public float CurrentHealthInPercentage;
-=======
+
 		public int CurrentHealth;
         public float CurrentHealthInPercentage;
->>>>>>> Stashed changes
         public bool Invulnerable = false;
 
 		[Header("Health")]
@@ -395,19 +391,14 @@ namespace Infated.CoreEngine
 	    /// </summary>
 		protected virtual void UpdateHealthBar(bool show)
         {
-<<<<<<< Updated upstream
-            Debug.Log("Current Health " + CurrentHealth);
-            CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
-            _character.mGuiWriter.setHp(CurrentHealthInPercentage);
-            Debug.Log("Current Health Percentage " + CurrentHealthInPercentage);
-=======
+
             if(show)
             {   
                 CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
                 _character.mGuiWriter.setHp(CurrentHealthInPercentage);
                 Debug.Log(CurrentHealth);
             }
->>>>>>> Stashed changes
+
 	    }
 
 	    /// <summary>
@@ -443,7 +434,7 @@ namespace Infated.CoreEngine
 		{
 			CurrentHealth = InitialHealth;
 			DamageEnabled();
-			UpdateHealthBar (false);
+			UpdateHealthBar(false);
 		}
 	}
 }
