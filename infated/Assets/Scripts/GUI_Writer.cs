@@ -6,7 +6,7 @@ public class GUI_Writer : MonoBehaviour
 {
     public GameObject mGui;
     public UnityEngine.UI.Text mMana, mCharge, mChargeType, mStamina;
-    public UnityEngine.UI.Image mManabar, mStaminabar;
+    public UnityEngine.UI.Image mHpBar, mManabar, mStaminabar;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +30,10 @@ public class GUI_Writer : MonoBehaviour
         GameObject[] guiPanel;
 
         foreach(GameObject child in guiChildren){
-            if(child.name == "MagicPanel"){
+            if (child.name == "MagicPanel") {
                 guiPanel = getAllChildren(child);
-                foreach(GameObject magicChild in guiPanel){
-                    switch(magicChild.name){
+                foreach (GameObject magicChild in guiPanel) {
+                    switch (magicChild.name) {
                         case "Mana":
                             mMana = magicChild.GetComponent<UnityEngine.UI.Text>();
                             mMana.text = "10/100";
@@ -49,6 +49,20 @@ public class GUI_Writer : MonoBehaviour
                         case "ManaBar":
                             mManabar = magicChild.GetComponent<UnityEngine.UI.Image>();
                             mManabar.fillAmount = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            else if (child.name == "HpPanel")
+            {
+                guiPanel = getAllChildren(child);
+                foreach (GameObject hpChild in guiPanel) {
+                    switch (hpChild.name) {
+                        case "HpBar":
+                            mHpBar = hpChild.GetComponent<UnityEngine.UI.Image>();
+                            mHpBar.fillAmount = 1;
                             break;
                         default:
                             break;
@@ -90,6 +104,12 @@ public class GUI_Writer : MonoBehaviour
         mMana.text = amount;
         mManabar.fillAmount = percentage;
     }
+
+    public void setHp(float percentage)
+    {
+        mHpBar.fillAmount = percentage;
+    }
+
     public void setChargeTypeText(string type){
         mChargeType.text = type;
     }

@@ -248,7 +248,8 @@ GameObject:
   - component: {fileID: 6001219151359360939}
   - component: {fileID: 5613238327129319290}
   - component: {fileID: 5088435595275183719}
-  m_Layer: 0
+  - component: {fileID: 8585337575444469392}
+  m_Layer: 9
   m_Name: Sancar
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -645,6 +646,7 @@ MonoBehaviour:
   mCharge: {fileID: 0}
   mChargeType: {fileID: 0}
   mStamina: {fileID: 0}
+  mHpBar: {fileID: 0}
   mManabar: {fileID: 0}
   mStaminabar: {fileID: 0}
 --- !u!114 &4425453556564442702
@@ -828,3 +830,32 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   debug: 1
+--- !u!114 &8585337575444469392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807224888320924601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c004d72982fc64d9f98788cc57ac47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  CurrentHealthInPercentage: 0
+  Invulnerable: 0
+  InitialHealth: 100
+  MaximumHealth: 100
+  DamageEffect: {fileID: 0}
+  DamageSfx: {fileID: 0}
+  FlickerSpriteOnHit: 1
+  ImmuneToKnockback: 0
+  DeathEffect: {fileID: 0}
+  DestroyOnDeath: 1
+  DelayBeforeDestruction: 0
+  CollisionsOffOnDeath: 1
+  DeathForce: {x: 0, y: 10}
+  PointsWhenDestroyed: 0
+  VibrateOnDeath: 0
+  RespawnAtInitialLocation: 0

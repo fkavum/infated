@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.Collections;
 using Infated.Tools;
 
 namespace Infated.CoreEngine
@@ -8,15 +9,13 @@ namespace Infated.CoreEngine
 	/// This class manages the health of an object, pilots its potential health bar, handles what happens when it takes damage,
 	/// and what happens when it dies.
 	/// </summary>
-	[AddComponentMenu("Corgi Engine/Character/Core/Health")] 
 	public class Health : MonoBehaviour
 	{
 		/// the current health of the character
-		//[ReadOnly]
+		[ReadOnly]
 		public int CurrentHealth ;
-		/// If this is true, this object can't take damage
-		//[ReadOnly]
-		public bool Invulnerable = false;	
+        public float CurrentHealthInPercentage;
+        public bool Invulnerable = false;
 
 		[Header("Health")]
 		//[Information("Add this component to an object and it'll have health, will be able to get damaged and potentially die.",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
@@ -25,7 +24,8 @@ namespace Infated.CoreEngine
 	    /// the maximum amount of health of the object
 	    public int MaximumHealth = 10;
 
-		[Header("Damage")]
+
+        [Header("Damage")]
 		//[Information("Here you can specify an effect and a sound FX to instantiate when the object gets damaged, and also how long the object should flicker when hit (only works for sprites).",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
 		/// the effect that will be instantiated everytime the character touches the ground
 		public GameObject DamageEffect;
@@ -137,7 +137,7 @@ namespace Infated.CoreEngine
 			_initialPosition = transform.position;
 			_initialized = true;
 			CurrentHealth = InitialHealth;
-			DamageEnabled();
+            DamageEnabled();
 			UpdateHealthBar (false);
 		}
 
@@ -271,13 +271,6 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public virtual void Kill()
 		{
-			// we make our handheld device vibrate
-			if (VibrateOnDeath)
-			{
-				#if UNITY_ANDROID || UNITY_IPHONE
-					Handheld.Vibrate();	
-				#endif
-			}
 
 			// we prevent further damage
 			DamageDisabled();
@@ -421,18 +414,6 @@ namespace Infated.CoreEngine
         }
 
 		/// <summary>
-		/// Called when the character gets health (from a stimpack for example)
-		/// </summary>
-		/// <param name="health">The health the character gets.</param>
-		/// <param name="instigator">The thing that gives the character health.</param>
-		public virtual void GetHealth(int health,GameObject instigator)
-		{
-			// this function adds health to the character's Health and prevents it to go above MaxHealth.
-			CurrentHealth = Mathf.Min (CurrentHealth + health,MaximumHealth);
-			UpdateHealthBar(true);
-		}
-
-		/// <summary>
 		/// Plays a sound when the character is hit
 		/// </summary>
 		protected virtual void PlayHitSfx()
@@ -456,25 +437,11 @@ namespace Infated.CoreEngine
 	    /// Updates the character's health bar progress.
 	    /// </summary>
 		protected virtual void UpdateHealthBar(bool show)
-	    {
-            /*
-	    	if (_healthBar != null)
-	    	{
-				_healthBar.UpdateBar(CurrentHealth, 0f, MaximumHealth, show);
-	    	}
-
-	    	if (_character != null)
-	    	{
-	    		if (_character.CharacterType == Character.CharacterTypes.Player)
-	    		{
-					// We update the health bar
-					if (GUIManager.Instance != null)
-					{
-						GUIManager.Instance.UpdateHealthBar(CurrentHealth, 0f, MaximumHealth, _character.PlayerID);
-					}
-	    		}
-	    	}*/
-            return;
+        {
+            Debug.Log("Current Health " + CurrentHealth);
+            CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
+            _character.mGuiWriter.setHp(CurrentHealthInPercentage);
+            Debug.Log("Current Health Percentage " + CurrentHealthInPercentage);
 	    }
 
 	    /// <summary>

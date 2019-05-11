@@ -165,8 +165,7 @@ namespace Infated.CoreEngine
     public override void OnEnterState()
         {
             base.OnEnterState();
-            Debug.Log("I entered the State");
-           _numberOfShoots = 0;
+            _numberOfShoots = 0;
             _shooting = true;
             //_weaponAim = _characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<WeaponAim>();
             //_projectileWeapon = _characterHandleWeapon.CurrentWeapon.gameObject.GetComponentNoAlloc<ProjectileWeapon>();
