@@ -35,6 +35,7 @@ public class CharacterStates
 			Walking,
 			Running,
 			Attacking,
+			JumpAnticipation,
 			Jumping,
 			DoubleJumping,
 			Landing,

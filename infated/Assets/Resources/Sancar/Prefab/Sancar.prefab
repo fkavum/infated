@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 6001219151359360939}
   - component: {fileID: 5613238327129319290}
   - component: {fileID: 5088435595275183719}
-  - component: {fileID: 8585337575444469392}
+
   m_Layer: 9
   m_Name: Sancar
   m_TagString: Player

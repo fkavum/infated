@@ -143,7 +143,12 @@ namespace Infated.CoreEngine
 
 			if (_inputManager.JumpButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
 			{
-				JumpStart();
+				if(!_jumpButtonPressed && 
+				(_movement.CurrentState == CharacterStates.MovementStates.Jumping || _movement.CurrentState == CharacterStates.MovementStates.Landing))
+					JumpStart();
+				else
+					JumpAnticipation();
+
 			}
 			if (_inputManager.JumpButton.State.CurrentState == InfInput.ButtonStates.ButtonUp)
 			{
@@ -151,6 +156,7 @@ namespace Infated.CoreEngine
 			}
 		}	
 
+		
 		/// <summary>
 		/// Every frame we perform a number of checks related to jump
 		/// </summary>
@@ -294,6 +300,16 @@ namespace Infated.CoreEngine
 			}	
 
 			return true;
+		}
+
+		protected void JumpAnticipation(){
+			if (!AbilityPermitted) { return; }
+
+			if (!EvaluateJumpConditions())
+			{
+				return;
+			}
+			_movement.ChangeState(CharacterStates.MovementStates.JumpAnticipation);
 		}
 
 		/// <summary>
@@ -446,6 +462,7 @@ namespace Infated.CoreEngine
 			RegisterAnimatorParameter ("Jumping", AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter ("DoubleJumping", AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter ("HitTheGround", AnimatorControllerParameterType.Bool);
+			RegisterAnimatorParameter ("JumpAnticipation", AnimatorControllerParameterType.Bool);
 		}
 
 		/// <summary>
@@ -455,7 +472,8 @@ namespace Infated.CoreEngine
 		{
 			InfAnimator.UpdateAnimatorBool(_animator,"Jumping",(_movement.CurrentState == CharacterStates.MovementStates.Jumping),_character._animatorParameters);
 			InfAnimator.UpdateAnimatorBool(_animator,"DoubleJumping",_doubleJumping,_character._animatorParameters);
-            InfAnimator.UpdateAnimatorBool (_animator, "HitTheGround", _controller.State.JustGotGrounded, _character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "HitTheGround", _controller.State.JustGotGrounded, _character._animatorParameters);
+			InfAnimator.UpdateAnimatorBool(_animator, "JumpAnticipation", _movement.CurrentState == CharacterStates.MovementStates.JumpAnticipation, _character._animatorParameters);
 		}
 
 		/// <summary>
