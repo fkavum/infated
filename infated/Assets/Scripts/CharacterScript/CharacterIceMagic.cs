@@ -85,7 +85,9 @@ namespace Infated.CoreEngine
                 _character.mGuiWriter.setChargeTypeText("Discharged");
         }
         private void CreateIceBlock(){
+            
             Vector3 position = _character.transform.position;
+            Debug.Log("My Pos: " + position.x + " " + position.y);
             if(_character.IsFacingRight){
                 position.x += BlockOffset;
             }
@@ -95,10 +97,13 @@ namespace Infated.CoreEngine
 
             RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down);
             if(hit.collider != null){
-                GameObject iceBlockInstance = Instantiate(IceBlock, hit.point, Quaternion.identity);
-                float height = ((ChargedAmount - MinimumCharge) * (MaximumBlockHeight - MinimumBlockHeight) / (MaxChargeAmount - MinimumCharge)) + MinimumBlockHeight;
-                
-                iceBlockInstance.transform.localScale = new Vector3(1, height, 1);
+                Debug.Log("Target Pos: " + hit.collider.transform.position.x + " " + hit.collider.transform.position.y);
+                Vector2 target = hit.point;
+                GameObject iceBlockInstance = Instantiate(IceBlock, target, Quaternion.identity);
+                IceBlockConcatanate iceBlockScript = iceBlockInstance.GetComponent<IceBlockConcatanate>();
+                iceBlockScript.amount = (int)Mathf.Floor((ChargedAmount / MaxChargeAmount) * 3);
+
+                //iceBlockInstance.transform.localScale = new Vector3(1, height, 1);
                 ChargedAmount = 0;
             }
             EndMagicCharge();

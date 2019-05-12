@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 784c18fb7eee6b84a8c4b0ffc130cf3d
+guid: 45358647b35013c4d83937f43a83fc05
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fire_0
-    21300002: fire_1
-    21300004: fire_2
-    21300006: fire_3
-    21300008: fire_4
-    21300010: fire_5
+    21300000: magic_spritesheet_0
+    21300002: magic_spritesheet_1
+    21300004: magic_spritesheet_2
+    21300006: magic_spritesheet_3
+    21300008: magic_spritesheet_4
+    21300010: magic_spritesheet_5
+    21300012: magic_spritesheet_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,121 +91,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire_0
+      name: magic_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 275
-        width: 410
-        height: 275
+        y: 1076
+        width: 300
+        height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8fcfebc4e9881248944ffd0bdb08f6c
+      spriteID: 5a548849f2bbc8c44a6b9c640db13a3d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_1
+      name: magic_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 410
-        y: 275
-        width: 410
-        height: 275
+        x: 0
+        y: 926
+        width: 300
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb4ca60239949d441ac022d156709e3d
+      spriteID: 3663405edab09784085adf127183a53c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_2
+      name: magic_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 820
-        y: 275
-        width: 410
-        height: 275
+        x: 0
+        y: 776
+        width: 300
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035a88aa22f619048aeb768366e9b952
+      spriteID: 214fdd8e903668d4e9b3c45cda88e28d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_3
+      name: magic_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 626
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae625d7f215e1824a9e361c1ced79416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 475
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d230363fa6cde31468fabd8998866017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 326
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c1176a29af14f4a99a40e94d529e8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_spritesheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 410
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 300
+        height: 304
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2d75a4ce5a9a4f43ae61cbe957dbb08
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire_4
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 0
-        width: 410
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fb32afb32d99e840af3391273b515cf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fire_5
-      rect:
-        serializedVersion: 2
-        x: 820
-        y: 0
-        width: 410
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34b2d504b37d81348a4f6b3ef7c90995
+      spriteID: bf1027bbc722ea342861fdc1cdc54659
       vertices: []
       indices: 
       edges: []
@@ -212,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 068e260a4abfa65478809fd788759a9f
+    spriteID: 1181d1fa00139724181250b329bb4602
     vertices: []
     indices: 
     edges: []

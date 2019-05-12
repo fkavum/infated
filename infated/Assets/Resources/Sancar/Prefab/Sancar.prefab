@@ -330,7 +330,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.81537175, y: -3.8816185}
+  m_Offset: {x: 0, y: -3.8816185}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -356,7 +356,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.81537175, y: -3.8816185}
+  m_Offset: {x: 0, y: -3.8816185}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RegenCooldown: 4
-  RegenAmount: 0.05
+  RegenAmount: 0.1
   Charging: 0
   CurrentChargeType: 0
 --- !u!114 &3104302588705471600
@@ -685,11 +685,11 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
   DeltaCharge: 0.5
-  MaxChargeAmount: 20
+  MaxChargeAmount: 25
   MinimumCharge: 5
   IceBlock: {fileID: 7703296408480403947, guid: 02e34eb79c786fd4598934ec3fa33edc,
     type: 3}
-  BlockOffset: 3
+  BlockOffset: 4
   MinimumBlockHeight: 0.2
   MaximumBlockHeight: 1
 --- !u!114 &3615015981981838614
@@ -714,7 +714,7 @@ MonoBehaviour:
   MinimumCharge: 5
   FireObject: {fileID: 5975552266938463561, guid: 7fb53d9487e4e9848a2d74490a32885b,
     type: 3}
-  FireOffset: 2
+  FireOffset: 1.2
 --- !u!114 &5988958342251902498
 MonoBehaviour:
   m_ObjectHideFlags: 0

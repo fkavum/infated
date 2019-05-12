@@ -7,20 +7,25 @@ ModelImporter:
     100002: Foreground
     100004: //RootNode
     100006: Water
+    100008: Object001
     400000: Floor
     400002: Foreground
     400004: //RootNode
     400006: Water
+    400008: Object001
     2100000: No Name
     2300000: Floor
     2300002: Foreground
     2300004: Water
+    2300006: Object001
     3300000: Floor
     3300002: Foreground
     3300004: Water
+    3300006: Object001
     4300000: Water
     4300002: Floor
     4300004: Foreground
+    4300006: Object001
   externalObjects: {}
   materials:
     importMaterials: 0

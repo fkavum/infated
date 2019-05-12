@@ -18,9 +18,6 @@ public class IvyBurn : MonoBehaviour
     public void destroySelf(){
         Object.Destroy(this.gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("Ivy " + other.tag);
-        
-    }
+    
 
 }

@@ -15,13 +15,16 @@ namespace Infated.CoreEngine
         public override string HelpBoxText() { return "This component handles fire magic. Holding down the fire button charges fire magic power."; }
 
         public GameObject FireObject;
-         public int FireOffset = 1;
+
+         public float FireOffset = 0.1f;
+
         void Update(){
             if(!Mana.Charging){
                 UpdateGuiValues();
             }
             else if(Mana.getChargingMagicType() == ChargingMagicType.FIRE)
                 UpdateGuiValues();
+            
         }
         
         public override void StartMagicCharge()
@@ -94,8 +97,17 @@ namespace Infated.CoreEngine
             }
 
             GameObject FireInstance = Instantiate(FireObject, position, Quaternion.identity);
-            
 
+            Transform Fire = FireInstance.transform.GetChild(0);
+            if(_character.IsFacingRight){
+                Fire.GetComponent<SpriteRenderer>().flipX = false;            
+                Fire.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
+            } 
+            else{
+                Fire.GetComponent<SpriteRenderer>().flipX = true; 
+                Fire.GetComponent<Rigidbody2D>().velocity = Vector2.left * 10;
+            }
+            Fire.GetComponent<FireMagicInteractions>().isFacingRight = _character.IsFacingRight;
             
             EndMagicCharge();
         }
