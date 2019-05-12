@@ -87,17 +87,17 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected override void HandleInput ()
 		{			
-
+			/*
 			if ((_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonDown) || (ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && (_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonPressed)))
 			{
 				ShootStart();
 			}
-
+ 			*/
 			if ((_inputManager.ShootAxis == InfInput.ButtonStates.ButtonDown) || (ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && (_inputManager.ShootAxis == InfInput.ButtonStates.ButtonPressed)))
 			{
                 ShootStart();
 			}
-
+			/*
 			if (_inputManager.ReloadButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
 			{
                 Reload();
@@ -107,11 +107,14 @@ namespace Infated.CoreEngine
             {
                 ShootStop();
             }
+			*/
 
             if (CurrentWeapon != null)
             {
                 if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses)
-                && ((_inputManager.ShootAxis == InfInput.ButtonStates.Off) && (_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.Off)))
+                && ((_inputManager.ShootAxis == InfInput.ButtonStates.Off) 
+				//&& (_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.Off)
+				))
                 {
                     ShootStop();
                 }

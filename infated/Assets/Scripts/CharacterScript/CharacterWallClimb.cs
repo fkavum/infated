@@ -15,6 +15,7 @@ namespace Infated.CoreEngine
         public override string HelpBoxText() { return "This component is required for wall climbing."; }
 
         public float WallClimbDistance = 0.6f;
+        public float NearWallCheckStartOffset = 1.0f;
         public float StaminaCost = 0.5f;
         private CharacterStamina _Stamina; 
         private CharacterJump _Jump;
@@ -112,11 +113,11 @@ namespace Infated.CoreEngine
             Vector2 direction;
             if(_character.IsFacingRight){
                 direction = Vector2.right;
-                position.x += 1;
+                position.x += NearWallCheckStartOffset;
             }
             else{
                 direction = Vector2.left;
-                position.x -= 1;
+                position.x -= NearWallCheckStartOffset;
             }
             position.y -= 0.5f;
 
@@ -125,6 +126,7 @@ namespace Infated.CoreEngine
 
             foreach(RaycastHit2D hit in hits){
                 if(hit.collider != null){
+                    Debug.Log(hit.collider.name);
                     isNearWall = true;
                     return;
                 }

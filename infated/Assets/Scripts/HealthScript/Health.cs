@@ -14,7 +14,11 @@ namespace Infated.CoreEngine
 		/// the current health of the character
 		[ReadOnly]
 
+		public GameObject mask;
+		public bool isMask = false;
 		public int CurrentHealth;
+		
+		public int Armor;
         public float CurrentHealthInPercentage;
         public bool Invulnerable = false;
 
@@ -24,7 +28,10 @@ namespace Infated.CoreEngine
 	    public int InitialHealth = 10;
 	    /// the maximum amount of health of the object
 	    public int MaximumHealth = 10;
+		public int InitialArmor = 0;
+		public int MaximumArmor = 8;
 
+		public GameObject armors = null;
 		public bool isBlocking = false;
 
         [Header("Damage")]
@@ -140,8 +147,10 @@ namespace Infated.CoreEngine
 			_initialPosition = transform.position;
 			_initialized = true;
 			CurrentHealth = InitialHealth;
+			Armor = InitialArmor;
             DamageEnabled();
 			UpdateHealthBar (false);
+			UpdateArmorBar();
 		}
 
 		/// <summary>
@@ -183,7 +192,7 @@ namespace Infated.CoreEngine
 		/// <param name="instigator">The object that caused the damage.</param>
 		/// <param name="flickerDuration">The time (in seconds) the object should flicker after taking the damage.</param>
 		/// <param name="invincibilityDuration">The duration of the short invincibility following the hit.</param>
-		public virtual void Damage(int damage,GameObject instigator, float flickerDuration, float invincibilityDuration)
+		public virtual void Damage(int damage,GameObject instigator, float flickerDuration, float invincibilityDuration, bool ignoreArmor = false)
 		{
 			// if the object is invulnerable, we do nothing and exit
 			if (Invulnerable)
@@ -199,7 +208,9 @@ namespace Infated.CoreEngine
 
 			// we decrease the character's health by the damage
 			float previousHealth = CurrentHealth;
-			CurrentHealth -= damage;
+			float rng = Random.Range(0.0f, 1.0f);
+			ignoreArmor = (rng > 0.75f) ? true : ignoreArmor;
+			CurrentHealth -= (ignoreArmor) ? damage : (damage - Armor);
 
             if (OnHit != null)
             {
@@ -395,11 +406,39 @@ namespace Infated.CoreEngine
             if(show)
             {   
                 CurrentHealthInPercentage = (float) CurrentHealth / MaximumHealth;
-                _character.mGuiWriter.setHp(CurrentHealthInPercentage);
-                Debug.Log(CurrentHealth);
+				
+				if(isMask){
+					Vector3 scale = mask.transform.localScale;
+					scale.x = 40 * CurrentHealthInPercentage;
+					mask.transform.localScale = scale;
+				}
+                else{
+					_character.mGuiWriter.setHp(CurrentHealthInPercentage);
+				}
+                Debug.Log(CurrentHealthInPercentage);
             }
 
 	    }
+
+		private void UpdateArmorBar(){
+			
+			if(armors == null)
+				return;
+			
+			int armorCount = 0;
+			foreach(Transform child in armors.transform){
+				if(child.name == (armorCount).ToString()){
+					child.GetComponent<SpriteRenderer>().enabled = true;
+					Debug.Log(child.name + " enabled.");
+				}
+				if(armorCount != Armor - 1)
+					armorCount+=1;
+			}
+
+		}
+		void Update(){
+			UpdateHealthBar(true);
+		}
 
 	    /// <summary>
 	    /// Prevents the character from taking any damage

@@ -112,22 +112,15 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			
-            bool thisCharged = false;
-            if(ChargedAmount > 0.0f)
-                thisCharged = true;
-            InfAnimator.UpdateAnimatorBool(_animator, "Charging", Mana.Charging && thisCharged,_character._animatorParameters);
+	
+            InfAnimator.UpdateAnimatorBool(_animator, "Charging", Mana.Charging,_character._animatorParameters);
 		}
 
         public void Decharge(){
             InfAnimator.UpdateAnimatorBool(_animator, "Casting", true,_character._animatorParameters);
-            _jump.AbilityPermitted = false;
-            _hMovement.AbilityPermitted = false;
         }
         public void StoppedCast(){
             InfAnimator.UpdateAnimatorBool(_animator, "Casting", false,_character._animatorParameters);
-            _jump.AbilityPermitted = true;
-            _hMovement.AbilityPermitted = true;
         }
     }
 }

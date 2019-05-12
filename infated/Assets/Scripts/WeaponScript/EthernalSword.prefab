@@ -88,7 +88,7 @@ MonoBehaviour:
   ScreenFlash: 0
   InitializeOnStart: 0
   Interruptable: 0
-  DamageAreaShape: 1
+  DamageAreaShape: 0
   AreaSize: {x: 2, y: 2}
   AreaOffset: {x: 0, y: 0}
   InitialDelay: 0

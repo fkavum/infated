@@ -17,6 +17,7 @@ namespace Infated.CoreEngine
 
         protected Character _character;
         protected CharacterHandleWeapon _characterHandleWeapon;
+        protected CharacterAttack _characterAttack;
         protected WeaponAim _weaponAim;
         //protected ProjectileWeapon _projectileWeapon;
         protected Vector3 _weaponAimDirection;
@@ -42,6 +43,7 @@ namespace Infated.CoreEngine
         {
             _character = GetComponent<Character>();
             _characterHandleWeapon = this.gameObject.GetComponent<CharacterHandleWeapon>();
+            _characterAttack = GetComponent<CharacterAttack>();
         }
 
         /// <summary>
@@ -149,6 +151,7 @@ namespace Infated.CoreEngine
             if (_numberOfShoots < 1)
             {
                 _characterHandleWeapon.ShootStart();
+                _characterAttack.ShootStart();
                 _numberOfShoots++;
             }
         }
@@ -173,6 +176,7 @@ namespace Infated.CoreEngine
             base.OnExitState();
             //Debug.Log("I exited the State");
             _characterHandleWeapon.ShootStop();
+            _characterAttack.ShootStop();
             _shooting = false;
         }
     }

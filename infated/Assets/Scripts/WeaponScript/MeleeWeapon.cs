@@ -74,7 +74,8 @@ namespace Infated.CoreEngine
             _damageArea.name = this.name+"DamageArea";
             _damageArea.transform.position = this.transform.position;
             _damageArea.transform.rotation = this.transform.rotation;
-            _damageArea.transform.SetParent(this.transform);
+			_damageArea.transform.SetParent(this.transform);
+
 
 			if (DamageAreaShape == MeleeDamageAreaShapes.Rectangle)
 			{
@@ -160,7 +161,7 @@ namespace Infated.CoreEngine
             }
             if (DamageAreaShape == MeleeDamageAreaShapes.Rectangle)
             {
-                InfDebug.DrawGizmoRectangle(this.transform.position + _gizmoOffset, AreaSize, Color.green);
+                InfDebug.DrawGizmoRectangle(this.transform.position + _gizmoOffset, AreaSize, Color.red);
             }
         }
     }

@@ -61,10 +61,6 @@ namespace Infated.CoreEngine
         /// the jetpack button
 		/// the dash button
 		public InfInput.IInfButton DashButton { get; protected set; }
-		/// the shoot button
-		public InfInput.IInfButton ShootButton { get; protected set; }
-		/// the reload button
-		public InfInput.IInfButton ReloadButton { get; protected set; }
 		/// the pause button
 		public InfInput.IInfButton PauseButton { get; protected set; }
 		/// the switch weapon button
@@ -154,9 +150,7 @@ namespace Infated.CoreEngine
             ButtonList.Add(JumpButton = new InfInput.IInfButton(PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
             ButtonList.Add(InteractButton = new InfInput.IInfButton (PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
 			ButtonList.Add(DashButton = new InfInput.IInfButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
-            ButtonList.Add(ShootButton = new InfInput.IInfButton (PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp)); 
-			ButtonList.Add(ReloadButton = new InfInput.IInfButton (PlayerID, "Reload", ReloadButtonDown, ReloadButtonPressed, ReloadButtonUp));
-			ButtonList.Add(SwitchWeaponButton = new InfInput.IInfButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
+        	ButtonList.Add(SwitchWeaponButton = new InfInput.IInfButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
 			ButtonList.Add(PauseButton = new InfInput.IInfButton (PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
 		}
 
@@ -403,14 +397,6 @@ namespace Infated.CoreEngine
         public virtual void DashButtonDown()        { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void DashButtonPressed()     { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void DashButtonUp()          { DashButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
-
-		public virtual void ReloadButtonDown()		{ ReloadButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
-		public virtual void ReloadButtonPressed()	{ ReloadButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
-		public virtual void ReloadButtonUp()		{ ReloadButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
-
-		public virtual void ShootButtonDown()		{ ShootButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
-		public virtual void ShootButtonPressed()	{ ShootButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
-		public virtual void ShootButtonUp()			{ ShootButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
 
 		public virtual void PauseButtonDown()		{ PauseButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
 		public virtual void PauseButtonPressed()	{ PauseButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }

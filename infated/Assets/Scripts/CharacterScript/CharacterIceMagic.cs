@@ -67,7 +67,19 @@ namespace Infated.CoreEngine
             if(Mana.getChargingMagicType() == ChargingMagicType.ICE)
                 base.ProcessAbility();
         }
+       protected override void InitializeAnimatorParameters()
+        {
+            base.InitializeAnimatorParameters();
+            RegisterAnimatorParameter("IceMagicCharging", AnimatorControllerParameterType.Bool);
+        }
+        public override void UpdateAnimator()
+        {
+            bool thisCharged = false;
+            if(ChargedAmount > 0.0f)
+                thisCharged = true;
 
+            InfAnimator.UpdateAnimatorBool(_animator, "IceMagicCharging", Mana.Charging && thisCharged,_character._animatorParameters);
+        }
         protected override void UpdateGuiValues(){
             base.UpdateGuiValues();
             if(Mana.Charging)

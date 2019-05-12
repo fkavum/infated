@@ -70,7 +70,8 @@ namespace Infated.CoreEngine
         }
         protected override void InitializeAnimatorParameters()
         {
-            RegisterAnimatorParameter("FireMagicCast", AnimatorControllerParameterType.Bool);
+            base.InitializeAnimatorParameters();
+            RegisterAnimatorParameter("FireMagicCharging", AnimatorControllerParameterType.Bool);
         }
         public override void UpdateAnimator()
         {
@@ -78,7 +79,7 @@ namespace Infated.CoreEngine
             if(ChargedAmount > 0.0f)
                 thisCharged = true;
 
-            InfAnimator.UpdateAnimatorBool(_animator, "FireMagicCast", Mana.Charging && thisCharged,_character._animatorParameters);
+            InfAnimator.UpdateAnimatorBool(_animator, "FireMagicCharging", Mana.Charging && thisCharged,_character._animatorParameters);
         }
         
         protected override void UpdateGuiValues(){
