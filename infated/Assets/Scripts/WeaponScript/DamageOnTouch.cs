@@ -82,7 +82,7 @@ namespace Infated.CoreEngine
 			_coreController = GetComponent<CoreController> ();
             _boxCollider2D = GetComponent<BoxCollider2D>();
             _circleCollider2D = GetComponent<CircleCollider2D>();
-            _gizmosColor = Color.red;
+            _gizmosColor = Color.blue;
             _gizmosColor.a = 0.25f;
 
         }

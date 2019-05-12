@@ -160,7 +160,7 @@ namespace Infated.CoreEngine
             }
             if (DamageAreaShape == MeleeDamageAreaShapes.Rectangle)
             {
-                InfDebug.DrawGizmoRectangle(this.transform.position + _gizmoOffset, AreaSize, Color.red);
+                InfDebug.DrawGizmoRectangle(this.transform.position + _gizmoOffset, AreaSize, Color.green);
             }
         }
     }

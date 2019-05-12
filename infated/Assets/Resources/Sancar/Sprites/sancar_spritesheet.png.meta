@@ -49,6 +49,10 @@ TextureImporter:
     21300088: sancar_spritesheet_36
     21300090: sancar_spritesheet_37
     21300092: sancar_spritesheet_block
+    21300094: sancar_spritesheet_cast1
+    21300096: sancar_spritesheet_cast2
+    21300098: sancar_spritesheet_cast3
+    21300100: sancar_spritesheet_cast4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -906,6 +910,86 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2b25051233b0f4241acebf17fffbf136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_spritesheet_cast1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2688
+        width: 512
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fbf3d2545609040a70ec435c882721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_spritesheet_cast2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2688
+        width: 512
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8f1b6a9b884f94a97e6dc3f0a24e40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_spritesheet_cast3
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 2688
+        width: 512
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66476c8dc7dee764aa9bdf2232e4673d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sancar_spritesheet_cast4
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 2688
+        width: 512
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98434c3775d7e574d9667f236ccfb07f
       vertices: []
       indices: 
       edges: []

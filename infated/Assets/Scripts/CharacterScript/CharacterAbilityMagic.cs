@@ -15,6 +15,8 @@ namespace Infated.CoreEngine
         public override string HelpBoxText() { return "This component is base for ice and fire majik."; }
 
         protected CharacterMana Mana;
+        protected CharacterJump _jump;
+        protected CharacterHorizontalMovement _hMovement;
         //private ParticleSystem IceParticles;
         public float DeltaCharge = 0.5f;
         public float MaxChargeAmount = 20.0f;
@@ -28,6 +30,8 @@ namespace Infated.CoreEngine
         {
             base.Initialization();
             Mana = GetComponent<CharacterMana>();
+            _jump = GetComponent<CharacterJump>();
+            _hMovement = GetComponent<CharacterHorizontalMovement>();
         }
 
         /// <summary>
@@ -94,6 +98,36 @@ namespace Infated.CoreEngine
         {
             base.Reset();
             ChargedAmount = 0.0f;
+        }
+
+        protected override void InitializeAnimatorParameters()
+		{
+            //Debug.Log("Jump Registered");
+			RegisterAnimatorParameter ("Charging", AnimatorControllerParameterType.Bool);
+            RegisterAnimatorParameter ("Casting", AnimatorControllerParameterType.Bool);
+		}
+
+		/// <summary>
+		/// At the end of each cycle, sends Jumping states to the Character's animator
+		/// </summary>
+		public override void UpdateAnimator()
+		{
+			
+            bool thisCharged = false;
+            if(ChargedAmount > 0.0f)
+                thisCharged = true;
+            InfAnimator.UpdateAnimatorBool(_animator, "Charging", Mana.Charging && thisCharged,_character._animatorParameters);
+		}
+
+        public void Decharge(){
+            InfAnimator.UpdateAnimatorBool(_animator, "Casting", true,_character._animatorParameters);
+            _jump.AbilityPermitted = false;
+            _hMovement.AbilityPermitted = false;
+        }
+        public void StoppedCast(){
+            InfAnimator.UpdateAnimatorBool(_animator, "Casting", false,_character._animatorParameters);
+            _jump.AbilityPermitted = true;
+            _hMovement.AbilityPermitted = true;
         }
     }
 }

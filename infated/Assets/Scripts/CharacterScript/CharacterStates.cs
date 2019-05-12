@@ -40,6 +40,7 @@ public class CharacterStates
 			DoubleJumping,
 			Landing,
 			LadderClimbing,
+			Casting,
 			pIdle,
 			pWalking,
 			pRunning,

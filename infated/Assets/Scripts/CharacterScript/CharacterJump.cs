@@ -446,6 +446,9 @@ namespace Infated.CoreEngine
 			NumberOfJumpsLeft = newNumberOfJumps;
 		}
 
+		public void JumpAnticipationReset(){
+			InfAnimator.UpdateAnimatorBool(_animator, "JumpAnticipation", false, _character._animatorParameters);
+		}
 		/// <summary>
 		/// Resets the jump button released flag.
 		/// </summary>

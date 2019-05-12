@@ -50,12 +50,14 @@ namespace Infated.CoreEngine
                 EndMagicCharge();
             }
 
-            if(Mana.Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
+            if(Mana.Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown 
+            && _character.MovementState.CurrentState != CharacterStates.MovementStates.Casting){
                 if(ChargedAmount > MinimumCharge) {
                     
                     if (_userProfiler != null) { 
                     _userProfiler.profileIceMagic(ChargedAmount);
                     }
+                    Decharge();
                     CreateIceBlock();
                      
                 }
@@ -65,18 +67,7 @@ namespace Infated.CoreEngine
             if(Mana.getChargingMagicType() == ChargingMagicType.ICE)
                 base.ProcessAbility();
         }
-        protected override void InitializeAnimatorParameters()
-        {
-            RegisterAnimatorParameter("IceMagicCast", AnimatorControllerParameterType.Bool);
-        }
-        public override void UpdateAnimator()
-        {
-            bool thisCharged = false;
-            if(ChargedAmount > 0.0f)
-                thisCharged = true;
-            InfAnimator.UpdateAnimatorBool(_animator, "IceMagicCast", Mana.Charging && thisCharged,_character._animatorParameters);
-        }
-        
+
         protected override void UpdateGuiValues(){
             base.UpdateGuiValues();
             if(Mana.Charging)

@@ -50,13 +50,15 @@ namespace Infated.CoreEngine
                 EndMagicCharge();
             }
         
-            if(Mana.Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
+            if(Mana.Charging && _inputManager.ActionButton.State.CurrentState == InfInput.ButtonStates.ButtonDown
+            && _character.MovementState.CurrentState != CharacterStates.MovementStates.Casting){
                 if(ChargedAmount > MinimumCharge) {
                     /*
                     if (_userProfiler != null) { 
                     _userProfiler.profileIceMagic(ChargedAmount);
                     }
                     */
+                    Decharge();
                     CreateFire();
                      
                 }
