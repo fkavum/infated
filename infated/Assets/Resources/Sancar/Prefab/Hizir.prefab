@@ -284,25 +284,18 @@ GameObject:
   - component: {fileID: 4023153226184472410}
   - component: {fileID: 7807224888320924605}
   - component: {fileID: 7807224888320924604}
-  - component: {fileID: 7807224888320924594}
   - component: {fileID: 7807224888320924595}
-  - component: {fileID: 1113648694513236840}
   - component: {fileID: 7807224888320924593}
-  - component: {fileID: 6662278907168254395}
   - component: {fileID: 3137519418177971456}
   - component: {fileID: 6460282362840382723}
-  - component: {fileID: 4425453556564442702}
-  - component: {fileID: 3104302588705471600}
-  - component: {fileID: 3615015981981838614}
   - component: {fileID: 5988958342251902498}
   - component: {fileID: 6001219151359360939}
   - component: {fileID: 5613238327129319290}
-  - component: {fileID: 5088435595275183719}
   - component: {fileID: 8585337575444469392}
   - component: {fileID: 1534678467829206632}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Hizir
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 7807224888320924601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.2}
   m_Children:
   - {fileID: 2654808681883130200}
   - {fileID: 1619339358701243092}
@@ -493,32 +486,6 @@ MonoBehaviour:
   StickWhenWalkingDownSlopes: 0
   StickyRaycastLength: 0
   AutomaticGravitySettings: 1
---- !u!114 &7807224888320924594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d3e9eb7c32874448c5cbf521468c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  JumpHeight: 2
-  NumberOfJumps: 2
-  JumpRestrictions: 2
-  JumpTimeWindow: 0
-  JumpIsProportionalToThePressTime: 1
-  JumpMinimumAirTime: 0.1
-  JumpReleaseForceFactor: 2
-  OneWayPlatformsJumpCollisionOffDuration: 0.3
-  MovingPlatformsJumpCollisionOffDuration: 0.05
 --- !u!114 &7807224888320924595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,25 +508,6 @@ MonoBehaviour:
   isRunning: 0
   TouchTheGroundEffect: {fileID: 0}
   TouchTheGroundSfx: {fileID: 0}
---- !u!114 &1113648694513236840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aafa7c6c75543a24f8bd3b7f5af9bb1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  LadderClimbingSpeed: 5
-  ForceRightFacing: 0
 --- !u!50 &7807224888320924593
 Rigidbody2D:
   serializedVersion: 4
@@ -581,61 +529,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6662278907168254395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624654ff0a68ee844994f728ddf3d991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectAt: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 8192
-  distanceFrom: 1
-  maxSelectionDistance: 5
-  runRaycasts: 0
-  raycastAll: 0
-  useDefaultGUI: 1
-  guiSkin: {fileID: 11400000, guid: a335577d0e85761409aeef66f54670e1, type: 2}
-  guiStyleName: label
-  alignment: 1
-  textStyle: 1
-  textStyleColor: {r: 0, g: 0, b: 0, a: 1}
-  inRangeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  outOfRangeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  reticle:
-    inRange: {fileID: 0}
-    outOfRange: {fileID: 0}
-    width: 64
-    height: 64
-  useKey: 101
-  useButton: Action
-  defaultUseMessage: (Hit E to Interact)
-  broadcastToChildren: 1
-  actorTransform: {fileID: 0}
-  tooFarMessage: 
-  onSelectedUsable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onDeselectedUsable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  tooFarEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  debug: 1
 --- !u!114 &3137519418177971456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,70 +569,6 @@ MonoBehaviour:
   mHpBar: {fileID: 0}
   mManabar: {fileID: 0}
   mStaminabar: {fileID: 0}
---- !u!114 &4425453556564442702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e875b3ea9b5648bec8a087270205c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RegenCooldown: 4
-  RegenAmount: 0.1
-  Charging: 0
-  CurrentChargeType: 0
---- !u!114 &3104302588705471600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b82dbfeba9ae364489518c57fc99389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  DeltaCharge: 0.5
-  MaxChargeAmount: 25
-  MinimumCharge: 5
-  IceBlock: {fileID: 7703296408480403947, guid: 02e34eb79c786fd4598934ec3fa33edc,
-    type: 3}
-  BlockOffset: 4
-  MinimumBlockHeight: 0.2
-  MaximumBlockHeight: 1
---- !u!114 &3615015981981838614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dff185171249304390cb2cabd871d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  DeltaCharge: 0.5
-  MaxChargeAmount: 25
-  MinimumCharge: 5
-  FireObject: {fileID: 5975552266938463561, guid: 7fb53d9487e4e9848a2d74490a32885b,
-    type: 3}
-  FireOffset: 1.2
 --- !u!114 &5988958342251902498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +587,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 0
   WallClimbDistance: 0.1
+  NearWallCheckStartOffset: 1
   StaminaCost: 1
 --- !u!114 &6001219151359360939
 MonoBehaviour:
@@ -802,61 +632,6 @@ MonoBehaviour:
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
     subtitleColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &5088435595275183719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807224888320924601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624654ff0a68ee844994f728ddf3d991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectAt: 2
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  distanceFrom: 1
-  maxSelectionDistance: 30
-  runRaycasts: 0
-  raycastAll: 0
-  useDefaultGUI: 1
-  guiSkin: {fileID: 11400000, guid: a335577d0e85761409aeef66f54670e1, type: 2}
-  guiStyleName: label
-  alignment: 1
-  textStyle: 1
-  textStyleColor: {r: 0, g: 0, b: 0, a: 1}
-  inRangeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  outOfRangeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  reticle:
-    inRange: {fileID: 0}
-    outOfRange: {fileID: 0}
-    width: 64
-    height: 64
-  useKey: 32
-  useButton: Fire2
-  defaultUseMessage: (spacebar to interact)
-  broadcastToChildren: 1
-  actorTransform: {fileID: 7807224888320924606}
-  tooFarMessage: 
-  onSelectedUsable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onDeselectedUsable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: PixelCrushers.DialogueSystem.UsableUnityEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  tooFarEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  debug: 1
 --- !u!114 &8585337575444469392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,12 +644,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c004d72982fc64d9f98788cc57ac47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask: {fileID: 0}
+  isMask: 0
   CurrentHealth: 0
+  Armor: 0
   CurrentHealthInPercentage: 0
   Invulnerable: 0
+  blockSound: {fileID: 0}
+  damageSound: {fileID: 0}
   InitialHealth: 100
   MaximumHealth: 100
+  InitialArmor: 0
+  MaximumArmor: 8
+  armors: {fileID: 0}
   isBlocking: 0
+  blockStaminaSpend: 10
   DamageEffect: {fileID: 0}
   DamageSfx: {fileID: 0}
   FlickerSpriteOnHit: 1

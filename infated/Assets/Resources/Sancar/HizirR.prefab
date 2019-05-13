@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3038560716977028485}
   - component: {fileID: 3038560716977028482}
   - component: {fileID: 3038560716977028481}
+  - component: {fileID: 5640186891078273780}
+  - component: {fileID: 5640186891078273781}
   m_Layer: 0
   m_Name: HizirR
   m_TagString: Untagged
@@ -155,7 +157,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: dummy
+  conversation: hizirReyis
   conversationConversant: {fileID: 0}
   conversationActor: {fileID: 0}
   exclusive: 0
@@ -222,6 +224,149 @@ MonoBehaviour:
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
     subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5640186891078273780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038560716977028484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ba0257edff4274f94b8cadf2a7b13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint1: {fileID: 0}
+  checkpoint2: {fileID: 0}
+  checkpoint3: {fileID: 0}
+--- !u!114 &5640186891078273781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038560716977028484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5473918a168c44fa0294bd4d1399f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversationEvents:
+    onConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5640186891078273780}
+          m_MethodName: conversationEnded
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationLine:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+SubtitleEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationLineEnd:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+SubtitleEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationLineCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+SubtitleEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationResponseMenu:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+ResponsesEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onConversationResponseMenuTimeout:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onLinkedConversationStart:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  barkEvents:
+    onBarkStart:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onBarkEnd:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onBarkLine:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+SubtitleEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  sequenceEvents:
+    onSequenceStart:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onSequenceEnd:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+TransformEvent,
+        Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  questEvents:
+    onQuestStateChange:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+StringEvent, Assembly-CSharp-firstpass,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onQuestTrackingEnabled:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+StringEvent, Assembly-CSharp-firstpass,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onQuestTrackingDisabled:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: PixelCrushers.DialogueSystem.DialogueSystemEvents+StringEvent, Assembly-CSharp-firstpass,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    onUpdateQuestTracker:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  pauseEvents:
+    onDialogueSystemPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onDialogueSystemUnpause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1001 &7714474536193958272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,11 +374,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3038560716977028480}
     m_Modifications:
-    - target: {fileID: 7807224888320924601, guid: 0a7c898edc585a1429fb50e8b2e55298,
-        type: 3}
-      propertyPath: m_Name
-      value: Hizir
-      objectReference: {fileID: 0}
     - target: {fileID: 7807224888320924606, guid: 0a7c898edc585a1429fb50e8b2e55298,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,35 +429,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7807224888320924606, guid: 0a7c898edc585a1429fb50e8b2e55298,
+    - target: {fileID: 7807224888320924601, guid: 0a7c898edc585a1429fb50e8b2e55298,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
+      propertyPath: m_Name
+      value: Hizir
       objectReference: {fileID: 0}
-    - target: {fileID: 7807224888320924606, guid: 0a7c898edc585a1429fb50e8b2e55298,
+    - target: {fileID: 7807224888320924592, guid: 0a7c898edc585a1429fb50e8b2e55298,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7807224888320924594, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 1113648694513236840, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 6662278907168254395, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 3137519418177971456, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 6460282362840382723, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 4425453556564442702, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 3104302588705471600, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 3615015981981838614, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 5988958342251902498, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 6001219151359360939, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 5613238327129319290, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 5088435595275183719, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 8585337575444469392, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
-    - {fileID: 1534678467829206632, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
+      propertyPath: CharacterAnimator
+      value: 
+      objectReference: {fileID: 529036738431433279}
+    - target: {fileID: 7807224888320924592, guid: 0a7c898edc585a1429fb50e8b2e55298,
+        type: 3}
+      propertyPath: CharacterModel
+      value: 
+      objectReference: {fileID: 529036738431433273}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a7c898edc585a1429fb50e8b2e55298, type: 3}
+--- !u!1 &529036738431433273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7807224888320924601, guid: 0a7c898edc585a1429fb50e8b2e55298,
+    type: 3}
+  m_PrefabInstance: {fileID: 7714474536193958272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &529036738431433278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7807224888320924606, guid: 0a7c898edc585a1429fb50e8b2e55298,
+    type: 3}
+  m_PrefabInstance: {fileID: 7714474536193958272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &529036738431433279 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7807224888320924607, guid: 0a7c898edc585a1429fb50e8b2e55298,
     type: 3}
   m_PrefabInstance: {fileID: 7714474536193958272}
   m_PrefabAsset: {fileID: 0}

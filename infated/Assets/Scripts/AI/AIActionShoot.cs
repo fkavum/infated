@@ -16,7 +16,7 @@ namespace Infated.CoreEngine
         public bool AimAtTarget = false;
 
         protected Character _character;
-        protected CharacterHandleWeapon _characterHandleWeapon;
+       // protected CharacterHandleWeapon _characterHandleWeapon;
         protected CharacterAttack _characterAttack;
         protected WeaponAim _weaponAim;
         //protected ProjectileWeapon _projectileWeapon;
@@ -27,7 +27,7 @@ namespace Infated.CoreEngine
 
        public void animShootStart()
         {
-            _characterHandleWeapon.ShootStop();
+            //_characterHandleWeapon.ShootStop();
             _shooting = false;
         }
         public void animShootEnd()
@@ -41,8 +41,10 @@ namespace Infated.CoreEngine
         /// </summary>
         protected override void Initialization()
         {
+
+            Debug.Log("I initiated");
             _character = GetComponent<Character>();
-            _characterHandleWeapon = this.gameObject.GetComponent<CharacterHandleWeapon>();
+           // _characterHandleWeapon = this.gameObject.GetComponent<CharacterHandleWeapon>();
             _characterAttack = GetComponent<CharacterAttack>();
         }
 
@@ -51,7 +53,7 @@ namespace Infated.CoreEngine
         /// </summary>
         public override void PerformAction()
         {
-
+            Debug.Log("I Performed Action");
             //Debug.Log(_numberOfShoots);
             TestFaceTarget();
             //TestAimAtTarget();

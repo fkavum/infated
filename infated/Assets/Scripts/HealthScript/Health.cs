@@ -404,7 +404,9 @@ namespace Infated.CoreEngine
 	    /// </summary>
 	    protected virtual void DestroyObject()
 		{
-			if (!DestroyOnDeath)
+            
+
+            if (!DestroyOnDeath)
 			{
 				return;
 			}

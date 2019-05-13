@@ -24,6 +24,8 @@ namespace Infated.CoreEngine
         public Animator CharacterAnimator { get; set; }
         private bool attacking = false;
 
+        public bool atackingPermited = true;
+
 		private CharacterStamina _characterStamina = null;
 		// Initialization
 		protected override void Initialization () 
@@ -32,6 +34,15 @@ namespace Infated.CoreEngine
 			_characterStamina = GetComponent<CharacterStamina>();
 			Setup ();
 		}
+
+        public void permitAbility()
+        {
+            atackingPermited = true;
+        }
+        public void forbidAbility()
+        {
+            atackingPermited = false;
+        }
 
 		/// <summary>
 		/// Grabs various components and inits stuff
@@ -73,6 +84,9 @@ namespace Infated.CoreEngine
 		/// </summary>
 		public virtual void ShootStart()
 		{
+
+            if (!atackingPermited) { return; }
+
 			// if the Shoot action is enabled in the permissions, we continue, if not we do nothing.  If the player is dead we do nothing.
 			if ( !AbilityPermitted
 				|| (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
@@ -82,8 +96,11 @@ namespace Infated.CoreEngine
 			}
 
             attacking = true;
+
+            if(gameObject.tag == "Player") { 
 			_characterStamina.spendStamina(5.0f);
-		}
+            }
+        }
 		
 		/// <summary>
 		/// Causes the character to stop shooting

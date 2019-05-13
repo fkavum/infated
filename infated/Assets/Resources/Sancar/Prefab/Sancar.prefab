@@ -837,9 +837,9 @@ MonoBehaviour:
   selectAt: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8193
   distanceFrom: 1
-  maxSelectionDistance: 30
+  maxSelectionDistance: 10
   runRaycasts: 0
   raycastAll: 0
   useDefaultGUI: 1
