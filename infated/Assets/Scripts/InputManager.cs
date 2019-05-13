@@ -52,6 +52,7 @@ namespace Infated.CoreEngine
         public InfInput.IInfButton ActionButton { get; protected set; }
         /// the jump button, used for jumps
         public InfInput.IInfButton JumpButton { get; protected set; }
+		public InfInput.IInfButton EnchantButton { get; protected set; }
         /// Attacks
         public InfInput.IInfButton LightAttackButton { get; protected set; }
         public InfInput.IInfButton BlockButton { get; protected set; }
@@ -64,7 +65,6 @@ namespace Infated.CoreEngine
 		/// the pause button
 		public InfInput.IInfButton PauseButton { get; protected set; }
 		/// the switch weapon button
-		public InfInput.IInfButton SwitchWeaponButton { get; protected set; }
 		/// the shoot axis, used as a button (non analogic)
 		public InfInput.ButtonStates ShootAxis { get; protected set; }
 		/// the primary movement value (used to move the character around)
@@ -148,10 +148,10 @@ namespace Infated.CoreEngine
             ButtonList.Add(BlockButton = new InfInput.IInfButton(PlayerID, "Block", BlockButtonDown, BlockButtonPressed, BlockButtonUp));
             ButtonList.Add(ActionButton = new InfInput.IInfButton(PlayerID, "Action", ActionButtonDown, ActionButtonPressed, ActionButtonUp));
             ButtonList.Add(JumpButton = new InfInput.IInfButton(PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
-            ButtonList.Add(InteractButton = new InfInput.IInfButton (PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
+            ButtonList.Add(EnchantButton = new InfInput.IInfButton(PlayerID, "Enchant", EnchantButtonDown, EnchantButtonPressed, EnchantButtonUp));
+			ButtonList.Add(InteractButton = new InfInput.IInfButton (PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
 			ButtonList.Add(DashButton = new InfInput.IInfButton(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp));
-        	ButtonList.Add(SwitchWeaponButton = new InfInput.IInfButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
-			ButtonList.Add(PauseButton = new InfInput.IInfButton (PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
+        	ButtonList.Add(PauseButton = new InfInput.IInfButton (PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
 		}
 
 		/// <summary>
@@ -386,6 +386,10 @@ namespace Infated.CoreEngine
         public virtual void JumpButtonPressed()     { JumpButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void JumpButtonUp()          { JumpButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
 
+		public virtual void EnchantButtonDown()        { EnchantButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
+        public virtual void EnchantButtonPressed()     { EnchantButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
+        public virtual void EnchantButtonUp()          { EnchantButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
+
         public virtual void ActionButtonDown() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonDown); }
         public virtual void ActionButtonPressed() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonPressed); }
         public virtual void ActionButtonUp() { ActionButton.State.ChangeState(InfInput.ButtonStates.ButtonUp); }
@@ -401,10 +405,6 @@ namespace Infated.CoreEngine
 		public virtual void PauseButtonDown()		{ PauseButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
 		public virtual void PauseButtonPressed()	{ PauseButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
 		public virtual void PauseButtonUp()			{ PauseButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
-
-		public virtual void SwitchWeaponButtonDown()		{ SwitchWeaponButton.State.ChangeState (InfInput.ButtonStates.ButtonDown); }
-		public virtual void SwitchWeaponButtonPressed()		{ SwitchWeaponButton.State.ChangeState (InfInput.ButtonStates.ButtonPressed); }
-		public virtual void SwitchWeaponButtonUp()			{ SwitchWeaponButton.State.ChangeState (InfInput.ButtonStates.ButtonUp); }
 
 	}
 }

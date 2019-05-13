@@ -14,14 +14,17 @@ namespace Infated.CoreEngine
         /// This method is only used to display a helpbox text at the beginning of the ability's inspector
         public override string HelpBoxText() { return "This component is base for ice and fire majik."; }
 
+        public GameObject particle;
         protected CharacterMana Mana;
         protected CharacterJump _jump;
         protected CharacterHorizontalMovement _hMovement;
+        protected CharacterAttack _attack;
         //private ParticleSystem IceParticles;
         public float DeltaCharge = 0.5f;
         public float MaxChargeAmount = 20.0f;
         public float MinimumCharge = 5.0f;
         protected float ChargedAmount = 0.0f;
+        public float BuffDuration = 0.0f;
 
         /// <summary>
         /// On Start() we reset our number of jumps
@@ -32,6 +35,7 @@ namespace Infated.CoreEngine
             Mana = GetComponent<CharacterMana>();
             _jump = GetComponent<CharacterJump>();
             _hMovement = GetComponent<CharacterHorizontalMovement>();
+            _attack = GetComponent<CharacterAttack>();
         }
 
         /// <summary>
@@ -53,12 +57,19 @@ namespace Infated.CoreEngine
 
         void Update(){
              UpdateGuiValues();
+             if(BuffDuration < 0){
+                 DebuffSword();
+             }
+             else
+                BuffDuration -= Time.deltaTime;
+
         }
         /// <summary>
         /// Causes the character to start jumping.
         /// </summary>
         public virtual void StartMagicCharge()
         {
+
             if(Mana.getChargingMagicType() != ChargingMagicType.NONE){
                 return;
             }
@@ -77,10 +88,19 @@ namespace Infated.CoreEngine
         /// </summary>
         public virtual void EndMagicCharge()
         {
+            
             //IceParticles.stopEmit()
             ChargedAmount = 0.0f;
             Mana.Charging = false;
             UpdateGuiValues();
+        }
+
+        protected void BuffSword(ChargingMagicType type){
+            _attack.Buff = type;
+            BuffDuration = (ChargedAmount / MaxChargeAmount) * 0.2f;
+        }
+        protected void DebuffSword(){
+            _attack.Buff = ChargingMagicType.NONE;
         }
         private void Charge(float amount){
             if(ChargedAmount == MaxChargeAmount) return;
@@ -122,5 +142,6 @@ namespace Infated.CoreEngine
         public void StoppedCast(){
             InfAnimator.UpdateAnimatorBool(_animator, "Casting", false,_character._animatorParameters);
         }
+
     }
 }

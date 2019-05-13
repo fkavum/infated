@@ -18,6 +18,8 @@ namespace Infated.CoreEngine
 		public override string HelpBoxText() { return "This component will allow your character to pickup and use weapons. What the weapon will do is defined in the Weapon classes. This just describes the behaviour of the 'hand' holding the weapon, not the weapon itself. Here you can set an initial weapon for your character to start with, allow weapon pickup, and specify a weapon attachment (a transform inside of your character, could be just an empty child gameobject, or a subpart of your model."; }
 
 		public GameObject weapon;
+		public int Damage = 10;
+		public ChargingMagicType Buff = ChargingMagicType.NONE;
 		private BoxCollider2D _damageAreaCollider;
         public Animator CharacterAnimator { get; set; }
         private bool attacking = false;

@@ -55,19 +55,10 @@ public class GUI_Writer : MonoBehaviour
                     }
                 }
             }
-            else if (child.name == "HpPanel")
+            else if (child.name == "HpBar")
             {
-                guiPanel = getAllChildren(child);
-                foreach (GameObject hpChild in guiPanel) {
-                    switch (hpChild.name) {
-                        case "HpBar":
-                            mHpBar = hpChild.GetComponent<UnityEngine.UI.Image>();
-                            mHpBar.fillAmount = 1;
-                            break;
-                        default:
-                            break;
-                    }
-                }
+                mHpBar = child.GetComponent<UnityEngine.UI.Image>();
+                
             }
             else if(child.name == "StaminaPanel"){
                 guiPanel = getAllChildren(child);

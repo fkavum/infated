@@ -22,6 +22,8 @@ namespace Infated.CoreEngine
         public float CurrentHealthInPercentage;
         public bool Invulnerable = false;
 
+		public AudioClip blockSound;
+		public AudioClip damageSound;
 		[Header("Health")]
 		//[Information("Add this component to an object and it'll have health, will be able to get damaged and potentially die.",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
 		/// the initial amount of health of the object
@@ -206,12 +208,21 @@ namespace Infated.CoreEngine
 				return;
 			}
 
+			if(isBlocking){
+				PlaySound(blockSound);
+				DamageDisabled();
+				StartCoroutine(DamageEnabled(invincibilityDuration));
+				Vector2 knockbackForce = new Vector2(3.0f, 0.0f);	
+				if(_character.IsFacingRight) knockbackForce.x *= -1;
+				_controller.SetForce(knockbackForce);	
+				return;
+			}
 			// we decrease the character's health by the damage
 			float previousHealth = CurrentHealth;
 			float rng = Random.Range(0.0f, 1.0f);
 			ignoreArmor = (rng > 0.75f) ? true : ignoreArmor;
 			CurrentHealth -= (ignoreArmor) ? damage : (damage - Armor);
-
+			PlaySound(damageSound);
             if (OnHit != null)
             {
                 OnHit();
@@ -247,12 +258,12 @@ namespace Infated.CoreEngine
 	    		Instantiate(DamageEffect,transform.position,transform.rotation);
 	        }
 
-			if (FlickerSpriteOnHit)
+			if (FlickerSpriteOnHit && !isBlocking)
 			{
 				// We make the character's sprite flicker
 				if (_renderer != null)
 				{
-					//StartCoroutine(MMImage.Flicker(_renderer,_initialColor,_flickerColor,0.05f,flickerDuration));	
+					StartCoroutine(Blink(flickerDuration, 0.05f, 0.05f));	
 				}	
 			}
 
@@ -269,7 +280,7 @@ namespace Infated.CoreEngine
 				CurrentHealth = 0;
 				if (_character != null)
 				{
-                    Debug.Log("Character's Health is " + CurrentHealth);
+                    //Debug.Log("Character's Health is " + CurrentHealth);
 
 					//if (_character.CharacterType == Character.CharacterTypes.Player)
 					//{
@@ -281,7 +292,23 @@ namespace Infated.CoreEngine
 				Kill();
 			}
 		}
+		protected virtual void PlaySound(AudioClip sfx)
+        {
+            // we create a temporary game object to host our audio source
+            GameObject temporaryAudioHost = new GameObject("TempAudio");
+            // we set the temp audio's position
 
+            // we add an audio source to that host
+            AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+            // we set that audio source clip to the one in paramaters
+            audioSource.clip = sfx;
+            // we set the audio source volume to the one in parameters
+            audioSource.volume = 100;
+            // we start playing the sound
+            audioSource.Play();
+
+            Destroy(temporaryAudioHost, sfx.length);
+        }
 		/// <summary>
 		/// Kills the character, vibrates the device, instantiates death effects, handles points, etc
 		/// </summary>
@@ -415,7 +442,7 @@ namespace Infated.CoreEngine
                 else{
 					_character.mGuiWriter.setHp(CurrentHealthInPercentage);
 				}
-                Debug.Log(CurrentHealthInPercentage);
+                //Debug.Log(CurrentHealthInPercentage);
             }
 
 	    }
@@ -429,7 +456,7 @@ namespace Infated.CoreEngine
 			foreach(Transform child in armors.transform){
 				if(child.name == (armorCount).ToString()){
 					child.GetComponent<SpriteRenderer>().enabled = true;
-					Debug.Log(child.name + " enabled.");
+					//Debug.Log(child.name + " enabled.");
 				}
 				if(armorCount != Armor - 1)
 					armorCount+=1;
@@ -474,6 +501,16 @@ namespace Infated.CoreEngine
 			CurrentHealth = InitialHealth;
 			DamageEnabled();
 			UpdateHealthBar(false);
+		}
+		IEnumerator Blink(float duration, float timeOn, float timeOff){
+			float time = 0.0f;
+			while (time < duration){
+				_renderer.enabled = false;
+				yield return new WaitForSeconds(timeOn);
+				_renderer.enabled = true;
+				yield return new WaitForSeconds(timeOff);
+				time+= Time.deltaTime;
+			}
 		}
 	}
 }

@@ -11,13 +11,18 @@ namespace Infated.CoreEngine
 
         private bool isFacingRight = false;
         public GameObject spritesheetObject;
+        public GameObject attackerObject;
         private SpriteRenderer _renderer;
-        private CharacterMana _mana = null;
+        private CharacterAttack _attack = null;
+
+        public GameObject SplashCheckerObj = null;
+        private SplashCheck _splashCheck = null;
         public bool canHurt = false;
         void Start()
         {
             _renderer = spritesheetObject.GetComponent<SpriteRenderer>();
-            _mana = spritesheetObject.GetComponent<CharacterMana>();
+            _attack = attackerObject.GetComponent<CharacterAttack>();
+            _splashCheck = SplashCheckerObj.GetComponent<SplashCheck>();
         }
 
         // Update is called once per frame
@@ -34,17 +39,28 @@ namespace Infated.CoreEngine
         }
 
         void DealDamage(Collider2D other){
-            if(other.tag == "Enemy" && this.tag == "Player"){
+            if((other.tag == "Enemy" && this.tag == "Player") || (other.tag == "Player" && this.tag == "Enemy")) {
                 if(canHurt){
-                    other.transform.GetComponent<Health>().Damage(10, this.gameObject, 5, 0.5f);
-                    Debug.Log("Player hit Enemy");
+                    Health hp = other.transform.GetComponent<Health>();
+                    if(hp != null){
+                        if(_attack.Buff == ChargingMagicType.NONE){
+                            hp.Damage(_attack.Damage, this.gameObject, 0.15f, 0.282f);
+                        }
+                        else if(_attack.Buff == ChargingMagicType.FIRE){
+                            hp.Damage(_attack.Damage, this.gameObject, 0.15f, 0.282f, true);
+                        }
+                        else if(_attack.Buff == ChargingMagicType.ICE){
+                            hp.Damage(_attack.Damage, this.gameObject, 0.15f, 0.282f);
+                            if(_splashCheck != null){
+                                _splashCheck.DealDamage();
+                            }
+
+                        }
+                        else{}
+                        
+                    }
+                    //Debug.Log("Player hit Enemy");
                 }
-            }
-            else if(other.tag == "Player" && this.tag == "Enemy"){
-                if(canHurt) {
-                    other.transform.GetComponent<Health>().Damage(10, this.gameObject, 5, 0.5f);
-                    Debug.Log("Enemy hit Player");
-                }   
             }
         }
         void OnTriggerEnter2D(Collider2D other){

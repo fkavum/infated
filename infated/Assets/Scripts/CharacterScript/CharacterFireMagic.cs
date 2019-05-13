@@ -21,9 +21,16 @@ namespace Infated.CoreEngine
         void Update(){
             if(!Mana.Charging){
                 UpdateGuiValues();
+                particle.gameObject.SetActive(false);
             }
-            else if(Mana.getChargingMagicType() == ChargingMagicType.FIRE)
+            else if(Mana.getChargingMagicType() == ChargingMagicType.FIRE){
+                particle.gameObject.SetActive(true);
                 UpdateGuiValues();
+            }
+            else{
+                
+            }
+                
             
         }
         
@@ -47,6 +54,10 @@ namespace Infated.CoreEngine
             }
             if (_inputManager._magicCharge == 0)
             {
+                EndMagicCharge();
+            }
+            if(_inputManager.EnchantButton.State.CurrentState == InfInput.ButtonStates.ButtonDown){
+                if(Mana.CurrentChargeType == ChargingMagicType.FIRE) base.BuffSword(ChargingMagicType.FIRE);
                 EndMagicCharge();
             }
         

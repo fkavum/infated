@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Infated.CoreEngine;
 
 public class LevelBoundaryChecker : MonoBehaviour
 {
     public Spawner spawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,6 @@ public class LevelBoundaryChecker : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other){
        other.transform.position = spawner._Position;
+       other.GetComponent<Health>().CurrentHealth = 100;
     }
 }

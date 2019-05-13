@@ -66,7 +66,7 @@ namespace Infated.CoreEngine
         protected virtual void Update()
         {
 
-
+            /*
             if (_characterHandleWeapon.CurrentWeapon != null)
             {
                 if (_weaponAim != null)
@@ -88,6 +88,7 @@ namespace Infated.CoreEngine
                     }
                 }
             }
+             */
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Infated.CoreEngine
             
             if (_numberOfShoots < 1)
             {
-                _characterHandleWeapon.ShootStart();
+                //_characterHandleWeapon.ShootStart();
                 _characterAttack.ShootStart();
                 _numberOfShoots++;
             }
@@ -175,7 +176,7 @@ namespace Infated.CoreEngine
         {
             base.OnExitState();
             //Debug.Log("I exited the State");
-            _characterHandleWeapon.ShootStop();
+            //_characterHandleWeapon.ShootStop();
             _characterAttack.ShootStop();
             _shooting = false;
         }

@@ -465,6 +465,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4709400190943016828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8903384739937838546}
+  m_Layer: 13
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8903384739937838546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709400190943016828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6599069363042689718}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5965076882285166979
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +711,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8903384739937838546}
   m_Father: {fileID: 6599069363414851735}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -724,6 +755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spritesheetObject: {fileID: 6599069363414851966}
+  attackerObject: {fileID: 6599069363414851966}
+  SplashCheckerObj: {fileID: 4709400190943016828}
   canHurt: 0
 --- !u!1 &6599069363414851966
 GameObject:
@@ -751,7 +784,6 @@ GameObject:
   - component: {fileID: 6599069363414851942}
   - component: {fileID: 6599069363414851943}
   - component: {fileID: 6599069363414851960}
-  - component: {fileID: 6599069363414851961}
   - component: {fileID: 6599069363414851962}
   - component: {fileID: 6599069363414851963}
   - component: {fileID: 6599069363414851964}
@@ -892,7 +924,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2515564, y: 2.7783048}
+  m_Size: {x: 1.251556, y: 2.7783048}
   m_EdgeRadius: 0
 --- !u!114 &6599069363414851948
 MonoBehaviour:
@@ -1219,31 +1251,6 @@ MonoBehaviour:
   CharacterModel: {fileID: 0}
   FlipOnDirectionChange: 1
   FlipValue: {x: -1, y: 1, z: 1}
---- !u!114 &6599069363414851961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6599069363414851966}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d37457b244e9dbb429b7945c76531cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userProfiler: {fileID: 0}
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityPermitted: 1
-  InitialWeapon: {fileID: 1807081326533691245, guid: 584239b168aa3634da0afc6e3427cf87,
-    type: 3}
-  WeaponAttachment: {fileID: 6599069362831495506}
-  CanPickupWeapons: 1
-  CurrentWeapon: {fileID: 0}
-  ContinuousPress: 0
-  AutomaticallyBindAnimator: 1
-  GettingHitInterruptsAttack: 0
 --- !u!114 &6599069363414851962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,6 +1297,8 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
   weapon: {fileID: 6599069362831495507}
+  Damage: 10
+  Buff: 0
 --- !u!114 &6599069363414851965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,6 +1317,8 @@ MonoBehaviour:
   Armor: 0
   CurrentHealthInPercentage: 0
   Invulnerable: 0
+  blockSound: {fileID: 0}
+  damageSound: {fileID: 8300000, guid: 7897096422a7ece44865612114999c5a, type: 3}
   InitialHealth: 100
   MaximumHealth: 100
   InitialArmor: 2

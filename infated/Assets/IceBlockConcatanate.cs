@@ -40,4 +40,22 @@ public class IceBlockConcatanate : MonoBehaviour
         iceBlockInstance.GetComponent<IceBlockConcatanate>().amount = amount - 1;
         DisableSpriteMask();
     }
+
+    protected virtual void PlaySound(AudioClip sfx)
+        {
+            // we create a temporary game object to host our audio source
+            GameObject temporaryAudioHost = new GameObject("TempAudio");
+            // we set the temp audio's position
+
+            // we add an audio source to that host
+            AudioSource audioSource = temporaryAudioHost.AddComponent<AudioSource>() as AudioSource;
+            // we set that audio source clip to the one in paramaters
+            audioSource.clip = sfx;
+            // we set the audio source volume to the one in parameters
+            audioSource.volume = 100;
+            // we start playing the sound
+            audioSource.Play();
+
+            Destroy(temporaryAudioHost, sfx.length);
+        }
 }
