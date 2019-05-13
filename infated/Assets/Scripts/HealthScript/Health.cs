@@ -36,6 +36,10 @@ namespace Infated.CoreEngine
 		public GameObject armors = null;
 		public bool isBlocking = false;
 
+		private CharacterStamina _stamina;
+
+		public float blockStaminaSpend = 10.0f;
+
         [Header("Damage")]
 		//[Information("Here you can specify an effect and a sound FX to instantiate when the object gets damaged, and also how long the object should flicker when hit (only works for sprites).",MoreMountains.Tools.InformationAttribute.InformationType.Info,false)]
 		/// the effect that will be instantiated everytime the character touches the ground
@@ -120,6 +124,8 @@ namespace Infated.CoreEngine
 					}
 				}	
 			}
+
+			_stamina = GetComponent<CharacterStamina>();
 
             // we grab our animator
             if (_character != null)
@@ -215,6 +221,7 @@ namespace Infated.CoreEngine
 				Vector2 knockbackForce = new Vector2(3.0f, 0.0f);	
 				if(_character.IsFacingRight) knockbackForce.x *= -1;
 				_controller.SetForce(knockbackForce);	
+				_stamina.spendStamina(blockStaminaSpend);
 				return;
 			}
 			// we decrease the character's health by the damage

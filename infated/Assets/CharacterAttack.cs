@@ -24,11 +24,12 @@ namespace Infated.CoreEngine
         public Animator CharacterAnimator { get; set; }
         private bool attacking = false;
 
+		private CharacterStamina _characterStamina = null;
 		// Initialization
 		protected override void Initialization () 
 		{
 			base.Initialization();
-								
+			_characterStamina = GetComponent<CharacterStamina>();
 			Setup ();
 		}
 
@@ -81,6 +82,7 @@ namespace Infated.CoreEngine
 			}
 
             attacking = true;
+			_characterStamina.spendStamina(5.0f);
 		}
 		
 		/// <summary>
@@ -112,6 +114,12 @@ namespace Infated.CoreEngine
 		    InfAnimator.UpdateAnimatorBool(_animator,"Attacking", attacking,_character._animatorParameters);
 		}
 
+		public void SpendStamina(float amount){
+			float x = _characterStamina.spendStamina(amount);
+			if(x == 0){
+				attacking = false;
+			}
+		}
         protected override void OnHit()
         {
             base.OnHit();

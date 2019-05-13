@@ -14,10 +14,11 @@ namespace Infated.CoreEngine
         private float MaxStamina = 100.0f;
         private float currentRegenCooldown = 0.0f;
 
-
+        private Health _hp;
         // Start is called before the first frame update
         void Start()
         {
+            _hp = GetComponent<Health>();
         }
 
         // Update is called once per frame
@@ -35,8 +36,10 @@ namespace Infated.CoreEngine
             }
             else
             {
-                currentRegenCooldown -= Time.deltaTime;
+                if(!_hp.isBlocking)
+                    currentRegenCooldown -= Time.deltaTime;
             }
+
         }
 
 
