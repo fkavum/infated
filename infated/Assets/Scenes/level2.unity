@@ -428,16 +428,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.1
       objectReference: {fileID: 0}
-    - target: {fileID: 6599069363414851965, guid: 6536fd917c21ec947b2df6fd0ec1bd74,
-        type: 3}
-      propertyPath: Armor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599069363414851965, guid: 6536fd917c21ec947b2df6fd0ec1bd74,
-        type: 3}
-      propertyPath: InitialArmor
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6599069363414851947, guid: 6536fd917c21ec947b2df6fd0ec1bd74,
         type: 3}
       propertyPath: m_IsTrigger
@@ -492,6 +482,16 @@ PrefabInstance:
         type: 3}
       propertyPath: States.Array.data[4].Transitions.array.Array.data[0].FalseState
       value: Delay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599069363414851965, guid: 6536fd917c21ec947b2df6fd0ec1bd74,
+        type: 3}
+      propertyPath: Armor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599069363414851965, guid: 6536fd917c21ec947b2df6fd0ec1bd74,
+        type: 3}
+      propertyPath: InitialArmor
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6536fd917c21ec947b2df6fd0ec1bd74, type: 3}
@@ -1391,6 +1391,11 @@ PrefabInstance:
       propertyPath: _Position.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6299468295474924639, guid: 59f35acfd7c8ee54e80e85a8c72e25c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 816950971, guid: 59f35acfd7c8ee54e80e85a8c72e25c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 494.23
@@ -1401,6 +1406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1504513222, guid: 59f35acfd7c8ee54e80e85a8c72e25c9, type: 3}
+    - {fileID: 6299468295474924639, guid: 59f35acfd7c8ee54e80e85a8c72e25c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59f35acfd7c8ee54e80e85a8c72e25c9, type: 3}
 --- !u!4 &667074721 stripped
 Transform:
@@ -3115,25 +3121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
---- !u!114 &1504513228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504513221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac8303d695ecd8409730a8fde76e1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doubleJumpCount: 0
-  oneJumpCount: 0
-  tripleJumpCount: 0
-  iceChargeAmount: 0
-  iceMagicUsed: 0
-  shapeShiftCount: 0
-  totalCombatTime: 0
 --- !u!1001 &1519875476
 PrefabInstance:
   m_ObjectHideFlags: 0
