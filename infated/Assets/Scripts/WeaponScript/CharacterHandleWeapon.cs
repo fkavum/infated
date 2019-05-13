@@ -87,38 +87,13 @@ namespace Infated.CoreEngine
 		/// </summary>
 		protected override void HandleInput ()
 		{			
-			/*
-			if ((_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonDown) || (ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && (_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonPressed)))
-			{
-				ShootStart();
-			}
- 			*/
+
+
 			if ((_inputManager.ShootAxis == InfInput.ButtonStates.ButtonDown) || (ContinuousPress && (CurrentWeapon.TriggerMode == Weapon.TriggerModes.Auto) && (_inputManager.ShootAxis == InfInput.ButtonStates.ButtonPressed)))
 			{
                 ShootStart();
 			}
-			/*
-			if (_inputManager.ReloadButton.State.CurrentState == InfInput.ButtonStates.ButtonDown)
-			{
-                Reload();
-            }
-
-            if ((_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.ButtonUp) || (_inputManager.ShootAxis == InfInput.ButtonStates.ButtonUp))
-            {
-                ShootStop();
-            }
-			*/
-
-            if (CurrentWeapon != null)
-            {
-                if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses)
-                && ((_inputManager.ShootAxis == InfInput.ButtonStates.Off) 
-				//&& (_inputManager.ShootButton.State.CurrentState == InfInput.ButtonStates.Off)
-				))
-                {
-                    ShootStop();
-                }
-            }            
+         
         }
 						
 		/// <summary>
@@ -310,8 +285,8 @@ namespace Infated.CoreEngine
 			RegisterAnimatorParameter(CurrentWeapon.ReloadAnimationParameter, AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter(CurrentWeapon.SingleUseAnimationParameter, AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter(CurrentWeapon.UseAnimationParameter, AnimatorControllerParameterType.Bool);
-			RegisterAnimatorParameter ("Attack1", AnimatorControllerParameterType.Bool);
 			RegisterAnimatorParameter ("Attack2", AnimatorControllerParameterType.Bool);
+
 		}
 
 		/// <summary>
@@ -333,9 +308,8 @@ namespace Infated.CoreEngine
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStartAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart),_character._animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload),_character._animatorParameters);
             InfAnimator.UpdateAnimatorBool(_animator,CurrentWeapon.ReloadStopAnimationParameter,(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
-			InfAnimator.UpdateAnimatorBool(_animator,"Attack1",(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
 			InfAnimator.UpdateAnimatorBool(_animator,"Attack2",(CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop),_character._animatorParameters);
-
+			
 			if (_aimableWeapon != null)
 			{
                 InfAnimator.UpdateAnimatorFloat (_animator, CurrentWeapon.WeaponAngleAnimationParameter, _aimableWeapon.CurrentAngle,_character._animatorParameters);

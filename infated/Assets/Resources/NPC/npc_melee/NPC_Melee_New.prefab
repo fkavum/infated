@@ -1319,12 +1319,13 @@ MonoBehaviour:
   Invulnerable: 0
   blockSound: {fileID: 0}
   damageSound: {fileID: 8300000, guid: 7897096422a7ece44865612114999c5a, type: 3}
-  InitialHealth: 100
-  MaximumHealth: 100
+  InitialHealth: 35
+  MaximumHealth: 35
   InitialArmor: 2
   MaximumArmor: 8
   armors: {fileID: 1082299030939806893}
   isBlocking: 0
+  blockStaminaSpend: 10
   DamageEffect: {fileID: 0}
   DamageSfx: {fileID: 0}
   FlickerSpriteOnHit: 1
