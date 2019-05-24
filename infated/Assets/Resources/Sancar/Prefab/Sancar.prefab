@@ -540,7 +540,7 @@ MonoBehaviour:
     DisplayWarnings: 1
   PlatformMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8448
   MovingPlatformMask:
     serializedVersion: 2
     m_Bits: 0
@@ -703,8 +703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24e875b3ea9b5648bec8a087270205c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RegenCooldown: -0.99
-  RegenAmount: 3.66
+  RegenCooldown: 3
+  RegenAmount: 0.1
   Charging: 0
   CurrentChargeType: 0
 --- !u!114 &3104302588705471600
@@ -725,9 +725,10 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityPermitted: 1
   particle: {fileID: 7724630293422253344}
-  DeltaCharge: 0.5
+  DeltaCharge: 0.1
   MaxChargeAmount: 25
   MinimumCharge: 5
+  ChargedAmount: 0
   BuffDuration: 0
   IceBlock: {fileID: 7703296408480403947, guid: 02e34eb79c786fd4598934ec3fa33edc,
     type: 3}
@@ -755,10 +756,12 @@ MonoBehaviour:
   DeltaCharge: 0.5
   MaxChargeAmount: 25
   MinimumCharge: 5
+  ChargedAmount: 0
   BuffDuration: 0
   FireObject: {fileID: 5975552266938463561, guid: 7fb53d9487e4e9848a2d74490a32885b,
     type: 3}
   FireOffset: 1.2
+  CurrentDamage: 0
 --- !u!114 &5988958342251902498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,8 +900,8 @@ MonoBehaviour:
   Invulnerable: 0
   blockSound: {fileID: 8300000, guid: bd7ec9d74131fc94d84b953d87889645, type: 3}
   damageSound: {fileID: 8300000, guid: 7897096422a7ece44865612114999c5a, type: 3}
-  InitialHealth: 1114
-  MaximumHealth: 1280
+  InitialHealth: 250
+  MaximumHealth: 250
   InitialArmor: 0
   MaximumArmor: 8
   armors: {fileID: 0}
@@ -915,7 +918,7 @@ MonoBehaviour:
   DeathForce: {x: 0, y: 10}
   PointsWhenDestroyed: 0
   VibrateOnDeath: 0
-  RespawnAtInitialLocation: 0
+  RespawnAtInitialLocation: 1
 --- !u!114 &1534678467829206632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +958,7 @@ MonoBehaviour:
   weapon: {fileID: 6892019984299926618}
   Damage: 10
   Buff: 0
+  atackingPermited: 1
 --- !u!114 &3045667180273425199
 MonoBehaviour:
   m_ObjectHideFlags: 0

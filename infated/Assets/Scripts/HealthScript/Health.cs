@@ -16,8 +16,10 @@ namespace Infated.CoreEngine
 
 		public GameObject mask;
 		public bool isMask = false;
-		public int CurrentHealth;
+		public float CurrentHealth;
 		
+		private  float gotHitCooldown = 0.0f;
+
 		public int Armor;
         public float CurrentHealthInPercentage;
         public bool Invulnerable = false;
@@ -222,8 +224,10 @@ namespace Infated.CoreEngine
 				if(_character.IsFacingRight) knockbackForce.x *= -1;
 				_controller.SetForce(knockbackForce);	
 				_stamina.spendStamina(blockStaminaSpend);
+				gotHitCooldown = 5.0f;
 				return;
 			}
+			gotHitCooldown = 5.0f;
 			// we decrease the character's health by the damage
 			float previousHealth = CurrentHealth;
 			float rng = Random.Range(0.0f, 1.0f);
@@ -473,7 +477,22 @@ namespace Infated.CoreEngine
 
 		}
 		void Update(){
+			if(tag == "Player"){
+				if(gotHitCooldown < 0){
+					if(CurrentHealth > MaximumHealth){
+							CurrentHealth = MaximumHealth;
+					}else{
+						CurrentHealth += 0.2f;
+					}
+						
+				}
+				else{
+					gotHitCooldown -= Time.deltaTime;
+				}
+			}
+			
 			UpdateHealthBar(true);
+			
 		}
 
 	    /// <summary>

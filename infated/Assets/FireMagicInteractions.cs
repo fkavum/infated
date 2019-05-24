@@ -7,6 +7,7 @@ namespace Infated.CoreEngine
     public class FireMagicInteractions : MonoBehaviour
     {
         public bool isFacingRight;
+        public int damage = 0;
         // Start is called before the first frame update
         void Start()
         {
@@ -19,6 +20,8 @@ namespace Infated.CoreEngine
                     }
                     
                 }
+            
+            
         }
 
         // Update is called once per frame
@@ -39,7 +42,8 @@ namespace Infated.CoreEngine
             if(other.tag == "Enemy"){
                 Health hp = other.GetComponent<Health>();
                 if(hp != null){
-                    hp.Damage(10, this.gameObject, 0.5f, 0.5f, true);
+                    hp.Damage(damage, this.gameObject, 0.5f, 0.5f, true);
+                    Debug.Log("Dealt: " + damage + " fire damage");
                 }
             }
         }

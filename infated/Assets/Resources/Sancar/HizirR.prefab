@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3038560716977028484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.715983, y: -7.6168346, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 529036738431433278}
   m_Father: {fileID: 0}
@@ -374,6 +374,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3038560716977028480}
     m_Modifications:
+    - target: {fileID: 7807224888320924601, guid: 0a7c898edc585a1429fb50e8b2e55298,
+        type: 3}
+      propertyPath: m_Name
+      value: Hizir
+      objectReference: {fileID: 0}
     - target: {fileID: 7807224888320924606, guid: 0a7c898edc585a1429fb50e8b2e55298,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -428,11 +433,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807224888320924601, guid: 0a7c898edc585a1429fb50e8b2e55298,
-        type: 3}
-      propertyPath: m_Name
-      value: Hizir
       objectReference: {fileID: 0}
     - target: {fileID: 7807224888320924592, guid: 0a7c898edc585a1429fb50e8b2e55298,
         type: 3}

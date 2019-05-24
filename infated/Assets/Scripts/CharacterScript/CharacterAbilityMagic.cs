@@ -23,7 +23,7 @@ namespace Infated.CoreEngine
         public float DeltaCharge = 0.5f;
         public float MaxChargeAmount = 20.0f;
         public float MinimumCharge = 5.0f;
-        protected float ChargedAmount = 0.0f;
+        public float ChargedAmount = 0.0f;
         public float BuffDuration = 0.0f;
 
         /// <summary>

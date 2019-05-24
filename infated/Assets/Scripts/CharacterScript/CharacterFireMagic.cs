@@ -17,8 +17,9 @@ namespace Infated.CoreEngine
         public GameObject FireObject;
 
          public float FireOffset = 0.1f;
-
+        public int CurrentDamage = 0;
         void Update(){
+            CurrentDamage = (int)ChargedAmount;
             if(!Mana.Charging){
                 UpdateGuiValues();
                 particle.gameObject.SetActive(false);
@@ -30,6 +31,7 @@ namespace Infated.CoreEngine
             else{
                 
             }
+
                 
             
         }
@@ -109,10 +111,13 @@ namespace Infated.CoreEngine
             else{
                 position.x -= FireOffset;
             }
-
+            
             GameObject FireInstance = Instantiate(FireObject, position, Quaternion.identity);
 
             Transform Fire = FireInstance.transform.GetChild(0);
+            FireMagicInteractions interactions = Fire.GetComponent<FireMagicInteractions>(); 
+            interactions.damage = (int)CurrentDamage;
+
             if(_character.IsFacingRight){
                 Fire.GetComponent<SpriteRenderer>().flipX = false;            
                 Fire.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
@@ -121,8 +126,10 @@ namespace Infated.CoreEngine
                 Fire.GetComponent<SpriteRenderer>().flipX = true; 
                 Fire.GetComponent<Rigidbody2D>().velocity = Vector2.left * 10;
             }
-            Fire.GetComponent<FireMagicInteractions>().isFacingRight = _character.IsFacingRight;
             
+            interactions.isFacingRight = _character.IsFacingRight;
+            
+
             EndMagicCharge();
         }
     }

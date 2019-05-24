@@ -1108,11 +1108,11 @@ MonoBehaviour:
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  DamageCaused: 10
+  DamageCaused: 2
   DamageCausedKnockbackType: 1
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  InvincibilityDuration: 0.2
   DamageTakenEveryTime: 0
   DamageTakenDamageable: 0
   DamageTakenNonDamageable: 0
@@ -1299,6 +1299,7 @@ MonoBehaviour:
   weapon: {fileID: 6599069362831495507}
   Damage: 10
   Buff: 0
+  atackingPermited: 1
 --- !u!114 &6599069363414851965
 MonoBehaviour:
   m_ObjectHideFlags: 0
